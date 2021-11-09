@@ -1,0 +1,396 @@
+\documentclass[a4paper,11point]{article}
+\usepackage[margin=2cm]{geometry}
+
+%% Fonts, etc.
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage{microtype}      % fine pdf font control
+
+\usepackage[scaled=0.92]{helvet} \renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor} % -- loaded by tikz
+% \usepackage{soul} % \ul \st \hl
+
+%% Maths
+% \usepackage{amssymb,amsmath}
+% \usepackage{algorithm,algpseudocode}
+% \usepackage{mathtools}
+% \usepackage{mathalfa}
+% \usepackage{bbm}
+% \usepackage{mathrsfs}
+% \usepackage{gensymb}
+% \input m.macros
+% \input m.symbols
+
+%% Other typsetting
+% \usepackage{booktabs}       % professional-quality tables
+% \usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{enumitem}
+
+%% Graphics
+% \usepackage{graphicx,tikz}
+% \usetikzlibrary{positioning}
+% \usetikzlibrary{fit}
+% \usetikzlibrary{calc}
+
+%% Floats
+% \usepackage{wrapfig}
+
+%% Margin bubbles
+% \usepackage{mbubble}
+% \mbubblestyle{ms}{font=\tiny,label=ms,color=blue}
+% \newcommand{\comment}[1]{}
+
+%% Sections
+\setcounter{secnumdepth}{-2}
+\usepackage[small]{titlesec} % format section titles
+% \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
+
+% \usepackage{caption,subcaption}
+% \DeclareCaptionSubType[Alph]{figure}
+% \captionsetup[subfigure]{labelformat=simple,labelfont={sf,bf,large},textfont={sf}}
+% \renewcommand{\thesubfigure}{{\sffamily\alph{subfigure}}}
+
+%% Spacing
+% \usepackage[doublespacing]{setspace}
+\parindent 0pt
+\parskip 1ex
+
+%% Citations, refs, hyperlinks
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+% \usepackage{natbib}
+% \usepackage[capitalize]{cleveref}
+% \crefname{equation}{}{}
+% \crefname{Equation}{Equation}{Equations}
+
+
+%% Title
+
+\title{}
+\author{}
+% \usepackage{filemod} % access to file modification times
+% \date{\Filemodtoday{\jobname}}  % replace \jobname if compiling from wrapper
+
+% \usepackage{titling} % modify title(page) appearance
+%\pretitle{\begin{center}\LARGE}
+%\posttitle{\par\end{center}\vskip 0.5em}
+%\preauthor{\begin{center} \large \lineskip 0.5em \begin{tabular}[t]{c}}
+%\postauthor{\end{tabular}\par\end{center}}
+%\predate{\begin{center}\large}
+%\postdate{\par\end{center}}
+
+
+
+\def\ii#1\par{{\color{blue!40}\sl #1}\par}
+\def\iibf#1\par{{\color{blue!40}\sl\bfseries #1}\par}
+\def\iitem#1\par{\ii\begin{itemize}[nosep]\item #1 \end{itemize}\par}
+
+\begin{document}
+
+\section{Notes}
+
+(This page is not for submission)
+
+Required items:
+\begin{itemize}  
+  \item case for support (up to eight pages)
+  \item justification of resources (two pages)
+  \item data management plan (DMP) (up to three pages, data management plan template)
+        if you opt not to use the template for your plan, the topics listed in the template must be addressed in the DMP document you do provide
+  \item diagrammatic workplan (one page)
+  \item management structure (one page)
+  \item narrative CV (up to two pages per staff member)
+  \item community letters of support or demand (up to 10)  
+  \item proposal cover letter.
+\end{itemize}
+
+    
+\newpage
+
+% \maketitle
+
+
+\section{Case for support}
+
+\ii Instructions and guidance:
+  \url{https://www.ukri.org/wp-content/uploads/2021/09/BBSRC-150921-FundingOpp-BioinformaticsBiologicalResourcesFund-GuidanceDocument.pdf}
+
+\iibf Assessment criteria.
+
+\ii \url{https://www.ukri.org/wp-content/uploads/2021/09/BBSRC-150921-FundingOpp-BioinformaticsBiologicalResourcesFund-AssessmentCriteria.pdf}
+
+\iibf Scientific quality and strategic relevance of the resource.
+
+\ii Including:
+\begin{itemize}[nosep]
+    \item the extent to which the resource meets the highest international standards in resource provision in its field
+    \item how well the resource is demonstrated to be unique or complementary to other similar existing resources
+    \item the extent to which the resource addresses the research and policy priority areas of BBSRC.
+\end{itemize}
+
+\iibf Cost effectiveness, particularly considerations for long-term
+sustainability beyond BBSRC funding.
+
+\ii The extent to which:
+\begin{itemize}[nosep]
+    \item the resource delivers value for money relative to the anticipated scientific gains it will provide
+    \item long term sustainability options have been considered, addressed, and planned where appropriate, particularly for existing resources.
+\end{itemize}
+
+\iibf Potential for economic and social impact beyond the academic
+community.
+
+\ii Including:
+\begin{itemize}
+    \item the extent to which the outputs from the resource will contribute to knowledge and potential for economic return or social impact
+    \item how well the proposal has outlined methods of engagement and measures of success in developing milestones and timelines of associated activities.
+\end{itemize}
+
+\iibf Fit to the scope.
+
+\ii How well the proposal addresses the scope of the opportunity.
+
+\iibf Assessment criteria adapted to new or existing resources
+
+\ii To allow for a more nuanced assessment between new and existing
+resources, the use of the following assessment criteria will be
+adapted accordingly. 
+
+\ii For new resources, these criteria will assess the ‘plans, potential, and promise’ of the resources.
+
+\iibf Quality of the overall arrangements for resource management, advisory functions, as well as user access and engagement
+
+\ii Including:
+\begin{itemize}
+    \item the extent to which the proposal has evidenced or planned interaction with relevant users and the broader research community to ensure the aims of the resource are realised and there is sufficient uptake and continued development
+    \item the extent to which adequate user access arrangements have been discussed and considered
+    \item the set-up of project management and advisory structures of the resource to ensure longevity in delivering the resource to a broad user base.
+\end{itemize}
+
+\iibf Need or demand, and potential benefit to the UK academic research community
+
+\ii The extent to which:
+\begin{itemize}
+    \item the community has demonstrated demand for the proposed resource, relative to the total community size (in particular, proposals for new resources should have consulted their prospective community prior to application)
+    \item the proposed resource will deliver and benefit the wider BBSRC community indicating how the proposed resource will help to deliver high-quality research.
+\end{itemize}
+
+
+\newpage
+\ii Section headings taken from guide.  We can omit some if clearly not necessary, but should do so with caution.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Background to the Resource}
+\ii Introduction of the proposed resource, including its academic and wider 
+economic and societal context.
+
+\ii Overview of past and current resource(s) in the subject area in both the UK 
+and abroad, including any alternative community resources currently 
+available. You should indicate the community size of the intended resource 
+and how this relates to the field in which it operates.
+
+\subsection{Details of Resource}
+
+\ii The case for support should outline the full details of the resource and 
+associated work packages presented in the proposal.
+
+\iitem Indication whether the project proposed to develop a new
+resource or is in support of an existing one.
+
+Existing if general Bonsai enhancements.  If specific to analysis we
+may be able to argue for "new" if helpful, while still making
+reference to Bonsai installed base.  
+
+\iitem Objectives for the proposal should be detailed including
+individual measurable targets against which the outcome of the work
+will be assessed. This should refer to the objectives set out in the
+Je-S proposal form.
+
+\iitem{Significant technical details for the development, maintenance or 
+enhancement of the resource must be clearly outlined and indicated 
+how this is of internationally exceptional quality. }
+
+\iitem{If applicable, outline any proposed research efforts and how they 
+  directly facilitate development of the resource. }
+
+\iitem{For proposals looking to focus on maintaining status quo for an 
+existing resource instead of suggesting further development, you 
+should detail evidence of why significant upgrades are not required at 
+this time and detail why the resource needs continued support to 
+maintain world-leading functionality.}
+
+\ii{Additional questions that may be considered: }
+
+\iitem Does the facility begin or continue to support a growing field of 
+bioscience, what is the anticipated growth and does the proposal 
+adequately accommodate this? 
+
+\iitem How will the resource accelerate science within its field and
+  beyond?
+
+\iitem What would be the impact on the scientific community if the resource 
+did not exist? How would this impact other, possibly dependent 
+resources?
+
+\subsection{Community Demand}
+\ii Evidence of community demand should be primarily driven from UK 
+academic researchers working largely within BBSRC remit – see our 
+Forward look for UK Bioscience for more detail on research areas covered by 
+BBSRC. Demand from other users (such as academic communities outside 
+of BBSRC remit or industrial users) may be appropriate to provide additional 
+support, especially in highlighting the potential for economic, commercial or 
+societal impact, but should not be the focus of the demand demonstration. 
+Evidence provided should highlight examples of the high-quality science that 
+the resource will underpin or has underpinned. Where possible and relevant, 
+examples should be drawn from a wide research community to illustrate the 
+broad impact of the resource to support high-quality internationally excellent 
+science.  
+
+\ii The level of community demand should be benchmarked against other 
+relevant resources and/or the size of the community. This will allow the fair 
+assessment of resources with different user bases. The types of evidence 
+that may be appropriate to provide will be different for new and existing 
+resources. 
+
+\ii Evidence of wider consultation of the prospective community (e.g community 
+surveys) is encouraged. 
+
+\iibf New Resources
+
+\ii New resources should estimate the number of researchers who may engage and benefit from the resource. Evidence, where possible, would be of benefit and may include: 
+\begin{itemize}
+    \item  Datasets (or samples) in public or private repositories 
+    \item Citations or acknowledgments 
+    \item Gap analysis with existing resources 
+    \item Pilot project uptake or feedback from potential users.  
+\end{itemize}
+
+\ii In particular, proposals for new resources should have consulted their prospective community prior to application
+
+\iibf Existing Resources
+
+\ii For existing resources this should include usage data of the
+current resource. Data types may include: 
+
+\iitem Access requests from independent users/ sites 
+
+\iitem Citations or acknowledgements 
+
+\iitem Other public resources providing links to the resource 
+
+\iitem New major acquisitions captured by the resource 
+
+\ii{Additionally, existing resources need 
+to evidence why this resource needs 
+to be maintained/updated by the 
+current grant. This could include: }
+
+\iitem Survey data from users on what upgrades are needed 
+
+\iitem Evidence of an expanding 
+user base, which requires 
+additional resource 
+
+\iitem Recent developments in the 
+field, which require upgrades 
+to be integrated into the 
+resource. 
+
+
+\subsection{User engagement}
+\ii Discussion of user engagement provision should aim to answer the following 
+questions:
+
+\iitem Is there awareness of the resource within the user community?
+
+\iitem How do you plan to develop the engagement strategy within the 
+proposal timeframe to expand user engagement? 
+
+\iitem How have access mechanisms to ensure usability of the resource 
+been considered? 
+
+\iitem How have user needs been incorporated into this proposal to ensure 
+it is fit for purpose and will deliver on expectations? 
+
+\iibf New Resources
+  
+\ii Evidence should be provided as to how the resource plans to engage
+stakeholders and ensure that the resource meets their needs and is
+used by the community targeted by the resource.
+
+\iibf Existing Resources
+
+\ii Evidence should be provided as to whether the resource has
+achieved the level of engagement it originally anticipated, and
+consideration is given how the additional investment would change
+this.  
+
+\subsection{Long term sustainability planning}
+\ii{
+In addition, the case for support should outline considerations for the long-
+term sustainability of the resource beyond UKRI-BBSRC funding, as well as 
+the true cost of running and maintaining the resource in question. 
+The proposal should include: }
+
+\iitem Cost recovery plans, where appropriate, or an explanation why
+not if not viable. Evidence of clear business planning with a focus on
+at least partial cost recovery is required, especially when applying
+as an existing resource.
+
+\iitem Details for alternative support plans, aside from UKRI-BBSRC 
+funding. 
+
+\iitem The level of support the resource is projected to require for expected 
+maintenance and/or subsequent maturation/enhancement activities. 
+Clear arguments as to why UKRI-BBSRC should support the resource now 
+should be provided, if other cost recovery and support plans are deemed 
+unsuitable.  
+
+
+\subsection{Potential for economic and societal impact}
+\ii{Outline how the outputs of the proposed resource will contribute to 
+knowledge and how this may have the potential for economic return or 
+societal benefits. Impact activities should be integrated into appropriate 
+sections of the case for support, not presented as an independent work 
+package. }
+
+\iitem All proposals are expected to demonstrate clear plans with recorded 
+milestones and timelines for associated activities to develop 
+economic, commercial and societal impacts.  
+August 2021 7 
+ 
+
+\iitem Methods of engagement and measures of success should be outlined 
+including how these will be regularly reviewed throughout the project 
+in order to deliver the most impact. 
+
+\iitem Any planned activities should be fully justified within the Justification 
+of Resources attachment
+
+
+
+
+
+
+
+
+\subsection{Track Record}
+\ii{
+The majority of the track record relevant to the project should be located 
+within the Narrative CV and should not be repeated within the case for 
+support. You may, however, want to describe: }
+
+\iitem Track record of the team working together  
+
+\iitem Specific expertise available at the host organisation and any 
+proposed partner organisations to enable the successful delivery of 
+the project.  
+
+\iitem The specific role of each applicant and collaborator in the project
+
+
+
+\end{document}

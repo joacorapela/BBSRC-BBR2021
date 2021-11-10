@@ -1,0 +1,393 @@
+\documentclass[a4paper,11point]{article}
+\usepackage[margin=2cm]{geometry}
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{natbib}
+\usepackage{apalike}
+\usepackage{graphicx}
+
+\title{Case for Support}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+    
+\newpage
+
+\section{Background to the Resource}
+
+Experimental control and neural data analysis are currently highly
+disassociated.  Most neuroscientists collect their data and only afterward
+analyze it. This split has had dramatic consequences for the progress of
+neuroscience. First, most experimental control methods currently do not use
+advanced data analysis methods to enhance their functionality. Second, the vast
+majority of neural data analysis methods are offline and do not provide key
+functionality needed for online experimental control. Using advanced data
+analysis methods in experimental control will improve the sophistication of
+experiments that are currently possible, and generate new demands for neural
+data analysis methods that will generate advances in the field.
+
+A central goal of the software development proposed here is to address this
+problem, by providing Bonsai~(an experimental control software ecosystem;
+Figure~\ref{fig:bonsai} and Section~\ref{sec:bonsai}) with state-of-the-art online (and offline) data
+analysis methods (Figure~\ref{fig:proposedBonsaiExtensions} and 
+Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}).
+%
+It is unfortunate that neuroscientists currently do not have software that
+allows them to easily compare the performance of different data analysis
+methods for the characterization of their datasets. The second central goal
+of this proposal is to address this limitation by adding to Bonsai a generic
+mechanism for comparing the performance of different methods for the analysis
+of specific datasets (Section~\ref{sec:comparisonOfMultipleMethods}).
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=7in]{figures/bonsai.pdf}
+        \label{fig:bonsai}
+    \end{center}
+\end{figure}
+
+\setcounter{figure}{1}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=4in]{figures/proposed_bonsai_extensions.png}
+        \caption{Proposed extensions to Bonsai}
+        \label{fig:proposedBonsaiExtensions}
+    \end{center}
+\end{figure}
+
+Currently Bonsai has its own package manager, and its community of users have
+already extended Bonsai's functionality with several contributed packages
+(e.g., \ldots \textcolor{red}{Goncalo please reference the best contributed
+packages developed by the Bonsai community}). However, these packages need to
+be written in C\#, while most current neuroscience data analysis methods are
+written in Python, R or Matlab.  We propose to add to Bonsai capabilities to
+communicate with software written in these languages
+(Section~\ref{sec:bonsaiPythonMatlabCommunication}).  These capabilities will
+allow a large number of neuroscience data analysis methods to be easily
+integrated into the Bonsai ecosystem and will provide Bonsai users a large
+repertoire of advance machine learning methods for their behavioral and neural
+data analysis.
+
+Bonsai is an excellent tool for reproducible data acquisition and
+experimental control. An experiment implemented in Bonsai can be replicated in
+a new laboratory by just sharing a Bonsai configuration file. With the addition
+of the proposed machine learning functionality Bonsai will extend this
+reproducibility to the domain of data analysis
+(Section~\ref{sec:reproducibility}).
+
+\subsection{Bonsai}
+\label{sec:bonsai}
+
+Bonsai~\citep{lopesEtAl15,lopesAndMonteiro21} is a free and open-source visual
+programming language that emphasizes performance, flexibility, and ease-of-use,
+allowing scientists with no previous programming experience to quickly develop
+their own high-performance data acquisition and experimental control systems
+(Figure 1c). Bonsai combines a high-level event algebra for data streams with
+an integrated development environment (IDE) and a strong library of plugins
+supporting multiple hardware and software packages used by the biomedical
+research community (Figures 1a, 1b).
+
+Bonsai has a large user base in the systems neuroscience community.
+Quantifications of this user base are provided in Figures 1d-1f.  In the last
+year alone, we estimate more than 1,000 new users have started to incorporate
+Bonsai into their experimental protocols across the world. The surprising rate
+of adoption of Bonsai in non-programmer experimental labs highlights the need
+for accessible programming tools that enable state-of-the-art technology but
+also allow researchers to stay in control and change their experimental
+paradigms.  Many open-source software tools are either inaccessible to
+non-programmers, or too constrained to be of general use outside their narrow
+domain of application. Bonsai has been successful because it has straddled this
+gap to some extent.
+
+The language has also helped to potentiate the growing wave of foundational
+open hardware initiatives, such as the OpenEphys \citep{siegleEtAl17} and UCLA
+Miniscope~\citep{caiEtAl16}, making it possible to quickly combine and
+integrate these tools into new experiments~\citep{buccinoEtAl18}.
+%
+Bonsai has been adopted in large neuroscience undertakings like the
+International Brain
+Laboratory\footnote{\href{https://www.internationalbrainlab.com/}{https://www.internationalbrainlab.com/}}
+and the Allen Institute for Brain
+Science\footnote{\href{https://alleninstitute.org/what-we-do/brain-science/}{https://alleninstitute.org/what-we-do/brain-science/}}.
+%
+More recently, Bonsai has started to expand outside the domain of neuroscience
+into biomedical research and biotechnology tool development, and even outside
+academia into public outreach and education programs.
+
+\section{Details of Resource}
+
+\subsection{Video-based behavioral analysis}
+\label{sec:videoBasedBehavioralAnalysis}
+
+Precisely quantifying animal behavior is an essential step toward understanding
+brain function.  Deeplabcut is a Python-based software for tracking animal body
+parts \citep{mathisEtAl18}, which it is currently well integrated with
+Bonsai~\citep{kaneEtAl20}. Here we propose extensions to Bonsai to extract
+other informative features from video recordings.
+
+\begin{description}
+
+    \item[Motion sequencing]\citep[MoSeq;][]{wiltschkoEtAl15}: extracts patterns
+        of behavior that repeat over time (i.e., syllables of behavior) from
+        video data. For instance, it parses (in an unsupervised way) the
+        behavior of a mouse in an arena into segments of time where a mouse
+        was running, rearing and grooming. It uses a hidden Markov model and it
+        is implemented in Python\footnote{Code for MoSeq can be requested from
+        the Datta laboratory, as indicated at
+        \href{http://datta.hms.harvard.edu/research/behavioral-analysis/}{http://datta.hms.harvard.edu/research/behavioral-analysis/}.}.
+        After trained MoSeq can be used to detect behavioral syllables online.
+
+    \item[Decoding behavior from neural
+        activity]\citep[BehaveNet;][]{battyEtAl19} combines hidden Markov
+        models with convolutional autoencoders and discriminative models to
+        decode video data from neural recordings. It is implemented in
+        Python\footnote{\href{https://github.com/themattinthehatt/behavenet}{https://github.com/themattinthehatt/behavenet}}.
+        After trained it can be used online to decode video data and detect
+        behavioral syllables.
+
+    \item[Interpretable latents for behavioral videos]\citep[Partitioned
+        Subspace Variational Autoencoder, PS-VAE;][]{whitewayEtAl21}: produces
+        interpretable low-dimensional representations of behavioral videos by
+        combining the output of pose-estimation algorithms (e.g., DeepLabCut)
+        with unsupervised dimensionality reduction methods. These
+        low-dimensional representations facilitate downstream behavioral and
+        neural analyses. It is based on autoencoders and is implemented in
+        Python\footnote{code for PS-VAE is embedded in the BehaveNet code
+        \href{https://github.com/themattinthehatt/behavenet}{https://github.com/themattinthehatt/behavenet}.
+        Please refer to class \texttt{PSVAE} in 
+        \texttt{behavenet.models.vaes.py}.}. After trained it can be used
+        online to extract low-dimensional features and perform downstream
+        processing.
+
+\end{description}
+
+\subsection{Spike sorting}
+\label{sec:spikeSorting}
+
+\noindent\textcolor{red}{TODO}
+
+\subsection{Low-dimensional representations of spiking data}
+\label{sec:lowDimensionalRepresentationsOfSpikingData}
+
+Bonsai is well integrated with OpenEphys~\citep{siegleEtAl17}, which allows
+scientists to record neural data from a large number of devices. However, it
+lacks functionality to process these recordings. Here we describe software that
+we propose to integrate into Bonsai to extract interpretable summary statistics
+(i.e., latent variables) from neural spiking activity.
+
+\begin{description}
+
+    \item[Gaussian Linear Dynamical
+        System]\citep[GLDS;][]{andersonAndMoore12}: with sufficiently large
+        bin sizes, spike counts can be modeled as Gaussian random processes.
+        This Gaussianity assumption greatly simplifies the estimation of
+        parameters of linear dynamical system (LDS) models, as well as
+        inferences about their states. After models parameters have been
+        learned, GLDS can be used online. A unique feature of GLDS is that the
+        posterior distribution of states given all observation up to the
+        present can be calculated efficiently. This estimate of the posterior
+        distribution can be used online for experimental control, as we
+        propose in Section~\ref{sec:comparisonOfMultipleMethods}. We will use an R implementation of GLDS
+        which allows the use of external
+        inputs\footnote{\href{https://github.com/joacorapela/kalmanFilter}{https://github.com/joacorapela/kalmanFilter}}.
+
+    \item[Poisson Linear Dynamical System]\citep[PLDS;][]{mackeEtAl15}: for
+        smaller bin sizes, spike counts are better modeled as Poisson random
+        processes, rather than Gaussian ones. The algorithm described in
+        \citet{mackeEtAl15} can estimate the parameters of a LDS, and make
+        inferences about its states, from Poisson distributed observations.  We
+        propose to interface Bonsai with a Matlab implementation of
+        PLDS\footnote{\href{https://bitbucket.org/mackelab/pop\_spike\_dyn/src/master/}{https://bitbucket.org/mackelab/pop\_spike\_dyn/src/master/}}
+        that uses variational inference. PLDS does not provide online estimates
+        of the states, since data from a full trial is needed for state
+        inference.
+
+    \item[Hidden Markov Model]\citep[HMM;][]{rabiner89}: as LDSs, HMMs model a
+        time series of observations as random processes conditioned on hidden
+        states. However, in HMMs hidden states are discrete random variables,
+        while in LDSs they are continuous ones. In some application domains
+        (e.g., speech, epilepsy) discrete state assumptions are more pertinent
+        than continuous ones. We propose to use an R implementation of
+        HMMs\footnote{\href{https://github.com/joacorapela/hiddenMarkovModels}{https://github.com/joacorapela/hiddenMarkovModels}}.
+        As GLDSs, once trained, HMMs can be used online to infer the posterior
+        distribution of states given observations.
+
+    \item[Gaussian Processes Factor Analysis]\citep[GPFA;][]{yuEtAl09}: as
+        LDSs, GFPA models represent a time series of observation as random
+        processes conditioned on hidden states. However, in GPFA models the
+        state dynamics are nonlinear, while in LDS models they are linear.
+        Thus, GPFA models are more general than LDS ones. As GLDS models, GPFA
+        models assume that observations conditioned on states are Gaussian
+        random processes. We propose to use a Matlab implementation of
+        GPFA\footnote{\href{https://users.ece.cmu.edu/~byronyu/software/gpfa0203.tgz}{https://users.ece.cmu.edu/~byronyu/software/gpfa0203.tgz}}.
+        GPFA models do not provide online estimates of the states, since data
+        from the full trial are needed for state estimates.
+
+    \item[Sparse Variational Gaussian Processes Factor
+        Analysis]\citep[svGPFA;][]{dunckerAndSahani18}: is similar to GPFA, but
+        models point process observations (i.e., single spikes as opposed to
+        spike counts). We propose to use a Python implementation of
+        svGPFA\footnote{\href{https://github.com/joacorapela/svGPFA}{https://github.com/joacorapela/svGPFA}}.
+        svGPFA models do not provide online estimates of states, since data
+        from the full trial are needed for state estimates.
+
+    \item[Latent factor analysis through dynamical
+        systems]\citep[LFADS;][]{pandarinathEtAl18}: uses an autoencoder
+        framework, with recursive neural networks, to infer continuous states
+        conditioned on spike counts, similar to those inferred by GPFA. We
+        propose to use a Python implementation at
+        LFADS\footnote{\href{https://github.com/tensorflow/models/tree/master/research/lfads}{https://github.com/tensorflow/models/tree/master/research/lfads}.}.
+        As GPFA, LFADS do not provide online estimates of states.
+
+\end{description}
+
+\subsection{Low-dimensional representations of local-field potentials}
+\label{sec:lowDimensionalRepresentationsOfLFPs}
+
+Spikes are extracted from a higher-frequency range of extracellulary recorded
+voltages. Local field potentials (LFPs) are computed from a lower-frequency
+range and are another important signal to understand brain function. We propose
+to use states inferred from LFPs by GLDS, GPFA, HMM and LFADS
+(Section~\ref{sec:lowDimensionalRepresentationsOfSpikingData}) as
+low-dimensional representations of the LFP.
+
+\subsection{Neural decoding}
+\label{sec:neuralDecoding}
+
+In order to use low-dimensional representations of spiking activity and/or of
+LFPs to guide the control of experiments, we need a decoder to optimally map
+these low-dimensional representations to experimental controls.
+%
+We propose to implement in Bonsai several decoding/classification algorithms:
+k-nearest neighbor, linear discriminative analysis, support vector machines,
+random forests, artificial neural networks, naive Bayes and Gaussian process
+classifiers.
+
+\subsection{Comparing multiple data-analysis methods}
+\label{sec:comparisonOfMultipleMethods}
+
+We propose to add functionality to Bonsai to facilitate multi-method
+comparisons in user-supplied datasets. Below we describe a comparison that we
+will perform in Bonsai to asses the relative performance of the methods
+described in the previous sections with neural recordings from behaving rats.
+These recordings are currently being performed, to address scientific questions,
+at the laboratory of Prof.~Akrami in the SWC.
+%
+Details of the experimental task appear in~\citet{akramiEtAl18}.
+%
+Briefly, in this task there are three nose ports (left, center, right). Rats
+initiate a trial by inserting their nose in the center port for the duration of
+the fixation period, until they hear a Go stimulus. During the fixation period
+two stimuli $s_a$ and $s_b$ are presented. Rats should decide which stimuli is
+louder. If $s_a$ is louder than $s_b$ the correct action is to poke the nose
+into the right port in order to collect a liquid reward, and if $s_b$ is louder
+than $s_a$ the correct choice is the left port.
+
+We will use high-density Neuropixel spike and LFP recordings from the rats
+performing this task to learn low-dimensional representations of spiking
+activity and LFPs during the decision time period (between the presentation of
+the last auditory stimuli and the presentation of the Go stimulus), using the
+methods described in
+Sections~\ref{sec:lowDimensionalRepresentationsOfSpikingData}
+and~\ref{sec:lowDimensionalRepresentationsOfLFPs}. We will also learn the
+parameters of the classifiers described in Section~\ref{sec:neuralDecoding} to
+optimally classify animal decisions (poke the nose into the right/left port)
+based on the previous low-dimensional representations.
+
+We will compare the decoding accuracy of all decoders. This comparison will
+tells us, for the auditory working memory task, which neural data type (spikes
+or LFPs), which low-dimensional representation method (e.g., LDS or Gaussian
+processes), and which decoder (e.g., Bayesian or ANN) yields the best decodings
+in state-of-the-art neural recordings from behaving animals.
+
+\subsection{Interfacing Bonsai with Python, R and Matlab data analysis software}
+\label{sec:bonsaiPythonMatlabCommunication}
+
+Bonsai is written in C\# and most neural data-analysis methods are written in
+Python, R or Matlab. Fortunately, there exist software that allow C\# program
+to call and be called by programs in these other languages. For the
+communication of C\# programs with Python we will use
+Python.NET\footnote{\href{https://github.com/pythonnet/pythonnet}{https://github.com/pythonnet/pythonnet}},
+with R programs we will use
+R.Net\footnote{\href{https://github.com/rdotnet/rdotnet}{https://github.com/rdotnet/rdotnet}}
+and with Matlab we will use the built in Matlab .NET
+interface\footnote{\href{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}}.
+In cases where these software cannot support some type of communication between
+C\# and another language we will use the messaging library
+ZeroMQ\footnote{\href{https://zeromq.org/}{https://zeromq.org/}}.
+
+\subsection{Reproducibility with Bonsai}
+\label{sec:reproducibility}
+
+The current version of Bonsai facilitates reproducibility of data acquisition
+and experimental control across laboratories. Most data acquisition and
+experimental control aspects of an experiment can be reproduced across
+different laboratories by sharing a Bonsai configuration file.
+%
+By adding data analysis functionality to Bonsai, besides reproducing my data
+acquisition and experimental control, Bonsai users will also be able to reproduce
+data analysis functionality.
+
+We will demonstrate each machine intelligence functionality added to Bonsai
+(Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}) and the multiple
+data-analysis methods comparisons
+(Section~\ref{sec:comparisonOfMultipleMethods}) in Bonsai experiments. We will
+then distribute Bonsai configuration files for users to reproduce these
+demonstrations.
+
+\subsection{Final remarks}
+\label{sec:finalRemarks}
+
+We proposed to add machine intelligence functionality to Bonsai to assist users
+in building close-loop neural experiments: online spike sorting, methods for
+low-dimensional representation of spiking activity and LFPs, and neural
+decoding algorithms. This functionality will allow neuroscience Bonsai users to
+build more sophisticated experiments and extract more information from their
+experimental recordings.
+
+We also proposed to add functionality to help Bonsai users compare the
+performance of multiple methods on their datasets. With this functionality
+Bonsai users will be able to select the best methods to model their own
+recordings. It will also motivate methods developers to interface their
+data-analysis functionality with Bonsai. By doing so, they will provide their
+software to the large community of Bonsai users, and will be able to easily
+compare the performance of their methods with that of preexisting methods in the
+Bonsai ecosystem. In this way method developers will become a new type of
+Bonsai users, which will guarantee the sustainability of developments
+proposed here.
+
+We focused this proposal on neuroscience applications of Bonsai. However, the
+addition of machine intelligence functionality is needed in many other
+experimental areas where Bonsai is or could be used. Therefore, the software
+abstractions that we will build to add to Bonsai machine intelligence
+functionality for neuroscience experiments (e.g., methods to perform
+multi-method comparisons) will translate to other application domains of
+Bonsai.
+
+Multiple groups at the SWC currently use Bonsai for data acquisition and
+experimental control. Carefully testing the functionality of new software is
+essential to ensure its correct functionality. We propose to use the SWC large
+internal Bonsai user base to test the functionality we will add to Bonsai,
+before distributing it to the general public.
+
+\section{Community Demand}
+
+\section{User engagement}
+
+\section{Resource management}
+
+\section{Long term sustainability planning}
+
+\section{Potential for economic and societal impact}
+
+\section{Track Record}
+
+\bibliographystyle{apalike}
+\bibliography{bonsai,epsrcSoftwareForResearchCommunities,monitoringBehavior,stateSpaceModels,machineLearning,gaussianProcesses}
+
+\end{document}

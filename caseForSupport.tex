@@ -5,6 +5,7 @@
 \usepackage{natbib}
 \usepackage{apalike}
 \usepackage{graphicx}
+\usepackage{verbatim}
 
 \title{Case for Support}
 \author{}
@@ -37,13 +38,14 @@ online (and offline) data analysis methods
 (Figure~\ref{fig:proposedBonsaiExtensions} and
 Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}). Bonsai is
 \textbf{unique} among experimental control software in that it allows people
-with no programming experience to control sophisticated experiments. With the
-proposed functionality to be added to Bonsai, its users will be able to use
-sophisticated machine-learning methods to control their experiments and analyze
-their data. This popularization of machine learning functionality will allow
-scientists without computational skills to control sophisticated experiments
-and analyze their data in unprecedented ways, which will most probably yield
-important \textbf{advances in science}.
+with no programming experience to control sophisticated experiments. Its large
+and rapidly growing user base demonstrates the need of this type of software
+resources. With the proposed functionality to be added to Bonsai, its users
+will be able to use sophisticated machine-learning methods to control their
+experiments and analyze their data. This popularization of machine learning
+functionality will allow scientists without computational skills to control
+sophisticated experiments and analyze their data in unprecedented ways, which
+will most probably yield important \textbf{advances in science}.
 
 \begin{figure}
     \begin{center}
@@ -75,18 +77,19 @@ integrated into the Bonsai ecosystem and will provide Bonsai users a large
 repertoire of advance machine learning methods for their behavioral and neural
 data analysis.
 
-Using the proposed Bonsai capabilities to communicate with software written in
-other languages, we will integrate into Bonsai an initial set of state-of-the
-art data analysis methods
-(Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}). Developers of
-advanced data-analysis methods should become interested in integrating their
-algorithm into de Bonsai ecosystem because, which will allow their methods to
+Developers of advanced data-analysis methods should become interested in
+integrating them into de Bonsai ecosystem, which will allow their methods to
 reach the wide Bonsai community. In addition this integration will enable
-method developers, to easily compare the performance of of their methods with
-that of other methods integrated into the Bonsai ecosystem. Method developers
-witll become a new type of Bonsai users. These new users, will contribute to
-the \textbf{sustainability} of the proposed resource beyond the period of
+method developers, to easily compare the performance of their methods with
+that of many methods previously integrated into the Bonsai ecosystem. Method
+developers will thus become a new type of Bonsai users, which will contribute
+to the \textbf{sustainability} of the proposed resource beyond the period of
 BBSRC-BBR funding.
+
+Using the proposed capabilities to communicate Bonsai with software written in
+other languages, we will integrate into Bonsai an initial set of state-of-the
+art behavioral and neural data analysis methods
+(Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}).
 
 Bonsai is an excellent tool for reproducible data acquisition and
 experimental control. An experiment implemented in Bonsai can be replicated in
@@ -94,6 +97,13 @@ a new laboratory by just sharing a Bonsai configuration file. With the addition
 of the proposed machine learning functionality Bonsai will extend this
 reproducibility to the domain of data analysis
 (Section~\ref{sec:reproducibility}).
+
+\textcolor{red}{Missing reference to alternatives to Bonsai}.
+
+\textcolor{red}{\textit{Overview of past and current resource(s) in the subject
+area in both the UK and abroad, including any alternative community resources
+currently available. You should indicate the community size of the intended
+resource and how this relates to the field in which it operates.}}
 
 \subsection{Bonsai}
 \label{sec:bonsai}
@@ -135,6 +145,154 @@ into biomedical research and biotechnology tool development, and even outside
 academia into public outreach and education programs.
 
 \section{Details of resource}
+
+\subsection{Software infrastructure to incorporate machine intelligence
+functionality to Bonsai}
+\label{sec:softwareInfrastructure}
+
+\begin{comment}
+Bonsai does not currently provide machine learning functionality. For instance,
+the close-loop experimental control depicted in
+Figure~\ref{fig:bci} cannot be currently implemented in
+Bonsai. It represents the control of an experiment where a subject guides the
+mouse position in a computer screen with her brain activity (Section~\ref{}).
+Nodes highlighted in color require machine intelligence functionality currently
+not available in Bonsai.
+%
+\end{comment}
+
+A central aim of this proposal is to create software infrastructure to provide
+this machine intelligence functionality to Bonsai in extensible and general
+ways.
+
+\subsubsection{Generality}
+
+The number of current machine learning algorithms is very large and it is
+continuously increasing. We intend to build a small number of machine
+intelligence operators in Bonsai that can be configured to provide the
+functionality of most machine learning algorithms.
+
+For this, we will build on abstractions used in the \texttt{sickit-learn}
+library. The success of this library is, to a large extent, due to its simple
+and general application programming interface \citep[API;][]{buitinckEtAl13}.
+%
+This API consists of three complementary interfaces: an estimator interface for
+building and fitting models, a predictor interface for making predictions and a
+transformer interface for converting data.
+%
+Using only these three interfaces \texttt{scikit-learn} provides
+implementations of a large number of machine learning algorithms for
+dimensionality reduction, clustering, classification and regression.
+
+Inspired by \texttt{scikit-learn}, Bonsai will have three types of operators:
+estimators, predictors and transformers. Each of these operators will be
+instantiated by objects implementing the corresponding interface.
+%
+For example, consider the close-loop system for the control of a computer
+cursor with neural activity represented in Figure~\ref{fig:bci}a. The Bonsai
+graphical program for this system is given in Figure~\ref{fig:bci}b. The
+objects instantiating the SpikeThresholdDetector, the KiloSortSpikeSorter and
+GPFAlatentsExtractor will implement the transformer interface, and the object
+instantiating the TimeSeriesForestClassifier will implement the predictor
+interface (Figure~\ref{fig:bci}b, top).
+%
+The parameters for the SpikeThresholdDetector and the KiloSortSpikeSorter will
+be set manually by the user, as is commonly done in practice. The parameters of
+the GPFAlatentsExtractor will be learnt offline in an unsupervised way in a
+second pipeline (Figure~\ref{fig:bci}b, middle). Finally, the parameters of the
+TimeSeriesForestClassifier will also be learnt offline, but in a supervised
+way, in a third pipeline (Figure~\ref{fig:bci}b, bottom).
+
+\begin{figure}
+   \begin{center}
+       \includegraphics[width=4in]{figures/bci.png}
+       \caption{Close-loop system for controlling a computer cursor with brain activity}
+     \label{fig:bci}
+   \end{center}
+\end{figure}
+
+\begin{comment}
+    The spike detector transforms membrane
+potentials into spike sequences. The spike sorter transforms spikes squences
+into lists of spikes, one list per neuron. The latents extractor transforms
+multi-neuron lists of spikes into latent trajectories summarizing the
+multi-neuon spiking activity.  The neural decoder predicts the next cursor
+position from the latent trajectories.
+\end{comment}
+
+\begin{comment}
+middl, whose output will set
+As in this library,
+there will be three type of machine intelligence operators in Bonsai:
+%
+estimator operators for building and fitting models, predictor operators for
+making predictions and transformer operators for converting data. These
+operators will be implemented by objects exposing the corresponding interfaces.
+
+The estimator interface exposes a fit method for learning a model from training
+data.  This method is called with training data (e.g., supplied as two arrays
+X\_train and y\_train in supervised learning estimators). Its task is to run a
+learning algorithm and to determine model-specific parameters from the training
+data.  All supervised and unsupervised learning algorithms (e.g., for
+classification, regression or clustering) will be offered as objects
+implementing this interface. Machine learning tasks like feature extraction,
+feature selection or dimensionality reduction will also be provided as
+estimators.
+
+The predictor interface extends the notion of an estimator by adding a predict
+method that takes an array X\_test and produces predictions for X\_test, based
+on the learned parameters of the estimator (we call the input to predict
+“X\_test” in order to emphasize that predict generalizes to new data). In the
+case of supervised learning estimators, this method typically returns the
+predicted labels or values computed by the model.
+
+Since it is common to modify or filter data before feeding it to a learning
+algorithm, the transformer interface defines a transform method. It takes as
+input some new data X\_test and yields as output a transformed version of
+X\_test. Preprocessing, feature selection, feature extraction and
+dimensionality reduction algorithms will be provided as transformers in Bonsai.
+
+Bonsai will provide the ability to compose new
+estimators from several base estimators. Composition mechanisms can be used
+to combine typical machine learning workflows into a single object which is
+itself an estimator, and can be employed wherever usual estimators can be used.
+Composition of estimators will be done with Pipeline objects that chain multiple estimators into a single one. This is useful
+since a machine learning workflow typically involves a fixed sequence of processing steps (e.g., feature extraction, dimensionality reduction, learning and making
+predictions), many of which perform some kind of learning. A sequence of N such
+steps can be combined into a Pipeline if the first N-1 steps are transformers;
+the last can be either a predictor, a transformer or both.
+
+\end{comment}
+
+\subsubsection{Extensibility}
+
+\textcolor{red}{I will start this section by saying that we are not proposing
+to implement machine learning algorithms, as in \texttt{scipy.learn}, but to
+integrate into Bonsai existing machine intelligence algorithms.}
+
+Currently Bonsai has its own package manager, and its community of users have
+already extended Bonsai's functionality with several contributed packages
+(e.g., \ldots). However, these packages need to be written in C\#, while most
+current data analysis methods are written in Python, R or Matlab. We propose to
+add to Bonsai capabilities to communicate with software written in these
+languages.
+
+Fortunately, there exist software that allow C\# program
+to call and be called by programs in these other languages. For the
+communication of C\# programs with Python we will use
+Python.NET\footnote{\href{https://github.com/pythonnet/pythonnet}{https://github.com/pythonnet/pythonnet}},
+with R programs we will use
+R.Net\footnote{\href{https://github.com/rdotnet/rdotnet}{https://github.com/rdotnet/rdotnet}}
+and with Matlab we will use the built in Matlab .NET
+interface\footnote{\href{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}}.
+In cases where these software cannot support some type of communication between
+C\# and another language we will use the messaging library
+ZeroMQ\footnote{\href{https://zeromq.org/}{https://zeromq.org/}}.
+
+Using the previous software, we will build C\# wrappers around machine
+intellgence programs written in other languages, so that these programs
+implement the Estimator, Predictor or Transformer interfaces and can be
+integrated into Bonsai as machine intelligence operators.
 
 \subsection{Machine intelligence functionality to be added to Bonsai}
 \label{sec:toBeAddedMachineIntelligenceFunctionality}
@@ -323,6 +481,8 @@ or LFPs), which low-dimensional representation method (e.g., LDS or Gaussian
 processes), and which decoder (e.g., Bayesian or ANN) yields the best decodings
 in state-of-the-art neural recordings from behaving animals.
 
+\begin{comment}
+
 \subsection{Interfacing Bonsai with Python, R and Matlab data analysis software}
 \label{sec:bonsaiPythonMatlabCommunication}
 
@@ -338,6 +498,8 @@ interface\footnote{\href{https://uk.mathworks.com/help/matlab/matlab\_external/u
 In cases where these software cannot support some type of communication between
 C\# and another language we will use the messaging library
 ZeroMQ\footnote{\href{https://zeromq.org/}{https://zeromq.org/}}.
+
+\end{comment}
 
 \subsection{Reproducibility with Bonsai}
 \label{sec:reproducibility}

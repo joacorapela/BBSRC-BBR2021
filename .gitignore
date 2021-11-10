@@ -2,4 +2,5 @@
 *.swp
 main.*
 !main.tex
-!main.pdf
+caseForSupport.*
+!caseForSupport.tex

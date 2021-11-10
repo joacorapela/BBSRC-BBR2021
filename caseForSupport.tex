@@ -1,7 +1,7 @@
 \documentclass[a4paper,11point]{article}
 \usepackage[margin=2cm]{geometry}
 
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[colorlinks=true]{hyperref}
 \usepackage{natbib}
 \usepackage{apalike}
 \usepackage{graphicx}
@@ -17,7 +17,7 @@
     
 \newpage
 
-\section{Background to the Resource}
+\section{Background to the resource}
 
 Experimental control and neural data analysis are currently highly
 disassociated.  Most neuroscientists collect their data and only afterward
@@ -30,18 +30,20 @@ analysis methods in experimental control will improve the sophistication of
 experiments that are currently possible, and generate new demands for neural
 data analysis methods that will generate advances in the field.
 
-A central goal of the software development proposed here is to address this
+A central goal of the software resource proposed here is to address this
 problem, by providing Bonsai~(an experimental control software ecosystem;
-Figure~\ref{fig:bonsai} and Section~\ref{sec:bonsai}) with state-of-the-art online (and offline) data
-analysis methods (Figure~\ref{fig:proposedBonsaiExtensions} and 
-Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}).
-%
-It is unfortunate that neuroscientists currently do not have software that
-allows them to easily compare the performance of different data analysis
-methods for the characterization of their datasets. The second central goal
-of this proposal is to address this limitation by adding to Bonsai a generic
-mechanism for comparing the performance of different methods for the analysis
-of specific datasets (Section~\ref{sec:comparisonOfMultipleMethods}).
+Figure~\ref{fig:bonsai} and Section~\ref{sec:bonsai}) with state-of-the-art
+online (and offline) data analysis methods
+(Figure~\ref{fig:proposedBonsaiExtensions} and
+Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}). Bonsai is
+\textbf{unique} among experimental control software in that it allows people
+with no programming experience to control sophisticated experiments. With the
+proposed functionality to be added to Bonsai, its users will be able to use
+sophisticated machine-learning methods to control their experiments and analyze
+their data. This popularization of machine learning functionality will allow
+scientists without computational skills to control sophisticated experiments
+and analyze their data in unprecedented ways, which will most probably yield
+important \textbf{advances in science}.
 
 \begin{figure}
     \begin{center}
@@ -65,13 +67,26 @@ already extended Bonsai's functionality with several contributed packages
 (e.g., \ldots \textcolor{red}{Goncalo please reference the best contributed
 packages developed by the Bonsai community}). However, these packages need to
 be written in C\#, while most current neuroscience data analysis methods are
-written in Python, R or Matlab.  We propose to add to Bonsai capabilities to
+written in Python, R or Matlab. We propose to add to Bonsai capabilities to
 communicate with software written in these languages
 (Section~\ref{sec:bonsaiPythonMatlabCommunication}).  These capabilities will
 allow a large number of neuroscience data analysis methods to be easily
 integrated into the Bonsai ecosystem and will provide Bonsai users a large
 repertoire of advance machine learning methods for their behavioral and neural
 data analysis.
+
+Using the proposed Bonsai capabilities to communicate with software written in
+other languages, we will integrate into Bonsai an initial set of state-of-the
+art data analysis methods
+(Section~\ref{sec:toBeAddedMachineIntelligenceFunctionality}). Developers of
+advanced data-analysis methods should become interested in integrating their
+algorithm into de Bonsai ecosystem because, which will allow their methods to
+reach the wide Bonsai community. In addition this integration will enable
+method developers, to easily compare the performance of of their methods with
+that of other methods integrated into the Bonsai ecosystem. Method developers
+witll become a new type of Bonsai users. These new users, will contribute to
+the \textbf{sustainability} of the proposed resource beyond the period of
+BBSRC-BBR funding.
 
 Bonsai is an excellent tool for reproducible data acquisition and
 experimental control. An experiment implemented in Bonsai can be replicated in
@@ -119,9 +134,12 @@ More recently, Bonsai has started to expand outside the domain of neuroscience
 into biomedical research and biotechnology tool development, and even outside
 academia into public outreach and education programs.
 
-\section{Details of Resource}
+\section{Details of resource}
 
-\subsection{Video-based behavioral analysis}
+\subsection{Machine intelligence functionality to be added to Bonsai}
+\label{sec:toBeAddedMachineIntelligenceFunctionality}
+
+\subsubsection{Video-based behavioral analysis}
 \label{sec:videoBasedBehavioralAnalysis}
 
 Precisely quantifying animal behavior is an essential step toward understanding
@@ -166,12 +184,12 @@ other informative features from video recordings.
 
 \end{description}
 
-\subsection{Spike sorting}
+\subsubsection{Spike sorting}
 \label{sec:spikeSorting}
 
 \noindent\textcolor{red}{TODO}
 
-\subsection{Low-dimensional representations of spiking data}
+\subsubsection{Low-dimensional representations of spiking data}
 \label{sec:lowDimensionalRepresentationsOfSpikingData}
 
 Bonsai is well integrated with OpenEphys~\citep{siegleEtAl17}, which allows
@@ -246,7 +264,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
 
 \end{description}
 
-\subsection{Low-dimensional representations of local-field potentials}
+\subsubsection{Low-dimensional representations of local-field potentials}
 \label{sec:lowDimensionalRepresentationsOfLFPs}
 
 Spikes are extracted from a higher-frequency range of extracellulary recorded
@@ -256,7 +274,7 @@ to use states inferred from LFPs by GLDS, GPFA, HMM and LFADS
 (Section~\ref{sec:lowDimensionalRepresentationsOfSpikingData}) as
 low-dimensional representations of the LFP.
 
-\subsection{Neural decoding}
+\subsubsection{Neural decoding}
 \label{sec:neuralDecoding}
 
 In order to use low-dimensional representations of spiking activity and/or of
@@ -268,7 +286,7 @@ k-nearest neighbor, linear discriminative analysis, support vector machines,
 random forests, artificial neural networks, naive Bayes and Gaussian process
 classifiers.
 
-\subsection{Comparing multiple data-analysis methods}
+\subsubsection{Comparing multiple data-analysis methods}
 \label{sec:comparisonOfMultipleMethods}
 
 We propose to add functionality to Bonsai to facilitate multi-method
@@ -356,8 +374,8 @@ Bonsai users will be able to select the best methods to model their own
 recordings. It will also motivate methods developers to interface their
 data-analysis functionality with Bonsai. By doing so, they will provide their
 software to the large community of Bonsai users, and will be able to easily
-compare the performance of their methods with that of preexisting methods in the
-Bonsai ecosystem. In this way method developers will become a new type of
+compare the performance of their methods with that of preexisting methods in
+the Bonsai ecosystem. In this way method developers will become a new type of
 Bonsai users, which will guarantee the sustainability of developments
 proposed here.
 
@@ -375,7 +393,7 @@ essential to ensure its correct functionality. We propose to use the SWC large
 internal Bonsai user base to test the functionality we will add to Bonsai,
 before distributing it to the general public.
 
-\section{Community Demand}
+\section{Community demand}
 
 \section{User engagement}
 

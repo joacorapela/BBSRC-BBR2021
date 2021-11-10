@@ -1,4 +1,4 @@
-all: main.pdf
+all: caseForSupport.pdf
 
 %.pdf: %.tex
 	pdflatex $<

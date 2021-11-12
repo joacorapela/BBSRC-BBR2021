@@ -30,15 +30,15 @@
 \section{Background to the resource}
 
 Experimental control and neural data analysis are currently highly
-disassociated.  Most neuroscientists collect their data and only afterward
-analyze it. This split has had dramatic consequences for the progress of
+disassociated.  Most neuroscientists collect their data and only after ward
+analyse it. This split has had dramatic consequences for the progress of
 neuroscience. First, most experimental control methods currently do not use
 advanced data analysis methods to enhance their functionality. Second, the vast
 majority of neural data analysis methods are offline and do not provide key
 functionality needed for online experimental control. Using advanced data
 analysis methods in experimental control will improve the sophistication of
 experiments that are currently possible, and generate new demands for neural
-data analysis methods that will generate advances in the field.
+data analysis methods that will trigger advanced in machine learning.
 
 A central goal of the software resource proposed here is to address this
 problem, by providing Bonsai~(an experimental control software ecosystem;
@@ -51,10 +51,10 @@ with no programming experience to control sophisticated experiments. Its large
 and rapidly growing user base demonstrates the need of this type of software
 resources. With the proposed functionality to be added to Bonsai, its users
 will be able to use sophisticated machine-learning methods to control their
-experiments and analyze their data. This
+experiments and analyse their data. This
 \textbf{democratisation} of machine learning
 functionality will allow scientists without computational skills to control
-sophisticated experiments and analyze their data in unprecedented ways, which
+sophisticated experiments and analyse their data in unprecedented ways, which
 will most probably yield important \textbf{advances in science}.
 
 \begin{figure}
@@ -84,11 +84,11 @@ communicate with software written in these languages
 (Section~\ref{sec:bonsaiPythonMatlabCommunication}).  These capabilities will
 allow a large number of neuroscience data analysis methods to be easily
 integrated into the Bonsai ecosystem and will provide Bonsai users a large
-repertoire of advance machine learning methods for their behavioral and neural
+repertoire of advance machine learning methods for their behavioural and neural
 data analysis.
 
 Developers of advanced data-analysis methods should become interested in
-integrating them into de Bonsai ecosystem, which will allow their methods to
+integrating them into the Bonsai ecosystem, which will allow their methods to
 reach the wide Bonsai community. In addition this integration will enable
 method developers, to easily compare the performance of their methods with
 that of many methods previously integrated into the Bonsai ecosystem. Method
@@ -98,7 +98,7 @@ BBSRC-BBR funding.
 
 Using the proposed capabilities to communicate Bonsai with software written in
 other languages, we will integrate into Bonsai an initial set of state-of-the
-art behavioral and neural data analysis methods
+art behavioural and neural data analysis methods
 (Section~\ref{sec:functionality}).
 
 Bonsai is an excellent tool for reproducible data acquisition and
@@ -119,7 +119,7 @@ resource and how this relates to the field in which it operates.}}
 \label{sec:bonsai}
 
 Bonsai~\citep{lopesEtAl15,lopesAndMonteiro21} is a free and open-source visual
-programming language that emphasizes performance, flexibility, and ease-of-use,
+programming language that emphasises performance, flexibility, and ease-of-use,
 allowing scientists with no previous programming experience to quickly develop
 their own high-performance data acquisition and experimental control systems
 (Figure 1c). Bonsai combines a high-level event algebra for data streams with
@@ -128,7 +128,7 @@ supporting multiple hardware and software packages used by the biomedical
 research community (Figures 1a, 1b).
 
 Bonsai has a large user base in the systems neuroscience community.
-Quantifications of this user base are provided in Figures 1d-1f.  In the last
+Quantification of this user base are provided in Figures 1d-1f.  In the last
 year alone, we estimate more than 1,000 new users have started to incorporate
 Bonsai into their experimental protocols across the world. The surprising rate
 of adoption of Bonsai in non-programmer experimental labs highlights the need
@@ -161,10 +161,10 @@ propose to create software infrastructure to facilitate the integration into it
 of existing advanced data analysis methods
 (Section~\ref{sec:softwareInfrastructure}).
 %
-To demonstate the use of this infrastructure, and to provide Bonsai users with
+To demonstrate the use of this infrastructure, and to provide Bonsai users with
 an initial set of advanced machine intelligence neural data analysis methods,
 we will add to the Bonsai ecosystem machine learning functionality to control
-neuroscience experiments and to analyze data generated by them
+neuroscience experiments and to analyse data generated by them
 (Section~\ref{sec:functionality}).
 
 This initial set of methods should demonstrate to Bonsai users, and to
@@ -172,9 +172,16 @@ machine-learning methods developers, the potential of embedding
 machine-learning functionality into the experimental control loop. We propose
 user engagement activities to expose both of these groups of people to this
 potential (Section~\ref{sec:userEngagement}).  When data-analysis method
-developers recognize this potentials, they will become interested in
+developers recognise this potentials, they will become interested in
 contributing their methods to the Bonsai ecosystem, ensuring the
 \textbf{long-term sustainability} of the proposed resource.
+
+Adding machine learning functionality to the experimental control loop will
+make possible the implementation of experiments with unprecedented levels of
+control. Moreover, equipping experimental scientists without programming
+experience with machine learning tools will considerably increase the
+application of machine learning to the biosciences, which most probably will
+translate into groundbreaking scientific discoveries.
 
 \subsection{Software infrastructure}
 \label{sec:softwareInfrastructure}
@@ -185,7 +192,7 @@ the close-loop experimental control depicted in
 Figure~\ref{fig:bci} cannot be currently implemented in
 Bonsai. It represents the control of an experiment where a subject guides the
 mouse position in a computer screen with her brain activity (Section~\ref{}).
-Nodes highlighted in color require machine intelligence functionality currently
+Nodes highlighted in colour require machine intelligence functionality currently
 not available in Bonsai.
 %
 \end{comment}
@@ -244,15 +251,15 @@ way, in a third pipeline (Figure~\ref{fig:bci}b, bottom).
 
 \begin{comment}
     The spike detector transforms membrane
-potentials into spike sequences. The spike sorter transforms spikes squences
+potentials into spike sequences. The spike sorter transforms spikes sequences
 into lists of spikes, one list per neuron. The latents extractor transforms
-multi-neuron lists of spikes into latent trajectories summarizing the
-multi-neuon spiking activity.  The neural decoder predicts the next cursor
+multi-neuron lists of spikes into latent trajectories summarising the
+multi-neuron spiking activity.  The neural decoder predicts the next cursor
 position from the latent trajectories.
 \end{comment}
 
 \begin{comment}
-middl, whose output will set
+middle, whose output will set
 As in this library,
 there will be three type of machine intelligence operators in Bonsai:
 %
@@ -273,7 +280,7 @@ estimators.
 The predictor interface extends the notion of an estimator by adding a predict
 method that takes an array X\_test and produces predictions for X\_test, based
 on the learned parameters of the estimator (we call the input to predict
-“X\_test” in order to emphasize that predict generalizes to new data). In the
+“X\_test” in order to emphasise that predict generalises to new data). In the
 case of supervised learning estimators, this method typically returns the
 predicted labels or values computed by the model.
 
@@ -322,7 +329,7 @@ C\# and another language we will use the messaging library
 ZeroMQ\footnote{\href{https://zeromq.org/}{https://zeromq.org/}}.
 
 Using the previous software, we will build C\# wrappers around machine
-intellgence programs written in other languages, so that these programs
+intelligence programs written in other languages, so that these programs
 implement the Estimator, Predictor or Transformer interfaces and can be
 integrated into Bonsai as machine intelligence operators.
 
@@ -332,7 +339,7 @@ integrated into Bonsai as machine intelligence operators.
 We propose to initially add to Bonsai machine intelligence functionality to
 support neuroscience experiments because, currently, neuroscience is the
 research area with the largest number of Bonsai users. Within neuroscience, we
-propose to add functionality for video-based behavioral analysis
+propose to add functionality for video-based behavioural analysis
 (Section~\ref{sec:videoBasedBehavioralAnalysis}) and for running
 brain-computer-interface experiments (Section~\ref{sec:bci}), since these tasks
 are relevant to many Bonsai users, and recent advances in machine learning
@@ -341,7 +348,7 @@ will greatly improve their implementation in Bonsai.
 \subsubsection{Video-based behavioral analysis}
 \label{sec:videoBasedBehavioralAnalysis}
 
-Precisely quantifying animal behavior is an essential step toward understanding
+Precisely quantifying animal behaviour is an essential step toward understanding
 brain function.  Deeplabcut is a Python-based software for tracking animal body
 parts \citep{mathisEtAl18}, which it is currently well integrated with
 Bonsai~\citep{kaneEtAl20}. Here we propose extensions to Bonsai to extract
@@ -350,16 +357,16 @@ other informative features from video recordings.
 \begin{description}
 
     \item[Motion sequencing]\citep[MoSeq;][]{wiltschkoEtAl15}: extracts patterns
-        of behavior that repeat over time (i.e., syllables of behavior) from
+        of behaviour that repeat over time (i.e., syllables of behaviour) from
         video data. For instance, it parses (in an unsupervised way) the
-        behavior of a mouse in an arena into segments of time where a mouse
+        behaviour of a mouse in an arena into segments of time where a mouse
         was running, rearing and grooming. It uses a hidden Markov model and it
         is implemented in Python\footnote{Code for MoSeq can be requested from
         the Datta laboratory, as indicated at
         \href{http://datta.hms.harvard.edu/research/behavioral-analysis/}{http://datta.hms.harvard.edu/research/behavioral-analysis/}.}.
         After trained MoSeq can be used to detect behavioral syllables online.
 
-    \item[Decoding behavior from neural
+    \item[Decoding behaviour from neural
         activity]\citep[BehaveNet;][]{battyEtAl19} combines hidden Markov
         models with convolutional autoencoders and discriminative models to
         decode video data from neural recordings. It is implemented in
@@ -404,7 +411,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
 
     \item[Gaussian Linear Dynamical
         System]\citep[GLDS;][]{andersonAndMoore12}: with sufficiently large
-        bin sizes, spike counts can be modeled as Gaussian random processes.
+        bin sizes, spike counts can be modelled as Gaussian random processes.
         This Gaussianity assumption greatly simplifies the estimation of
         parameters of linear dynamical system (LDS) models, as well as
         inferences about their states. After models parameters have been
@@ -417,7 +424,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
         inputs\footnote{\href{https://github.com/joacorapela/kalmanFilter}{https://github.com/joacorapela/kalmanFilter}}.
 
     \item[Poisson Linear Dynamical System]\citep[PLDS;][]{mackeEtAl15}: for
-        smaller bin sizes, spike counts are better modeled as Poisson random
+        smaller bin sizes, spike counts are better modelled as Poisson random
         processes, rather than Gaussian ones. The algorithm described in
         \citet{mackeEtAl15} can estimate the parameters of a LDS, and make
         inferences about its states, from Poisson distributed observations.  We
@@ -469,7 +476,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
 \paragraph{Low-dimensional representations of local-field potentials}
 % \label{sec:lowDimensionalRepresentationsOfLFPs}
 
-Spikes are extracted from a higher-frequency range of extracellulary recorded
+Spikes are extracted from a higher-frequency range of extracellularly recorded
 voltages. Local field potentials (LFPs) are computed from a lower-frequency
 range and are another important signal to understand brain function. We propose
 to use states inferred from LFPs by GLDS, GPFA, HMM and LFADS
@@ -484,7 +491,7 @@ LFPs to guide the control of experiments, we need a decoder to optimally map
 these low-dimensional representations to experimental controls.
 %
 We propose to implement in Bonsai several decoding/classification algorithms:
-k-nearest neighbor, linear discriminative analysis, support vector machines,
+k-nearest neighbour, linear discriminative analysis, support vector machines,
 random forests, artificial neural networks, naive Bayes and Gaussian process
 classifiers.
 
@@ -500,8 +507,8 @@ at the laboratory of Prof.~Akrami in the SWC.
 %
 Details of the experimental task appear in~\citet{akramiEtAl18}.
 %
-Briefly, in this task there are three nose ports (left, center, right). Rats
-initiate a trial by inserting their nose in the center port for the duration of
+Briefly, in this task there are three nose ports (left, centre, right). Rats
+initiate a trial by inserting their nose in the centre port for the duration of
 the fixation period, until they hear a Go stimulus. During the fixation period
 two stimuli $s_a$ and $s_b$ are presented. Rats should decide which stimuli is
 louder. If $s_a$ is louder than $s_b$ the correct action is to poke the nose
@@ -567,27 +574,31 @@ demonstrations.
 \subsection{Measurable targets}
 \label{sec:measurableTargets}
 
-To assess the progress of the proposed project, we propose the following
+We propose to assess the progress of the proposed project using the following
 measurable targets:
+
+\begin{comment}
 
 \begin{description}
 
     \item[implementation of software infrastructure]
         (Section~\ref{sec:softwareInfrastructure}) includes the
-        implementation of the machine abstractions described in Section~\ref{}
-        and of the capabilities to be added to Bonsai to communicate with
-        software written in other languages described in Section~\ref{}. We
+        implementation of the machine abstractions, described in
+        Section~\ref{},
+        and of the capabilities to allow Bonsai communicate with
+        software written in other languages, described in Section~\ref{}. We
         will consider this target completed when we can implement a simple BCI
         application, with the architecture depicted in Figure~\ref{}, with
         machine learning functionality provided by software in Python, Matlab
         and R.
 
     \item[implementation of functionality] (Sections~\ref{sec:functionality})
-        includes the integration into Bonsai of machine learning software
-        for video-based behavioral analysis (Section~\ref{}) and for
+        includes the integration into Bonsai of machine learning software for
+        video-based behavioral analysis (Section~\ref{}) and for
         brain-computer-interface applications (Section~\ref{}). Completion of
-        this target requires that Bonsai can perform these tasks interacting
-        with software written in other languages.
+        this target requires that Bonsai can perform each of these tasks
+        separately, in conjunction with software written in Python, R and
+        Matlab.
 
     \item[internal testing] multiple groups at the SWC use Bonsai to control
         their experiments. 
@@ -601,10 +612,12 @@ measurable targets:
 
     \item method developers integrate their methods into the Bonsai ecosystem.
         The integration of machine learning functionality into Bonsai will use
-        Bonsai's package manager. We propose to use this package manaer to tack
+        Bonsai's package manager. We propose to use this package manager to tack
         the number of machine intelligence methods integrated into Bonsai.
 
 \end{description}
+
+\end{comment}
 
 \subsection{Final remarks}
 \label{sec:finalRemarks}

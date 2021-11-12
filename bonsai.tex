@@ -1,0 +1,81 @@
+
+Bonsai~\citep{lopesEtAl15,lopesAndMonteiro21} is a free and open-source visual
+programming language that emphasizes performance, flexibility, and ease-of-use,
+allowing scientists with no previous programming experience to quickly develop
+their own high-performance data acquisition and experimental control systems
+(Figure 1c). Bonsai combines a high-level event algebra for data streams with
+an integrated development environment (IDE) and a strong library of plugins
+supporting multiple hardware and software packages used by the biomedical
+research community (Figures 1a, 1b).
+
+Standard software tools for data analysis (ImageJ, MATLAB, R, etc.) have been
+transformative to the progress of increasingly “data-rich” sciences. However,
+the equivalent standardized software tools for data acquisition and control of
+animal behaviour experiments are still lacking. Life science experiments demand
+a combination of multiple instrumentation and control technologies, in both
+physiology and behaviour studies. The growing complexity on both the amount of
+data that is collected, and the rich conditions under which behaviour must be
+explored, place an increasing burden on the experimenter to integrate highly
+specialized equipment in unique configurations, while often lacking expertise
+in the relevant engineering fields.
+
+Bonsai has a large user base in the systems neuroscience community.
+Quantifications of this user base are provided in Figures 1d-1f.  In the last
+year alone, we estimate more than 1,000 new users have started to incorporate
+Bonsai into their experimental protocols across the world. The surprising rate
+of adoption of Bonsai in non-programmer experimental labs highlights the need
+for accessible programming tools that enable state-of-the-art technology but
+also allow researchers to stay in control and change their experimental
+paradigms.  Many open-source software tools are either inaccessible to
+non-programmers, or too constrained to be of general use outside their narrow
+domain of application. Bonsai has been successful because it has straddled this
+gap to some extent.
+
+The language has also helped to potentiate the growing wave of foundational
+open hardware initiatives, such as the OpenEphys \citep{siegleEtAl17} and UCLA
+Miniscope~\citep{caiEtAl16}, making it possible to quickly combine and
+integrate these tools into new experiments~\citep{buccinoEtAl18}.
+%
+Bonsai has been adopted in large neuroscience undertakings like the
+International Brain
+Laboratory\footnote{\href{https://www.internationalbrainlab.com/}{https://www.internationalbrainlab.com/}}
+and the Allen Institute for Brain
+Science\footnote{\href{https://alleninstitute.org/what-we-do/brain-science/}{https://alleninstitute.org/what-we-do/brain-science/}}.
+%
+More recently, Bonsai has started to expand outside the domain of neuroscience
+into biomedical research and biotechnology tool development, and even outside
+academia into public outreach and education programs.
+
+\subsubsection*{Other resources in the subject area}
+
+The space of technologies serving experimental control and behaviour monitoring
+is large, and is traditionally occupied either by domain-specific graphical
+user interfaces for control and recording of specific devices and experiment
+types (e.g. Open Ephys
+GUI\footnote{\href{https://open-ephys.org/gui/}{https://open-ephys.org/gui/}},
+Miniscope DAQ
+Software\footnote{\href{https://github.com/Aharoni-Lab/Miniscope-DAQ-QT-Software}{https://github.com/Aharoni-Lab/Miniscope-DAQ-QT-Software}})
+or by real-time control frameworks for specifying task logic using state
+machine or similar formalisms (e.g. NIMH ML
+(nih.gov)\footnote{\href{https://monkeylogic.nimh.nih.gov/}{https://monkeylogic.nimh.nih.gov/}},
+pyControl\footnote{\href{https://pycontrol.readthedocs.io/en/latest/}{https://pycontrol.readthedocs.io/en/latest/}},
+Autopilot\footnote{\href{https://docs.auto-pi-lot.com/en/latest/}{https://docs.auto-pi-lot.com/en/latest/}},
+Sanworks\footnote{\href{https://sanworks.io/index.php}{https://sanworks.io/index.php}}).
+These dedicated interfaces are typically very comfortable for experimenters
+operating within the specific domain that the tool is designed for but tend to
+become unwieldy when there is a need to introduce a new device or variation of
+a task which is outside the scope of the framework. The alternative is to use a
+more general programming language like Python or MATLAB, with the disadvantage
+of the code being harder to understand, maintain, and change. Programming
+languages like LabVIEW straddle the middle ground and provide a high-level and
+flexible visual interface for composing data acquisition and control systems
+themselves. Unlike Bonsai, however, the graphical elements of LabVIEW are
+heterogeneous and very fine grained, creating the need for long and complicated
+logical structures to implement even a simple experimental control system. By
+providing an extremely simple, yet flexible, visual syntax, Bonsai opens the
+opportunity even for complete non-programmers to design and successfully
+customize relatively complex experiments from the ground up. It is mostly this
+capability which has made Bonsai so attractive as a standard tool in
+experimental neuroscience.
+
+

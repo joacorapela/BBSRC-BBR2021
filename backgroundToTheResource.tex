@@ -1,0 +1,83 @@
+
+Experimental control and neural data analysis are currently highly
+disassociated.  Most neuroscientists collect their data and only afterward
+analyse it. This split has had dramatic consequences for the progress of
+neuroscience. First, most experimental control methods currently do not use
+advanced data analysis methods to enhance their functionality. Second, the vast
+majority of neural data analysis methods are offline and do not provide key
+functionality needed for online experimental control. Using advanced data
+analysis methods in experimental control will improve the sophistication of
+experiments that are currently possible, and generate new demands for neural
+data analysis methods that will trigger advances in machine learning.
+
+A central goal of the software resource proposed here is to address this
+problem, by providing Bonsai~(an experimental control software ecosystem;
+Figure~\ref{fig:bonsai} and Section~\ref{sec:bonsai}) with state-of-the-art
+online (and offline) data analysis methods
+(Figure~\ref{fig:proposedBonsaiExtensions} and
+Section~\ref{sec:functionality}). Bonsai is
+\textbf{unique} among experimental control software in that it allows people
+with no programming experience to control sophisticated experiments. Its large
+and rapidly growing user base demonstrates the need for this type of software
+resources. With the proposed functionality to be added to Bonsai, its users
+will be able to use sophisticated machine-learning methods to control their
+experiments and analyse their data. This
+\textbf{democratisation} of machine learning
+functionality will allow scientists without computational skills to control
+sophisticated experiments and analyse their data in unprecedented ways, which
+will most probably yield important \textbf{advances in science}.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=7in]{figures/bonsai.pdf}
+        \label{fig:bonsai}
+    \end{center}
+\end{figure}
+
+\setcounter{figure}{1}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=4in]{figures/proposed_bonsai_extensions.png}
+        \caption{Proposed extensions to Bonsai}
+        \label{fig:proposedBonsaiExtensions}
+    \end{center}
+\end{figure}
+
+Currently Bonsai has its own package manager, and its community of users have
+already extended Bonsai's functionality with several contributed packages
+(e.g., \ldots \textcolor{red}{Goncalo please reference the best contributed
+packages developed by the Bonsai community}). However, these packages need to
+be written in C\#, while most current neuroscience data analysis methods are
+written in Python, R or Matlab. We propose to add to Bonsai capabilities to
+communicate with software written in these languages
+(Section~\ref{sec:softwareInfrastructure}).  These capabilities will allow a
+large number of neuroscience data analysis methods to be easily integrated into
+the Bonsai ecosystem and will provide Bonsai users a large repertoire of
+advanced machine learning methods for their behavioural and neural data
+analysis.
+%
+Using these capabilities we will integrate into Bonsai an initial set of
+state-of-the art behavioural and neural data analysis methods
+(Section~\ref{sec:functionality}).
+
+Developers of advanced data-analysis methods should become interested in
+integrating them into the Bonsai ecosystem, which will allow their methods to
+reach the wide Bonsai community. In addition this integration will enable
+method developers to easily compare the performance of their methods with
+that of many methods previously integrated into the Bonsai ecosystem. Method
+developers will thus become a new type of Bonsai users, which will contribute
+to the \textbf{sustainability} of the proposed resource beyond the period of
+BBSRC-BBR funding.
+
+Bonsai is an excellent tool for reproducible data acquisition and
+experimental control. For example, an experiment implemented in Bonsai can be replicated in
+a new laboratory by just sharing a Bonsai configuration file. With the addition
+of the proposed machine learning functionality Bonsai will extend this
+reproducibility to the domain of data analysis
+(Section~\ref{sec:reproducibility}).
+
+\subsection{Bonsai}
+\label{sec:bonsai}
+
+\input{bonsai.tex}

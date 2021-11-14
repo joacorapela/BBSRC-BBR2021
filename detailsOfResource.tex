@@ -1,8 +1,9 @@
 
 We intend to improve an \textbf{existing resource}, the Bonsai ecosystem. We
-propose to create software infrastructure to facilitate the integration into it
+propose to create software infrastructure to facilitate the integration into
+Bonsai
 of existing advanced data analysis methods
-(Section~\ref{sec:softwareInfrastructure}).
+(Section~\ref{sec:infrastructure}).
 %
 To demonstrate the use of this infrastructure, and to provide Bonsai users with
 an initial set of advanced machine intelligence neural data analysis methods,
@@ -27,7 +28,7 @@ application of machine learning to the biosciences, which most probably will
 translate into groundbreaking scientific discoveries.
 
 \subsection{Software infrastructure}
-\label{sec:softwareInfrastructure}
+\label{sec:infrastructure}
 
 \begin{comment}
 Bonsai does not currently provide machine learning functionality. For instance,
@@ -50,39 +51,42 @@ functionality to the Bonsai ecosystem in general
 
 The number of current machine learning algorithms is very large and it is
 continuously increasing. We intend to build a small number of machine
-intelligence operators in Bonsai that can be configured to provide the
-functionality of most machine learning algorithms.
+intelligence operators in Bonsai (Section~\ref{sec:bonsai},
+Figure~\ref{fig:bonsai}c) that can be configured to provide the functionality
+of all machine learning algorithms.
 
 For this, we will build on abstractions used in the \texttt{sickit-learn}
 library. The success of this library is, to a large extent, due to its simple
 and general application programming interface \citep[API;][]{buitinckEtAl13}.
 %
-This API consists of three complementary interfaces: an estimator interface for
-building and fitting models, a predictor interface for making predictions and a
-transformer interface for converting data.
+This API consists of three complementary interfaces: an \texttt{Estimator}
+interface for building and fitting models, a \texttt{Predictor} interface for
+making predictions and a \texttt{Transformer} interface for converting data.
 %
 Using only these three interfaces \texttt{scikit-learn} provides
 implementations of a large number of machine learning algorithms for
 dimensionality reduction, clustering, classification and regression.
 
 Inspired by \texttt{scikit-learn}, Bonsai will have three types of operators:
-estimators, predictors and transformers. Each of these operators will be
-instantiated by objects implementing the corresponding interface.
+\texttt{Estimators}, \texttt{Predictors} and \texttt{Transformers}. Each of
+these operators will be instantiated by objects implementing the corresponding
+interface.
 %
-For example, consider the close-loop system for the control of a computer
+As an example, consider the close-loop system for the control of a computer
 cursor with neural activity represented in Figure~\ref{fig:bci}a. The Bonsai
 graphical program for this system is given in Figure~\ref{fig:bci}b. The
 objects instantiating the SpikeThresholdDetector, the KiloSortSpikeSorter and
-GPFAlatentsExtractor will implement the transformer interface, and the object
-instantiating the TimeSeriesForestClassifier will implement the predictor
-interface (Figure~\ref{fig:bci}b, top).
+GPFAlatentsExtractor will implement the \texttt{Transformer} interface (blue),
+and the object instantiating the TimeSeriesForestClassifier will implement the
+\texttt{Predictor} interface (green; Figure~\ref{fig:bci}b, top).
 %
 The parameters for the SpikeThresholdDetector and the KiloSortSpikeSorter will
 be set manually by the user, as is commonly done in practice. The parameters of
-the GPFAlatentsExtractor will be learnt offline in an unsupervised way in a
-second pipeline (Figure~\ref{fig:bci}b, middle). Finally, the parameters of the
-TimeSeriesForestClassifier will also be learnt offline, but in a supervised
-way, in a third pipeline (Figure~\ref{fig:bci}b, bottom).
+the GPFAlatentsExtractor will be learnt offline in an unsupervised way by an
+\texttt{Estimator} (red) in a second pipeline (Figure~\ref{fig:bci}b, middle).
+Finally, the parameters of the TimeSeriesForestClassifier will also be learnt
+offline, but in a supervised way, by another \texttt{Estimator} in a third
+pipeline (Figure~\ref{fig:bci}b, bottom).
 
 \begin{figure}
    \begin{center}
@@ -148,9 +152,19 @@ the last can be either a predictor, a transformer or both.
 \subsubsection{Extensibility}
 \label{sec:extensibility}
 
-\textcolor{red}{I will start this section by saying that we are not proposing
-to implement machine learning algorithms, as in \texttt{scipy.learn}, but to
-integrate into Bonsai existing machine intelligence algorithms.}
+To incorporate machine learning functionality into the Bonsai ecosystem, we
+could
+implement this functionality directly into Bonsai, as done in
+\texttt{scikit-learn}. Alternatively, or in addition, we could build software
+infrastructure to facilitate the integration of existing machine learning
+software into Bonsai. We chose to begin with the second alternative because
+high-quality implementations of machine learning functionality already exist,
+which can be quickly integrated into the Bonsai ecosystem. In addition, the
+second alternative is more sustainable, as it will allow the continued addition
+of new machine learning functionality to Bonsai after the completion of the
+BBSRC-BBR funding period. Later we may decide to implement some widely-used
+machine learning functionality directly into Bonsai (e.g., for performance or
+robustness issues).
 
 Currently Bonsai has its own package manager, and its community of users have
 already extended Bonsai's functionality with several contributed packages
@@ -173,8 +187,8 @@ ZeroMQ\footnote{\href{https://zeromq.org/}{https://zeromq.org/}}.
 
 Using the previous software, we will build C\# wrappers around machine
 intelligence programs written in other languages, so that these programs
-implement the Estimator, Predictor or Transformer interfaces and can be
-integrated into Bonsai as machine intelligence operators.
+implement the \texttt{Estimator}, \texttt{Predictor} or \texttt{Transformer}
+interfaces and can be integrated into Bonsai as machine intelligence operators.
 
 \subsection{Machine intelligence functionality to be added to Bonsai}
 \label{sec:functionality}
@@ -237,12 +251,12 @@ other informative features from video recordings.
 \label{sec:bci}
 
 \paragraph{Spike sorting}
-% \label{sec:spikeSorting}
+\label{sec:spikeSorting}
 
 \noindent\textcolor{red}{TODO}
 
 \paragraph{Low-dimensional representations of spiking data}
-% \label{sec:lowDimensionalRepresentationsOfSpikingData}
+\label{sec:lowDimensionalRepresentationsOfSpikingData}
 
 Bonsai is well integrated with OpenEphys~\citep{siegleEtAl17}, which allows
 scientists to record neural data from a large number of devices. However, it
@@ -317,7 +331,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
 \end{description}
 
 \paragraph{Low-dimensional representations of local-field potentials}
-% \label{sec:lowDimensionalRepresentationsOfLFPs}
+\label{sec:lowDimensionalRepresentationsOfLFPs}
 
 Spikes are extracted from a higher-frequency range of extracellularly recorded
 voltages. Local field potentials (LFPs) are computed from a lower-frequency
@@ -327,7 +341,7 @@ to use states inferred from LFPs by GLDS, GPFA, HMM and LFADS
 low-dimensional representations of the LFP.
 
 \paragraph{Neural decoding}
-% \label{sec:neuralDecoding}
+\label{sec:neuralDecoding}
 
 In order to use low-dimensional representations of spiking activity and/or of
 LFPs to guide the control of experiments, we need a decoder to optimally map
@@ -339,12 +353,14 @@ random forests, artificial neural networks, naive Bayes and Gaussian process
 classifiers.
 
 \paragraph{Comparing multiple data-analysis methods}
-% \label{sec:comparisonOfMultipleMethods}
+\label{sec:comparisonOfMultipleMethods}
 
-We propose to add functionality to Bonsai to facilitate multi-method
-comparisons in user-supplied datasets. Below we describe a comparison that we
+% We propose to add functionality to Bonsai to facilitate multi-method
+% comparisons in user-supplied datasets.
+
+Below we describe a comparison that we
 will perform in Bonsai to asses the relative performance of the methods
-described in the previous sections with neural recordings from behaving rats.
+described in the previous sections, using neural recordings from behaving rats.
 These recordings are currently being performed, to address scientific questions,
 at the laboratory of Prof.~Akrami in the SWC.
 %
@@ -395,6 +411,15 @@ ZeroMQ\footnote{\href{https://zeromq.org/}{https://zeromq.org/}}.
 
 \end{comment}
 
+\subsection{Testing with neuroscience data}
+\label{sec:testingWithNeuroscienceData}
+
+Multiple groups at the SWC currently use Bonsai for data acquisition and
+experimental control. Carefully testing the functionality of new software is
+essential to ensure its correct functionality. We propose to use the SWC large
+internal Bonsai user base to test the functionality we will add to Bonsai,
+before distributing it to the general public.
+
 \subsection{Reproducibility with Bonsai}
 \label{sec:reproducibility}
 
@@ -417,15 +442,27 @@ demonstrations.
 \subsection{Measurable targets}
 \label{sec:measurableTargets}
 
-We propose to assess the progress of the proposed project using the following
-measurable targets:
+We propose to assess the progress of the proposed project using three different
+types of targets.
+%
+First, we will have targets associated with each release to the general public
+of the software components described in Sections~\ref{sec:infrastructure}
+and~\ref{sec:functionality}.
+%
+Second, we will monitor user activity in the Bonsai
+forum\footnote{\href{https://groups.google.com/g/bonsai-users}{https://groups.google.com/g/bonsai-users}},
+and publications citing Bonsai that use th new machine larning functionality,
+to estimate the number of Bonsai users using this functionality.
+%
+Third, we will count the number of machine learning methods that are integrated
+into the Bonsai ecosystem by us and by other method developers.
 
 \begin{comment}
 
 \begin{description}
 
     \item[implementation of software infrastructure]
-        (Section~\ref{sec:softwareInfrastructure}) includes the
+        (Section~\ref{sec:infrastructure}) includes the
         implementation of the machine abstractions, described in
         Section~\ref{},
         and of the capabilities to allow Bonsai communicate with
@@ -462,6 +499,8 @@ measurable targets:
 
 \end{comment}
 
+\begin{comment}
+
 \subsection{Final remarks}
 \label{sec:finalRemarks}
 
@@ -483,17 +522,4 @@ the Bonsai ecosystem. In this way method developers will become a new type of
 Bonsai users, which will guarantee the sustainability of developments
 proposed here.
 
-We focused this proposal on neuroscience applications of Bonsai. However, the
-addition of machine intelligence functionality is needed in many other
-experimental areas where Bonsai is or could be used. Therefore, the software
-abstractions that we will build to add to Bonsai machine intelligence
-functionality for neuroscience experiments (e.g., methods to perform
-multi-method comparisons) will translate to other application domains of
-Bonsai.
-
-Multiple groups at the SWC currently use Bonsai for data acquisition and
-experimental control. Carefully testing the functionality of new software is
-essential to ensure its correct functionality. We propose to use the SWC large
-internal Bonsai user base to test the functionality we will add to Bonsai,
-before distributing it to the general public.
-
+\end{comment}

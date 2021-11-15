@@ -198,7 +198,7 @@ support neuroscience experiments because, currently, neuroscience is the
 research area with the largest number of Bonsai users. Within neuroscience, we
 propose to add functionality for video-based behavioural analysis
 (Section~\ref{sec:videoBasedBehavioralAnalysis}) and for running
-brain-computer-interface experiments (Section~\ref{sec:bci}), since these tasks
+brain-computer-interface (BCI) experiments (Section~\ref{sec:bci}), since these tasks
 are relevant to many Bonsai users, and recent advances in machine learning
 will greatly improve their implementation in Bonsai.
 
@@ -251,26 +251,39 @@ other informative features from video recordings.
 \label{sec:bci}
 
 We propose to add functionality into Bonsai for the implementation of
-brain-computer-interface applications illustrated in Figure~\ref{fig:bci}. In
+brain-computer-interface (BCI) applications illustrated in Figure~\ref{fig:bci}. In
 this implementation voltage recordings from the brain will be converted into
-spikes fired by single neurons by a \texttt{SpikeSorter}
-(Section~\ref{sec:spikeSorting}), or to local field potentials (LFP) by an
-\texttt{LFPextractor} (Section~\ref{sec:lfpCalculation}). Next, neural activity
+spikes fired by single neurons by a \texttt{SpikeDetector}
+(Section~\ref{sec:spikeDetection}), or to local field potentials (LFP) by an
+\texttt{LFPextractor} (Section~\ref{sec:lfpExtraction}). Next, neural activity
 (spikes or LFPs) will be represented in a low-dimensional latent space by a
-\texttt{LatentsExtractor}. Finally, a \texttt{Decoder} will extract the
+\texttt{LatentsCalculator}. Finally, a \texttt{Decoder} will extract the
 intended behavior of the animal from this low-dimensional representation.
 
-\paragraph{Spike sorting}
-\label{sec:spikeSorting}
+\paragraph{Spike detection}
+\label{sec:spikeDetection}
 
-Spike sorting is an essential computational step needed to isolate the activity
-of individual neurons, or units, within extracellular recordings which combine
-noisy signals from many neurons. Most spike sorting algorithms are designed to
-work offline (i.e., identify individual neurons from a complete recording
-session, after this session has been completed). We propose to integrate into Bonsai
+Spikes from multiple neurons can be detected in recordings from a single
+electrode inserted in neural tissue. Spike sorting is the computational step
+used to assign each spike to the neuron that generated it. Most spike sorting
+algorithms are designed to work offline (i.e., to use a complete recording
+session, after this session terminated). Online spike sorting (i.e., the task
+of assigning spikes to individual neurons as recordings are being aquired) is a
+still unsolved task, specially for recording devices with large number of
+electrodes.
+%
+However, for the type of BCI application proposed here, previous studies have
+shown that spike sorting is not beneficial and high performance can be retained
+by just detecting spikes, without assigning them to invidivual
+neurons~\citep{trautmannEtAl19,todorovaEtAl14}. Thus, for the BCI application
+proposed here we will only detect spikes with a simple zero-corssing method,
+and not assign them to individual neurons.  We will, however, integrate into
+Bonsai two offline spike sorting methods, Kilosort~\citep[][written in Matlab]{pachitariuEtAl16} and MountainSort~\citep[][written in
+Python]{chungEtAl17}, to provide Bonsai users spike sorting functionality for
+applications that benefit from it.
 
-\paragraph{LFP calculation}
-\label{sec:lfpCalculation}
+\paragraph{LFP extraction}
+\label{sec:lfpExtractor}
 
 Spikes are extracted from a higher-frequency range of extracellularly recorded
 voltages. Local field potentials (LFPs) 
@@ -278,8 +291,8 @@ are another important signal to understand brain function, which is extracted
 from a lower-frequency range of these voltages. We propose to use in-house
 functions implemented in Python to compute LFPs.
 
-\paragraph{Low-dimensional representations of spiking data}
-\label{sec:lowDimensionalRepresentationsOfSpikingData}
+\paragraph{Low-dimensional representations of neural recordings}
+\label{sec:lowDimensionalRepresentation}
 
 Bonsai is well integrated with OpenEphys~\citep{siegleEtAl17}, which allows
 scientists to record neural data from a large number of devices. However, it
@@ -360,7 +373,7 @@ Spikes are extracted from a higher-frequency range of extracellularly recorded
 voltages. Local field potentials (LFPs) are computed from a lower-frequency
 range and are another important signal to understand brain function. We propose
 to use states inferred from LFPs by GLDS, GPFA, HMM and LFADS
-(Section~\ref{sec:lowDimensionalRepresentationsOfSpikingData}) as
+(Section~\ref{sec:lowDimensionalRepresentation}) as
 low-dimensional representations of the LFP.
 
 \paragraph{Neural decoding}
@@ -402,7 +415,7 @@ performing this task to learn low-dimensional representations of spiking
 activity and LFPs during the decision time period (between the presentation of
 the last auditory stimuli and the presentation of the Go stimulus), using the
 methods described in
-Sections~\ref{sec:lowDimensionalRepresentationsOfSpikingData}
+Sections~\ref{sec:lowDimensionalRepresentation}
 and~\ref{sec:lowDimensionalRepresentationsOfLFPs}. We will also learn the
 parameters of the classifiers described in Section~\ref{sec:neuralDecoding} to
 optimally classify animal decisions (poke the nose into the right/left port)
@@ -498,7 +511,7 @@ into the Bonsai ecosystem by us and by other method developers.
     \item[implementation of functionality] (Sections~\ref{sec:functionality})
         includes the integration into Bonsai of machine learning software for
         video-based behavioral analysis (Section~\ref{}) and for
-        brain-computer-interface applications (Section~\ref{}). Completion of
+        BCI applications (Section~\ref{}). Completion of
         this target requires that Bonsai can perform each of these tasks
         separately, in conjunction with software written in Python, R and
         Matlab.

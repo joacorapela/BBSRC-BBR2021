@@ -5,3 +5,5 @@ main.*
 caseForSupport.*
 !caseForSupport.tex
 costing/tasks.txt
+workPlan.*
+!workPlan.tex

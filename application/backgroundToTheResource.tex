@@ -1,26 +1,27 @@
-
 \section{Background: real-time neuroinformatics and control in behavioural systems
   neuroscience}
 
-Modern systems neuroscience depends on data from carefully designed behavioural experiments in
-animal models such as mice frequently combined with invasive electrophysiology and/or
-cellular-resolution imaging.  Experimental design might require behavioural feedback (e.g. reward,
-lights, sounds, actuated devices\dots) or neural pertubation (e.g. using light-sensitive polarising
-molecules) that depends on real-time behaviour or neural state.
+To understand the neural basis of behaviour, experiments need to control and quantify animal behaviour whilst recording, and often manipulating, neural activity. 
 %
-Furthermore, it has become increasingly apparent that the neural signals that drive complex
-behaviour are manifest in a broad population of neurons rather than in single cells.  So current
-neural recording emphasises high-dimensional signals from 100s to 1000s of neurons.   
+Powerful experimental designs require behavioural feedback (e.g.\ reward, lights, sounds, actuated
+devices) or neural perturbation (e.g.\ using light-sensitive polarising
+molecules) that depend on real-time behaviour or neural state.
+%
+Furthermore, it has become increasingly apparent that the neural signals that
+drive complex behaviour are manifest in a broad population of neurons rather
+than in single cells.  So current neural recording emphasises high-dimensional
+signals from 100s to 1000s of neurons monitored using multi-electrode arrays or cellular-resolution imaging, with a wide array of probe configurations and neural targets.
+%
+This complexity of experiments limits the potential for database-driven progress in systems neuroscience.
+%
+The number of possible experiments is astronomical, and a new question must
+usually be answered by designing and conducting a new experiment rather than
+mining the data from an old one.
 
-This complexity of experiments limits the potential for database-driven science.  The number of
-possible experiments is astronomical, and a new question must usually be answered by designing and
-conducting a new experiment rather than mining the data from an old one.
+At present, progress in the field is held back by the challenge of rapidly designing and implementing new experimental protocols, and the difficulty of integrating state-of-the-art data processing and
+neuroinformatics into custom experimental designs.
 %
-At present, the field is held back by our ability to efficiently design and analyse new experiments,
-and to integrate state-of-the-art data processing and neuroinformatics into experimental designs.
-%
-\textbf{Our proposal is to enhance, distribute and support a neuroinformatics resource which \dots}
-(simplifies data collection and analysis, something about sharing data??), potentially creating the most powerful experimental control and analysis tool available to neuroscientists, psychologists and ethologists worldwide.
+\textbf{Reproducibility}, in particular, depends on the availability of standardized tools for experimental control and analysis, shared between laboratories (Baker, 2016; Ioannidis, 2005). Although such tools exist in genetics, astronomy, physics and medicine (Fish et al., 2016; Abdalla et al., 2018, CERN Education, Communications and Outreach Group, 2018, Dickinson et al., 2016, Bycroft et al., 2018), they are mostly lacking in neuroscience, with documented consequences for the reliability of ``discoveries'' (Baker, 2016; Botvinik-Nezer et al., 2020; Button et al., 2013). 
 
 \setlength{\columnsep}{1em}
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -28,68 +29,60 @@ and to integrate state-of-the-art data processing and neuroinformatics into expe
   \label{fig:bonsai}
 \end{wrapfigure}
 
-\setcounter{figure}{1}
-
-This resource will be built on the platform of Bonsai, an established experimental control software
-ecosystem with a long development history and a large user base in systems neuroscience
-(Figure~\ref{fig:bonsai}).
-
-A central goal of the software resource proposed here is to address this
-problem, by extending Bonsai~(an experimental control software ecosystem;
-Figure~\ref{fig:bonsai} and Section~\ref{sec:bonsai}) with state-of-the-art
-online (and offline) data analysis methods
-(Figure~\ref{fig:proposedBonsaiExtensions} and
-Section~\ref{sec:functionality}). \textbf{Bonsai is}
-\textbf{unique} among experimental control software in that it allows people
-with no programming experience to control sophisticated experiments. Its large
-and rapidly growing user base demonstrates the need for this type of software
-resources. With the proposed functionality added to Bonsai, its users
-will be able to use sophisticated \textbf{machine-learning methods} to control their
-experiments and analyse their data. This
-\textbf{democratisation} of machine learning
-functionality will allow scientists without computational skills to control
-sophisticated experiments and analyse their data in unprecedented ways, which
-will facilitate \textbf{advances in explaining how the brain gives rise to behaviour}.
-
-
-Currently Bonsai has its own package manager, and its community of users have
-already extended Bonsai's functionality with several contributed packages
-(e.g., \ldots \textcolor{red}{Goncalo please reference the best contributed
-packages developed by the Bonsai user community}). However, these packages need to
-be written in C\#, while most current neuroscience data analysis methods are
-written in Python, R or Matlab. We propose to add to Bonsai capabilities to
-communicate with software written in these languages
-(Section~\ref{sec:softwareInfrastructure}).  These capabilities will allow a
-large number of neuroscience data analysis methods to be easily integrated into
-the Bonsai ecosystem and will provide Bonsai users a large repertoire of
-advanced machine learning methods for their behavioural and neural data
-analysis.
-%
-Using these capabilities we will integrate into Bonsai an initial set of
-state-of-the art behavioural and neural data analysis methods
-(Section~\ref{sec:functionality}).
-
-Developers of advanced data-analysis methods should become interested in
-integrating them into the Bonsai ecosystem, as it will allow their methods to
-reach the wide Bonsai user community. In addition this integration will enable
-method developers to easily compare the performance of their methods with
-that of many methods previously integrated into the Bonsai ecosystem. Method
-developers will thus become a new type of Bonsai users, which will contribute
-to the \textbf{sustainability} of the proposed resource beyond the period of
-BBSRC-BBR funding.
-
-Scientific advances rely on \textbf{reproducibility}, which in turn depends on standardized tools for experimental control and analysis, shared between laboratories (Baker, 2016; Ioannidis, 2005). Although such tools exist in genetics, astronomy, physics and medicine (Fish et al., 2016; Abdalla et al., 2018, CERN Education, Communications and Outreach Group, 2018, Dickinson et al., 2016, Bycroft et al., 2018), they are mostly lacking in neuroscience, which in itself suffers from a paucity of reproducible discoveries (Baker, 2016; Botvinik-Nezer et al., 2020; Button et al., 2013). Bonsai is an excellent tool for reproducible data acquisition and experimental control. For example, an experiment implemented in Bonsai can be replicated in
-any laboratory by just sharing a Bonsai configuration file. With the addition of the proposed machine learning functionality Bonsai will extend this
-reproducibility to the domain of data analysis
-(Section~\ref{sec:reproducibility}).
-
-\begin{figure}
-  \includegraphics[width=4in]{figures/proposed_bonsai_extensions.png}
-  \caption{Proposed extensions to Bonsai}
-  \label{fig:proposedBonsaiExtensions}
-\end{figure}
-
-\subsection{Bonsai}
-\label{sec:bonsai}
-
 \input{bonsai.tex}
+
+Our proposed enhancements will \textbf{enhance, reinforce and support this key neuroinformatics
+  resource to streamline reproducible experimental design, data collection and analysis, while making standardised implementations of cutting-edge machine-learning methodologies widely available to the community}, potentially creating the most powerful experimental
+control and analysis tool available to neuroscientists, psychologists and
+ethologists worldwide.
+
+\input{otherResources.tex}
+
+
+%
+
+%
+
+
+
+
+% This resource will be built on the platform established by \textbf{Bonsai}.
+%
+
+
+% an established
+% experimental control software ecosystem with a long development history and a
+% large user base in systems neuroscience (Figure~\ref{fig:bonsai}).
+
+% \subsection{Bonsai}
+% \label{sec:bonsai}
+%
+% We will 
+% 
+% 
+% 
+% A central goal of the software resource proposed here is to address this
+% problem, by extending Bonsai~(an experimental control software ecosystem;
+% Figure~\ref{fig:bonsai} and Section~\ref{sec:bonsai}) with state-of-the-art
+% online (and offline) data analysis methods
+% (Figure~\ref{fig:proposedBonsaiExtensions} and
+% Section~\ref{sec:functionality}).
+% Bonsai is unique amongst experimental control systems in that
+% it allows users with no programming expertise to design and implement
+% sophisticated experiments.
+%
+% The latest Its large and rapidly growing community of users demonstrates the demand for such software resources.
+%
+
+% With the proposed enhancements, users of Bonsai will be able to use sophisticated \textbf{machine-learning methods} to
+% control their experiments and analyse their data. This \textbf{democratisation}
+% of machine learning functionality will allow scientists without computational
+% skills to control sophisticated experiments and analyse their data in
+% unprecedented ways, which will facilitate \textbf{advances in explaining how the
+%   brain gives rise to behaviour}.
+
+
+
+% \subsection{Bonsai}
+% \label{sec:bonsai}
+

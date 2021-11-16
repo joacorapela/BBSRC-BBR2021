@@ -1,8 +1,8 @@
 all: caseForSupport.pdf workPlan.pdf
 
-caseForSupport.pdf: caseForSupport.tex backgroundToTheResource.tex bonsai.tex detailsOfResource.tex communityDemand.tex userEngagement.tex
+caseForSupport.pdf: caseForSupport.tex backgroundToTheResource.tex bonsai.tex detailsOfResource.tex communityDemand.tex userEngagement.tex trackRecord.tex
 	pdflatex $<
-	bibtex $*.aux
+	bibtex $*
 	pdflatex $<
 	pdflatex $<
 

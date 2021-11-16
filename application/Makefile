@@ -1,7 +1,10 @@
-all: caseForSupport.pdf
+all: caseForSupport.pdf workPlan.pdf
 
-%.pdf: %.tex backgroundToTheResource.tex bonsai.tex detailsOfResource.tex communityDemand.tex userEngagement.tex
+caseForSupport.pdf: caseForSupport.tex backgroundToTheResource.tex bonsai.tex detailsOfResource.tex communityDemand.tex userEngagement.tex
 	pdflatex $<
 	bibtex $*.aux
 	pdflatex $<
+	pdflatex $<
+
+workPlan.pdf: workPlan.tex
 	pdflatex $<

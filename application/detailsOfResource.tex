@@ -52,10 +52,9 @@ library \citep{buitinckEtAl13}.
 %
 By analogy to the interfaces provided by this library we will introduce three types of Bonsai operator: \texttt{Estimator} objects for building and fitting models, \texttt{Predictor} objects for making predictions and \texttt{Transformer} objects for converting data.
 %
-Th
+Interactions between these different object types will allow a single algorithm class (implemented by \texttt{Estimator} and \texttt{Predictor} operators) to act on many different data streams.
 %
-As an example, consider the close-loop system for the control of a computer
-cursor with neural activity represented in
+An example closed-loop system allowing  control of a computer cursor with neural activity is shown represented in
 Figure~\ref{fig:proposedBonsaiExtensions}b. The Bonsai
 graphical program for this system is given in
 Figure~\ref{fig:proposedBonsaiExtensions}c. The

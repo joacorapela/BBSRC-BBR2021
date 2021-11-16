@@ -1,3 +1,15 @@
+% 1. Develop, test and deploy a new software workflow to incorporate external packages into Bonsai's C# environment.
+
+% 2. Incorporate a suite of machine-learning-driven analysis tools into the Bonsai environment to implement:
+% 2a. video-based  behavioural analysis
+% 2b. real-time interfacing of population-scale activity with laboratory control  
+% 2c. evaluate competing data analytic approaches within a single experimental framework
+
+\section{Details of the proposed resource enhancements}
+
+
+
+
 
 We intend to improve an \textbf{existing resource}, the Bonsai ecosystem. We
 propose to create software infrastructure to enable the\textbf{ integration of advanced data analysis methods} into
@@ -24,6 +36,45 @@ control. Moreover, equipping experimental scientists without programming
 experience with machine learning tools will considerably increase the
 application of machine learning to the biosciences, which most probably will
 translate into groundbreaking scientific discoveries.
+
+
+Currently Bonsai has its own package manager, and its community of users have
+already extended Bonsai's functionality with several contributed packages.
+%
+However, these packages need to
+be written in C\#, while most current neuroscience data analysis methods are
+written in Python, R or Matlab. We propose to add to Bonsai capabilities to
+communicate with software written in these languages
+(Section~\ref{sec:softwareInfrastructure}).  These capabilities will allow a
+large number of neuroscience data analysis methods to be easily integrated into
+the Bonsai ecosystem and will provide Bonsai users a large repertoire of
+advanced machine learning methods for their behavioural and neural data
+analysis.
+%
+Using these capabilities we will integrate into Bonsai an initial set of
+state-of-the art behavioural and neural data analysis methods
+(Section~\ref{sec:functionality}).
+
+Developers of advanced data-analysis methods should become interested in
+integrating them into the Bonsai ecosystem, as it will allow their methods to
+reach the wide Bonsai user community. In addition this integration will enable
+method developers to easily compare the performance of their methods with
+that of many methods previously integrated into the Bonsai ecosystem. Method
+developers will thus become a new type of Bonsai users, which will contribute
+to the \textbf{sustainability} of the proposed resource beyond the period of
+BBSRC-BBR funding.
+
+% Scientific advances rely on \textbf{reproducibility}, which in turn depends on standardized tools for experimental control and analysis, shared between laboratories (Baker, 2016; Ioannidis, 2005). Although such tools exist in genetics, astronomy, physics and medicine (Fish et al., 2016; Abdalla et al., 2018, CERN Education, Communications and Outreach Group, 2018, Dickinson et al., 2016, Bycroft et al., 2018), they are mostly lacking in neuroscience, which in itself suffers from a paucity of reproducible discoveries (Baker, 2016; Botvinik-Nezer et al., 2020; Button et al., 2013). Bonsai is an excellent tool for reproducible data acquisition and experimental control. For example, an experiment implemented in Bonsai can be replicated in
+% any laboratory by just sharing a Bonsai configuration file. With the addition of the proposed machine learning functionality Bonsai will extend this
+% reproducibility to the domain of data analysis
+% (Section~\ref{sec:reproducibility}).
+
+\begin{figure}
+  \includegraphics[width=4in]{figures/proposed_bonsai_extensions.png}
+  \caption{Proposed extensions to Bonsai}
+  \label{fig:proposedBonsaiExtensions}
+\end{figure}
+
 
 \subsection{Software infrastructure}
 \label{sec:infrastructure}

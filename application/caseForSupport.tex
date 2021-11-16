@@ -26,14 +26,23 @@
 \makeatother
 \setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
 \setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
-\usepackage[small]{titlesec} % format section titles
+\usepackage[tiny]{titlesec} % format section titles
+\def\headfmt{\color{blue!50!black!50}\bfseries}
+\titleformat*{\section}{\headfmt}
+\titlespacing*{\section}{0pt}{*1}{*0}[-4em]
+\titleformat*{\subsection}{\headfmt}
+\titlespacing*{\subsection}{0pt}{*0.5}{*0}
+\titleformat*{\subsubsection}{\headfmt}
+\titlespacing*{\subsubsection}{0pt}{*0}{*0}
+\titleformat*{\paragraph}{\headfmt}
+\titlespacing*{\paragraph}{0pt}{*0.5}{*0}
 
 \title{Case for Support}
 \author{}
 
 \begin{document}
 
-\maketitle
+% \maketitle
 
 \tableofcontents
     
@@ -41,9 +50,16 @@
 
 \setcounter{page}{1}
 
+\section*{\large Case for support}
+\vskip 0.5ex
+We propose to extend, enhance, maintain and support \textbf{Bonsai}, a fully
+integrated software environment to \textbf{enable cutting-edge reproducible
+  laboratory systems neuroscience experiments in animal models}, with a
+particular emphasis on \textbf{machine-intelligence-enabled, real-time
+  neuroinformatics} methods.
+
 \input{backgroundToTheResource}
 
-\section{Details of resource}
 
 \input{detailsOfResource}
 

@@ -65,9 +65,11 @@ BBSRC-BBR funding.
 % (Section~\ref{sec:reproducibility}).
 
 \begin{figure}
-  \includegraphics[width=4in]{figures/proposed_bonsai_extensions.png}
-  \caption{Proposed extensions to Bonsai}
-  \label{fig:proposedBonsaiExtensions}
+    \begin{center}
+        \includegraphics[width=5in]{figures/proposed_bonsai_extensions_combined.png}
+        \caption{Proposed extensions to Bonsai}
+        \label{fig:proposedBonsaiExtensions}
+    \end{center}
 \end{figure}
 
 
@@ -77,7 +79,7 @@ BBSRC-BBR funding.
 \begin{comment}
 Bonsai does not currently provide machine learning functionality. For instance,
 the close-loop experimental control depicted in
-Figure~\ref{fig:bci} cannot be currently implemented in
+Figure~\ref{fig:proposedBonsaiExtensions}b cannot be currently implemented in
 Bonsai. It represents the control of an experiment where a subject guides the
 mouse position in a computer screen with her brain activity (Section~\ref{}).
 Nodes highlighted in colour require machine intelligence functionality currently
@@ -117,21 +119,25 @@ these operators will be instantiated by objects implementing the corresponding
 interface.
 %
 As an example, consider the close-loop system for the control of a computer
-cursor with neural activity represented in Figure~\ref{fig:bci}a. The Bonsai
-graphical program for this system is given in Figure~\ref{fig:bci}b. The
+cursor with neural activity represented in
+Figure~\ref{fig:proposedBonsaiExtensions}b. The Bonsai
+graphical program for this system is given in
+Figure~\ref{fig:proposedBonsaiExtensions}c. The
 objects instantiating the SpikeThresholdDetector, the KiloSortSpikeSorter and
 GPFAlatentsExtractor will implement the \texttt{Transformer} interface (blue),
 and the object instantiating the TimeSeriesForestClassifier will implement the
-\texttt{Predictor} interface (green; Figure~\ref{fig:bci}b, top).
+\texttt{Predictor} interface (green; Figure~\ref{fig:proposedBonsaiExtensions}c, top).
 %
 The parameters for the SpikeThresholdDetector and the KiloSortSpikeSorter will
 be set manually by the user, as is commonly done in practice. The parameters of
 the GPFAlatentsExtractor will be learnt offline in an unsupervised way by an
-\texttt{Estimator} (red) in a second pipeline (Figure~\ref{fig:bci}b, middle).
+\texttt{Estimator} (red) in a second pipeline
+(Figure~\ref{fig:proposedBonsaiExtensions}c, middle).
 Finally, the parameters of the TimeSeriesForestClassifier will also be learnt
 offline, but in a supervised way, by another \texttt{Estimator} in a third
-pipeline (Figure~\ref{fig:bci}b, bottom).
+pipeline (Figure~\ref{fig:proposedBonsaiExtensions}c, bottom).
 
+\begin{comment}
 \begin{figure}
    \begin{center}
        \includegraphics[width=4in]{figures/bci.png}
@@ -140,7 +146,6 @@ pipeline (Figure~\ref{fig:bci}b, bottom).
    \end{center}
 \end{figure}
 
-\begin{comment}
     The spike detector transforms membrane
 potentials into spike sequences. The spike sorter transforms spikes sequences
 into lists of spikes, one list per neuron. The latents extractor transforms
@@ -295,7 +300,8 @@ other informative features from video recordings.
 \label{sec:bci}
 
 We propose to add functionality into Bonsai for the implementation of
-brain-computer-interface (BCI) applications illustrated in Figure~\ref{fig:bci}. In
+brain-computer-interface (BCI) applications illustrated in
+Figure~\ref{fig:proposedBonsaiExtensions}b. In
 this implementation voltage recordings from the brain will be converted into
 spikes fired by single neurons by a \texttt{SpikeDetector}
 (Section~\ref{sec:spikeDetection}), or to local field potentials (LFP) by an

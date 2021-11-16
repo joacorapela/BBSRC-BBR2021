@@ -7,25 +7,25 @@
 
 \section{Details of proposed resource enhancements}
 
-The core proposed developments will enhance Bonsai's extensibility in two ways.
+We will enhance Bonsai's extensibility in two ways.
 %
-First, we will create a new package infrastructure to enable the integration of software toolboxes implemented in non-native languages into Bonsai.
+First, we will create a new package infrastructure to enable the integration of software objects implemented in non-native languages into Bonsai.
 %
 Second, we will create a new general abstraction framework within Bonsai suited to the implementation and application of data analytic algorithms.
 %
 Both frameworks will expose public interfaces available to all developers within the user community, thus simplifying and accelerating community-driven development.
 
-Furthermore, we will build on these extensibility developments ourselves to implement a suite of advanced machine intelligence neural data analysis methods that will be made available as one or more core Bonsai packages.
+Furthermore, we will build on these extensibility developments to implement a suite of advanced machine intelligence neural data analysis methods that will be made available as one or more core Bonsai packages.
 
 \subsection{Extensions to incorporate non-native code packages into Bonsai}
 
-As it stands, Bonsai is designed to be extensible and is distributed with a package management framework that controls installation of both optional core packages and user-contributed extensions.
+As it stands, Bonsai is designed to be extensible and is distributed with a package-management framework that controls installation of optional core packages as well as user-contributed extensions.
 %
-However, the present framework requires extensions to be written in Bonsai's native C\# programming language.
+However extensions must be written in Bonsai's native C\# programming language.
 %
-This specificity restricts the number of potential contributors to the ecosystem.
+This specificity restricts the range of potential contributors to the ecosystem.
 %
-It also hinders easy incorporation of published analytic tools, many of which are implemented for interpreted language systems such as Python, R, or MATLAB.  
+It also hinders easy incorporation of published analytic tools, many of which are implemented within other interpreted language systems such as Python, R, or MATLAB.  
 
 We will extend the Bonsai package interface to allow direct interaction with the runtime execution environments that implement these common languages.  
 %
@@ -33,40 +33,26 @@ Where possible, the extensions will be based on existing pipeline tools that all
 %
 These include:
 %
-Python.NET\footnote{\href{https://github.com/pythonnet/pythonnet}{https://github.com/pythonnet/pythonnet}},
+Python.NET\footnote{\url{https://github.com/pythonnet/pythonnet}},
 %
-R.Net\footnote{\href{https://github.com/rdotnet/rdotnet}{https://github.com/rdotnet/rdotnet}}
+R.Net\footnote{\url{https://github.com/rdotnet/rdotnet}}
 %
-and the native .NET interface shipped with MATLAB\footnote{\href{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}}.
+and the native .NET interface shipped with MATLAB\footnote{\url{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}}.
 %
-If necessary, we will also incorporate direct inter-runtime communication using the messaging library ZeroMQ\footnote{\href{https://zeromq.org/}{https://zeromq.org/}}.
+If necessary, we will also incorporate direct inter-runtime communication using the messaging library ZeroMQ\footnote{\url{https://zeromq.org/}}.
 
 
 \subsection{General abstraction framework for data processing}
 \label{sec:generality}
 
-The number of current machine learning algorithms is very large and it is
-continuously increasing. We intend to build a small number of machine
-intelligence operators in Bonsai (Section~\ref{sec:bonsai},
-Figure~\ref{fig:bonsai}c) that can be configured to provide the functionality
-of all machine learning algorithms.
-
-For this, we will build on abstractions used in the \texttt{scikit-learn}
-library. The success of this library is, to a large extent, due to its simple
-and general application programming interface \citep[API;][]{buitinckEtAl13}.
+To avoid the need to re-implement a single data analysis algorithm in multiple different contexts we will create a set of abstract machine-intelligence operators in Bonsai that can be configured to map between data substrates and machine-learning algorithms.
 %
-This API consists of three complementary interfaces: an \texttt{Estimator}
-interface for building and fitting models, a \texttt{Predictor} interface for
-making predictions and a \texttt{Transformer} interface for converting data.
+The planned abstraction layer is based on the successful \texttt{scikit-learn} Python
+library \citep{buitinckEtAl13}.
 %
-Using only these three interfaces \texttt{scikit-learn} provides
-implementations of a large number of machine learning algorithms for
-dimensionality reduction, clustering, classification and regression.
-
-Inspired by \texttt{scikit-learn}, Bonsai will have three types of operators:
-\texttt{Estimators}, \texttt{Predictors} and \texttt{Transformers}. Each of
-these operators will be instantiated by objects implementing the corresponding
-interface.
+By analogy to the interfaces provided by this library we will introduce three types of Bonsai operator: \texttt{Estimator} objects for building and fitting models, \texttt{Predictor} objects for making predictions and \texttt{Transformer} objects for converting data.
+%
+Th
 %
 As an example, consider the close-loop system for the control of a computer
 cursor with neural activity represented in

@@ -1,16 +1,18 @@
-
-Bonsai~\citep{lopesEtAl15,lopesAndMonteiro21} is a free and open-source visual
-programming language that emphasizes performance, flexibility, and ease-of-use,
+\textbf{Bonsai}~\citep{lopesEtAl15,lopesAndMonteiro21} is a free and open-source visual programming language developed 
+in response to these challenges.
+% ~\citep{lopesEtAl15,lopesAndMonteiro21} is a free and open-source visual
+% programming language that 
+Its design emphasizes performance, flexibility, and ease-of-use,
 allowing scientists with no previous programming experience to quickly develop
 their own high-performance data acquisition and experimental control systems.
 Bonsai combines a high-level event algebra for data streams with an integrated
-development environment (IDE) and a strong library of plugins supporting
-multiple hardware and software packages used by the biomedical research
-community (Figures~\ref{fig:bonsai}a and~\ref{fig:bonsai}b).
+development environment (IDE) and an extensive library of plugins supporting
+multiple hardware and software packages used by the neuroscience research
+community (Figure~\ref{fig:bonsai}A-B).
 %
 A Bonsai graphical program consists of one or more source data streams (e.g. neural activity, video, audio, sensors, etc)
 and several interconnected operators that transform input to output
-datastreams (Figure~\ref{fig:bonsai}c).
+datastreams (Figure~\ref{fig:bonsai}C).
 
 Standard software tools for data analysis (ImageJ, MATLAB, R, etc.) have been
 transformative to the progress of increasingly “data-rich” sciences. However,
@@ -23,8 +25,11 @@ must be explored, place an increasing burden on experimenters to integrate
 highly specialised equipment in unique configurations, while often lacking
 expertise in the relevant engineering fields.
 
-Bonsai has been in adopted in hundreds of laboratories worldwide and has the largest user base in the systems neuroscience community (Figures~\ref{fig:bonsai}d-\ref{fig:bonsai}f).  In the last year alone, more than 1,000 new users incorporated Bonsai into their experimental protocols. The surprising rate of adoption of Bonsai in non-programmer experimental
-labs highlights the need for accessible programming tools that enable
+Reproducibility is a key element of Bonsai's design.  Data acquisition and experimental control protocols can be 
+replicated in any laboratory by just sharing a Bonsai configuration file. 
+
+Bonsai has been in adopted in hundreds of laboratories worldwide and has the largest user base in the systems neuroscience community (Figure~\ref{fig:bonsai}D-F).  In the last year alone, more than 1,000 new users incorporated Bonsai into their experimental protocols. The surprising rate of adoption of Bonsai in non-programmer experimental
+labs highlights the need for accessible design tools that enable
 state-of-the-art technology but also allow researchers to stay in control and flexibly
 change their experimental paradigms.  Many open-source software tools are
 either inaccessible to non-programmers, or too constrained to be of general use
@@ -42,40 +47,9 @@ Laboratory\footnote{\href{https://www.internationalbrainlab.com/}{https://www.in
 and the Allen Institute for Brain
 Science\footnote{\href{https://alleninstitute.org/what-we-do/brain-science/}{https://alleninstitute.org/what-we-do/brain-science/}}.
 %
-More recently, Bonsai has started to expand outside the domain of neuroscience
-into biomedical research and biotechnology tool development, and even outside
-academia into public outreach and education programs.
-
-\subsubsection*{Other resources in the subject area}
-
-The space of technologies serving experimental control and behaviour monitoring
-is large, and is traditionally occupied either by domain-specific graphical
-user interfaces for control and recording of specific devices and experiment
-types (e.g. Open Ephys
-GUI\footnote{\href{https://open-ephys.org/gui/}{https://open-ephys.org/gui/}},
-Miniscope DAQ
-Software\footnote{\href{https://github.com/Aharoni-Lab/Miniscope-DAQ-QT-Software}{https://github.com/Aharoni-Lab/Miniscope-DAQ-QT-Software}})
-or by real-time control frameworks for specifying task logic using state
-machine or similar formalisms (e.g. NIMH ML
-(nih.gov)\footnote{\href{https://monkeylogic.nimh.nih.gov/}{https://monkeylogic.nimh.nih.gov/}},
-pyControl\footnote{\href{https://pycontrol.readthedocs.io/en/latest/}{https://pycontrol.readthedocs.io/en/latest/}},
-Autopilot\footnote{\href{https://docs.auto-pi-lot.com/en/latest/}{https://docs.auto-pi-lot.com/en/latest/}},
-Sanworks\footnote{\href{https://sanworks.io/index.php}{https://sanworks.io/index.php}}).
-These dedicated interfaces are typically very comfortable for experimenters
-operating within the specific domain that the tool is designed for, but tend to
-become unwieldy when there is a need to introduce a new device or variation of
-a task which is outside the scope of the framework. The alternative is to use a
-more general programming language like Python or MATLAB, with the disadvantage
-of the code being harder to understand, maintain, and change. Programming
-languages like LabVIEW straddle the middle ground and provide a high-level and
-flexible visual interface for composing data acquisition and control systems
-themselves. Unlike Bonsai, however, the graphical elements of LabVIEW are
-heterogeneous and very fine grained, creating the need for long and complicated
-logical structures to implement even a simple experimental control system. By
-providing an extremely simple, yet flexible, visual syntax, Bonsai opens the
-opportunity even for complete non-programmers to design and successfully
-customize relatively complex experiments from the ground up. It is mostly this
-capability which has made Bonsai so attractive as a standard tool in
-experimental neuroscience.
+% LEAVE OUT FOR THIS GRANT:
+% More recently, Bonsai has started to expand outside the domain of neuroscience
+% into biomedical research and biotechnology tool development, and even outside
+% academia into public outreach and education programs.
 
 

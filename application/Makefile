@@ -1,6 +1,9 @@
-all: caseForSupport.pdf workPlan.pdf
+all: caseForSupport.pdf workPlan.pdf narrativeCVs.pdf
 
 workPlan.pdf: workPlan.tex
+	pdflatex $<
+
+narrativeCVs.pdf: narrativeCVs.tex narrativeCVSahani.tex narrativeCVRapela.tex
 	pdflatex $<
 
 %.pdf: caseForSupport.tex backgroundToTheResource.tex bonsai.tex detailsOfResource.tex communityDemand.tex userEngagement.tex trackRecord.tex otherResources.tex

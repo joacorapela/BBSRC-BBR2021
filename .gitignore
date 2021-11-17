@@ -1,4 +1,5 @@
 *~
+*bak
 *.swp
 main.*
 !main.tex
@@ -7,3 +8,5 @@ caseForSupport.*
 costing/tasks.txt
 workPlan.*
 !workPlan.tex
+narrativeCVs.*
+!narrativeCVs.tex

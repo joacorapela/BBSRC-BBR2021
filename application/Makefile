@@ -1,6 +1,9 @@
-all: caseForSupport.pdf workPlan.pdf narrativeCVs.pdf
+all: caseForSupport.pdf workPlan.pdf narrativeCVs.pdf coverLetter.pdf
 
 workPlan.pdf: workPlan.tex
+	pdflatex $<
+
+coverLetter.pdf: coverLetter.tex
 	pdflatex $<
 
 narrativeCVs.pdf: narrativeCVs.tex narrativeCVSahani.tex narrativeCVRapela.tex

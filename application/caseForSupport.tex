@@ -16,8 +16,9 @@
             urlcolor  = blue!50!black!50,
             citecolor = blue!50!black!50,
             anchorcolor = blue!50!black!50]{hyperref}
-\usepackage{natbib}
-\usepackage{apalike}
+\usepackage[super]{natbib}
+\renewcommand{\citet}[1]{[\citenum{#1}]}
+% \usepackage{apalike}
 \usepackage{graphicx}
 \usepackage{verbatim}
 
@@ -49,6 +50,17 @@
 \titlespacing*{\subsubsection}{0pt}{*0}{*0}
 \titleformat*{\paragraph}{\headfmt}
 \titlespacing*{\paragraph}{0pt}{*0.5}{*0}
+
+\usepackage{enumitem}
+\setlist[description]{
+    topsep=0pt,
+    itemsep=0pt,
+    partopsep=0pt,
+    parsep=0pt,
+    font=\headfmt,
+    leftmargin=1em}
+
+\renewcommand{\footnote}[1]{ [#1]}
 
 \title{Case for Support}
 \author{}
@@ -100,23 +112,22 @@ particular emphasis on \textbf{machine-intelligence-enabled, real-time
         circuits in different brain regions. Extending the Bonsai ecosystem
         will facilitate new types of experiment that causally connect neural
         circuits with elemental behavioural processes. Long-term, this research
-        will help identify the missing links between circuit dysfunction and
+        will help identify missing links between circuit dysfunction and
         behavioural deficits in neurological or mental health disorders, and
-        will pave the way for the development of new neural circuit biomarkers
-        and therapies. The Bonsai ecosystem will also enable the experimental
+        will support the development of new neural circuit biomarkers
+        and therapies. The Bonsai ecosystem will also enable  experimental
         testing of emerging theories of brain function and learning, and thus
         contribute to the neuro-inspired machine learning algorithms that fuel
         intelligent technologies, increasingly important in our society.  The
         enhanced Bonsai platform will also support purely behavioural
-        experiments, in which the animals' posture, body parts or location are
-        tracked in real-time, allowing investigation of environmental variables
-        or captivity on their behaviour, especially important for assessment of
+        experiments, which track animals' posture, body parts or location in real-time, to investigate impacts of environmental variables
+        or captivity on behaviour - crucial for
         animal welfare.   
 
     \item[Improve reproducibility in behavioural and brain sciences] Lack of
         reproducible results slows down scientific progress and incurs personal
         and economic costs to scientists and funders.  In neuroscience,  many
-        behavioural and neural animal studies have been to be difficult to
+        behavioural and neural animal studies have been difficult to
         reproduce, and experiments are rarely replicated across laboratories.
         By creating a resource that standardises and enables reproducible
         experimental design/control, as well as analysis of neural and
@@ -128,13 +139,13 @@ particular emphasis on \textbf{machine-intelligence-enabled, real-time
         worldwide develop custom, unique solutions to their experimental
         control and analysis needs. Some laboratories also lack the technical
         know-how to either develop their own software for experimental hardware
-        control or write software for the state-of-the-art analysis of rich
+        control or write software for state-of-the-art analysis of rich
         neural and behavioural data, increasingly reliant on latest machine
         learning algorithms. The proposed upgrading of the open-source and
-        community empowered Bonsai ecosystem with a toolbox of online and
-        offline analytical tools, that can dovetail with closed-loop
+        community-empowered Bonsai ecosystem with a toolbox of online and
+        offline analytical tools, which can dovetail with closed-loop
         experimental requirements, will (i) allow the deployment of such tools
-        into laboratories that lack the expertise, (ii) reduce the need to
+        into laboratories that lack the necessary expertise, (ii) reduce the need to
         reinvent the same tools in multiple labs (cost/time efficiency) and
         (iii) concomitantly streamline and standardise the experimental data
         processing streams in systems neuroscience.
@@ -147,7 +158,7 @@ particular emphasis on \textbf{machine-intelligence-enabled, real-time
 
 \input{trackRecord}
 
-\bibliographystyle{apalike}
-\bibliography{bonsai,epsrcSoftwareForResearchCommunities,monitoringBehavior,stateSpaceModels,machineLearning,gaussianProcesses,spikeSorting,tomsCitations}
+\bibliographystyle{unsrtveryabbrv}
+\bibliography{journalsabbrvnodots,bonsai,epsrcSoftwareForResearchCommunities,monitoringBehavior,stateSpaceModels,machineLearning,gaussianProcesses,spikeSorting,tomsCitations}
 
 \end{document}

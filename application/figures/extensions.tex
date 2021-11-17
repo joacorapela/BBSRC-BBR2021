@@ -1,37 +1,37 @@
-% \documentclass{standalone}
-% %% Fonts, etc.
+\documentclass{standalone}
+%% Fonts, etc.
 
-% %% Language and font encodings
-% \usepackage[english]{babel}
-% \usepackage[utf8x]{inputenc}
-% \usepackage[T1]{fontenc}
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
 
-%  \usepackage[scaled=0.92]{helvet} \renewcommand{\familydefault}{\sfdefault}
-%  \usepackage{xcolor}
-% % \usepackage{soul} % \ul \st \hl
-
-
-% %% Maths
-
-% % \usepackage{amssymb,amsmath}
-% % \input m.macros
-% % \input m.symbols
+ \usepackage[scaled=0.92]{helvet} \renewcommand{\familydefault}{\sfdefault}
+ \usepackage{xcolor}
+% \usepackage{soul} % \ul \st \hl
 
 
-% %% Graphics
+%% Maths
 
-% \usepackage{graphicx,tikz}
-% \usetikzlibrary{positioning}
-% \usetikzlibrary{fit}
-% \usetikzlibrary{calc}
+% \usepackage{amssymb,amsmath}
+% \input m.macros
+% \input m.symbols
 
 
+%% Graphics
+
+\usepackage{graphicx,tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\usetikzlibrary{calc}
 
 
 
 
-% %% Document
-% \begin{document}
+
+
+%% Document
+\begin{document}
 
 \begin{tikzpicture}[
     ML/.style={text width=10em, rounded corners,
@@ -42,11 +42,12 @@
 
   \node[text width=10em, font={\bf}, align=center]
        (bonsai)
-       {\includegraphics[width=7em]{bonsai-lettering}\\
+       {\includegraphics[width=5em]{bonsai-lettering}\\
          Bonsai core (C\#)};
 
        
- \coordinate [below = 5em of bonsai.south] (A);
+  \coordinate [above right = 2.5ex and 13em of bonsai.east] (A);
+  \draw[<->, line width=1mm, gray] (bonsai.east) ++(-2em,0) -- +(2.5em,0);
 
   \node[below left=0 and 1em of A, Ext]
        (lang)
@@ -69,8 +70,8 @@
   \node[fit=(lang) (abstr) (intr), line width=1mm, draw=blue!50!black!50, rounded
     corners, inner sep=1ex] (intr box) {};
 
- \coordinate [below = 12em of A] (B);
-
+ \coordinate [below left = 11em and 5em of A] (B);
+ \draw[<->, line width=1mm, gray] (intr box.south) -- +(0,-2.5em);
 
  \node[below=0 of B, ML]
        (signal)
@@ -104,9 +105,7 @@
     corners, inner sep=1ex] (ml box) {};
 
 
-  \draw[<->, line width=1mm, gray] (bonsai) -- (intr box);
 
-  \draw[<->, line width=1mm, gray] (intr box) -- (ml box);
 
   
   
@@ -117,7 +116,7 @@
        
 \end{tikzpicture}
 
-% \end{document}
+\end{document}
 
 % Local Variables:
 % mode: latex

@@ -26,9 +26,8 @@ However extensions must be written in Bonsai's native C\# programming language.
 This specificity restricts the range of potential contributors to the ecosystem.
 %
 It also hinders easy incorporation of published analytic tools, many of which are implemented within other interpreted language systems such as Python, R, or MATLAB.  
-
-\begin{wrapfigure}{R}{0.4\textwidth}
-  \includegraphics[width=0.4\textwidth]{figures/extensions.pdf}
+\begin{wrapfigure}{R}{0pt}
+  \includegraphics[width=0.5\textwidth]{figures/extensions.pdf}
 %   \input{figures/extensions}
   \caption{Proposed extensions to Bonsai}
   \label{fig:proposedBonsaiExtensions}
@@ -42,9 +41,10 @@ These include:
 %
 Python.NET\footnote{https://github.com/pythonnet/pythonnet},
 %
-R.Net\footnote{https://github.com/rdotnet/rdotnet}
+R.Net\break \footnote{https://github.com/rdotnet/rdotnet}
 %
-and the native .NET interface shipped with MATLAB\footnote{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}.
+and the native .NET interface shipped with MATLAB.
+% \footnote{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}.  TOO LONG
 %
 If necessary, we will also incorporate direct inter-runtime communication using the messaging library ZeroMQ\footnote{https://zeromq.org/}.
 
@@ -174,9 +174,9 @@ other informative features from video recordings.
         low-dimensional representations facilitate downstream behavioral and
         neural analyses. It is based on autoencoders and is implemented in
         Python\footnote{code for PS-VAE is embedded in the BehaveNet code
-        https://github.com/themattinthehatt/behavenet.
-        Please refer to class \texttt{PSVAE} in 
-        \texttt{behavenet.models.vaes.py}.}. After trained it can be used
+        https://github.com/themattinthehatt/behavenet.%
+        % Please refer to class \texttt{PSVAE} in texttt{behavenet.models.vaes.py}.
+        }. After trained it can be used
         online to extract low-dimensional features and perform downstream
         processing.
 
@@ -239,7 +239,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
 \begin{description}
 
     \item[Gaussian Linear Dynamical
-        System]\citep[GLDS;][]{andersonAndMoore12}: with sufficiently large
+        System]\citep[GLDS][]{andersonAndMoore12}: with sufficiently large
         bin sizes, spike counts can be modelled as Gaussian random processes.
         This Gaussianity assumption greatly simplifies the estimation of
         parameters of linear dynamical system (LDS) models, as well as
@@ -252,7 +252,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
         which allows the use of external
         inputs\footnote{https://github.com/joacorapela/kalmanFilter}.
 
-    \item[Poisson Linear Dynamical System]\citep[PLDS;][]{mackeEtAl15}: for
+    \item[Poisson Linear Dynamical System]\citep[PLDS][]{mackeEtAl15}: for
         smaller bin sizes, spike counts are better modelled as Poisson random
         processes, rather than Gaussian ones. The algorithm described in
         \citet{mackeEtAl15} can estimate the parameters of a LDS, and make
@@ -418,8 +418,8 @@ We propose to assess the progress of the proposed project using three different
 types of targets.
 %
 First, we will have targets associated with each release to the general public
-of the software components described in Sections~\ref{sec:infrastructure}
-and~\ref{sec:functionality}.
+of the software components described above. 
+% in Sections~\ref{sec:infrastructure} and~\ref{sec:functionality}.
 %
 Second, we will monitor user activity in the Bonsai
 forum\footnote{https://groups.google.com/g/bonsai-users},

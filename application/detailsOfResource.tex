@@ -27,7 +27,7 @@ This restricts the range of potential contributors to the ecosystem.
 %
 It also hinders incorporation of published analytic tools, many of which are implemented within other interpreted language systems such as Python, R, or MATLAB.  
 \begin{wrapfigure}{R}{0pt}
-  \includegraphics[width=0.5\textwidth]{figures/extensions.pdf}%
+  \includegraphics[width=0.6\textwidth]{figures/extensions.pdf}%
 %   \input{figures/extensions}
   \caption{Proposed extensions to Bonsai}
   \label{fig:proposedBonsaiExtensions}
@@ -39,14 +39,14 @@ Where possible, the extensions will be based on existing pipeline tools that all
 %
 These include:
 %
-Python.NET\footnote{https://github.com/pythonnet/pythonnet},
+Python.NET\footnote{github.com/pythonnet/pythonnet},
 %
-R.Net\break \footnote{https://github.com/rdotnet/rdotnet}
+R.Net\break \footnote{github.com/rdotnet/rdotnet}
 %
 and the native .NET interface shipped with MATLAB.
 % \footnote{https://uk.mathworks.com/help/matlab/matlab\_external/using-net-from-matlab-an-overview.html}.  TOO LONG
 %
-If necessary, we will also incorporate direct inter-runtime communication using the messaging library ZeroMQ\footnote{https://zeromq.org/}.
+If necessary, we will also incorporate direct inter-runtime communication using the messaging library ZeroMQ\footnote{zeromq.org/}.\\
 
 \subsection{General abstraction framework for data processing}
 \label{sec:generality}
@@ -255,7 +255,7 @@ lacks functionality to process these recordings. Here we propose Bonsai software
         \citet{mackeEtAl15} can estimate the parameters of a LDS, and make
         inferences about its states, from Poisson distributed observations.  We
         propose to interface Bonsai with a Matlab implementation of
-        PLDS\footnote{https://bitbucket.org/mackelab/ pop\_spike\_dyn/src/master/}
+        PLDS\footnote{bitbucket.org/mackelab/ pop\_spike\_dyn/ src/master/}
         that uses variational inference. PLDS does not provide online estimates
         of the states, since data from a full trial is needed for state
         inference.
@@ -415,7 +415,7 @@ of the software components described above.
 % in Sections~\ref{sec:infrastructure} and~\ref{sec:functionality}.
 %
 Second, we will monitor user activity in the Bonsai
-forum\footnote{https://groups.google.com/g/bonsai-users},
+forum\footnote{groups.google.com/g/bonsai-users},
 and publications citing Bonsai that use the new ML functionality,
 to estimate the number of Bonsai users using this functionality.
 %

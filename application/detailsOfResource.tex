@@ -210,7 +210,7 @@ electrodes.
 However, for the type of BCI application proposed here, previous studies have
 shown that spike sorting is not beneficial and high performance can be retained
 by just detecting spikes, without assigning them to invidivual
-neurons~\citep{trautmannEtAl19,todorovaEtAl14}. Thus, we will only detect spikes with a simple zero-corssing method,
+neurons~\citep{trautmannEtAl19,todorovaEtAl14}. Thus, we will only detect spikes with a simple zero-crossing method,
 and not assign them to individual neurons.  We will, however, integrate into
 Bonsai two offline spike sorting methods, Kilosort~\citep[][written in Matlab]{pachitariuEtAl16}, and MountainSort~\citep[][written in
 Python]{chungEtAl17}, to provide Bonsai users with spike sorting functionality for
@@ -247,7 +247,7 @@ lacks functionality to process these recordings. Here we propose Bonsai software
         distribution can be used online for experimental control, as we
         propose in Section~\ref{sec:comparisonOfMultipleMethods}. We will use an R implementation of GLDS
         which allows the use of external
-        inputs\footnote{https://github.com/joacorapela/kalmanFilter}.
+        inputs\footnote{https://github.com/joacorapela/ kalmanFilter}.
 
     \item[Poisson Linear Dynamical System]\citep[PLDS][]{mackeEtAl15}: for
         smaller bin sizes, spike counts are better modelled as Poisson random

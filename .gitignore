@@ -10,3 +10,5 @@ workPlan.*
 !workPlan.tex
 narrativeCVs.*
 !narrativeCVs.tex
+coverLetter.*
+!coverLetter.tex

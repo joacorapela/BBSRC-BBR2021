@@ -1,30 +1,48 @@
 \section{Resource management}
 \textcolor{red}{I'm making this up -- Goncalo please comment/correct.}
 %
-As an open source environment developed over almost 10 years, Bonsai 
-has well-established user-community-based management structures.
+As an open source project developed over almost 10 years, Bonsai 
+has well-established management practices built around the user community.
 %
-The core system and the majority of extension packages are hosted on a
-publicly accessible website at \url{bonsai-rx.org}.
+The source code for the core system and the majority of extension packages
+is hosted on GitHub at \url{github.com/bonsai-rx}.
+%
+The documentation, including learning materials and all relevant community
+links are published in a publicly accessible website at \url{bonsai-rx.org}.
+%
+A community user forum is available as a public Google Group with an active
+user base of more than 700 users (Figure~\ref{fig:bonsai}f) and several
+new questions and answers exchanged every day.
 %
 Package installation and updates are supported by standalone package
-management software included within the core Bonsai distribution.
+management software included within the core Bonsai distribution and hosted
+in a shared centralized and curated repository.
 %
-This ensures that bugfixes and enhancements are easily available but
-under full user control (to ensure working experiments are not
-disrupted by changes in the system).
-
-Best-practice code review procedures are followed prior to including
-package updates.  \textcolor{red}{Goncalo/Joaquin -- could you expand
-  on this?}
+This ensures that bugfixes and enhancements are made easily available but
+also importantly allows for reproducible deployment of user environments
+to ensure working experiments are not disrupted by changes in the system.
+Large-scale experimental projects such as the International Brain Laboratory
+have leveraged this capability of Bonsai to standardize data acquisition and
+control software across dozens of laboratories around the world.
+%
+Community technology previews are made available through the package manager,
+providing early adopters the possibility of opting-in to the latest features
+prior to making them generally available. This allows for the community
+to help identify bugs and report issues with new features on GitHub, thereby
+distributing bug reporting and triage and overall improving the quality of
+stable releases.
 
 \textcolor{red}{Testing}
 
+The core compiler and IDE is extensively tested, and also takes advantage of
+a strong type system to greatly reduce bugs at compile-time. A set of best
+practices for leveraging this infrastructure for building new packages is
+in place.
+
 The software engineers recruited to this project will work with our
-collaborators at Neurogears Ltd, to strengthen and maintain these
+collaborators at NeuroGEARS Ltd, to strengthen and maintain these
 practices.  Once fully familiar with the Bonsai core architecture they
-will participate in review of pull requests and other code
-contributions.  
+will participate in review of pull requests and other code contributions.
 
 % To complement the management structure document, proposals may outline
 % how the resource management and advisory structures will operate including
@@ -36,21 +54,38 @@ contributions.
 
 \section{Long-term sustainability planning}
 
-Bonsai is a freely available open-source resource, already widely adopted within the systems neuroscience and behavioural science communities (see Fig~\ref{fig:bonsai}).  
+Bonsai is a freely available open-source resource, already widely adopted within
+the systems neuroscience and behavioural science communities (see Fig~\ref{fig:bonsai}).  
 %
-Current contributors include other large open projects (OpenEphys, \textcolor{red}{\dots}), as well as companies developing and supplying new hardware devices  (\textcolor{red}{\dots}).
+Current contributors include other large open projects (OpenEphys, DeepLabCut),
+as well as companies developing and supplying new hardware devices  (Neurophotometrics).
 %
-This level of community uptake, engagement, and commitment provides a foundation for long-term sustainability of the resource.
+This level of community uptake, engagement, and commitment provides a foundation for
+long-term sustainability of the resource.
 
-Neurogears Ltd is a keystone of this community and a key a collaborator in the current proposal.  As a company founded by the original developer of Bonsai, it helps to support and expand the user base well beyond the life of the current proposal.  Neurogears provides quality control and curation for core Bonsai code.  \textcolor{red}{other ways NG contributes ...} 
+NeuroGEARS Ltd is a keystone of this community and a key collaborator in the current proposal.
+As a company founded by the original developer of Bonsai, it helps to support and expand the
+user base well beyond the life of the current proposal. NeuroGEARS currently provides
+quality control and curation for the core Bonsai code, as well as providing training and support
+services for research institutions around the world who want to start using Bonsai.
+Finally, NeuroGEARS also facilitates knowledge transfer across users and institutions adopting
+Bonsai, by moderating the community user forums and collaborating with organisations
+who want to build new innovative research projects on top of Bonsai, as is the case with the
+current proposal.
 
-The specific contributions developed as part of the current project will form new components within the core Bonsai package. 
+The specific contributions developed as part of the current project will form new core
+components and packages within the Bonsai ecosystem. The new language integration packages are
+of particular relevance to the long-term sustainability of Bonsai, as they will dramatically
+increase the interoperability of Bonsai with existing software development communities which are
+already well established in basic science (MATLAB, Python, R).
 %
-They will be developed with input from the advisory panel, early public distribution, user testing within the SWC, and planned workshops, ensuring close user engagement from the beginning of the development cycle and so building momentum for their use, support and dissemination.
+The opportunity to develop these new packages with input from the core advisory panel of Bonsai,
+and early public distribution and user testing within the SWC and planned workshops, will ensure
+solid and broad user engagement from the beginning of the development cycle and will therefore
+build momentum for their use, support and dissemination.
 %
-\textcolor{red}{Can we say that NG will take over responsibility for maintenance and support beyond the project?}
-
-
-
-
+The close collaboration with the core maintainers of the Bonsai ecosystem at NeuroGEARS will
+allow them to take over responsibility for maintenance and support of these packages beyond the
+end of the project, following the same principles of open-source and free sharing of knowledge
+that characterises the entire Bonsai ecosystem.
 

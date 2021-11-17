@@ -1,0 +1,125 @@
+% \documentclass{standalone}
+% %% Fonts, etc.
+
+% %% Language and font encodings
+% \usepackage[english]{babel}
+% \usepackage[utf8x]{inputenc}
+% \usepackage[T1]{fontenc}
+
+%  \usepackage[scaled=0.92]{helvet} \renewcommand{\familydefault}{\sfdefault}
+%  \usepackage{xcolor}
+% % \usepackage{soul} % \ul \st \hl
+
+
+% %% Maths
+
+% % \usepackage{amssymb,amsmath}
+% % \input m.macros
+% % \input m.symbols
+
+
+% %% Graphics
+
+% \usepackage{graphicx,tikz}
+% \usetikzlibrary{positioning}
+% \usetikzlibrary{fit}
+% \usetikzlibrary{calc}
+
+
+
+
+
+
+% %% Document
+% \begin{document}
+
+\begin{tikzpicture}[
+    ML/.style={text width=10em, rounded corners,
+      fill=green!50!black!30, draw=green!50!black, very thick},
+    Ext/.style={text width=10em, rounded corners,
+      fill=blue!50!black!30, draw=blue!50!black, very thick}
+    ]
+
+  \node[text width=10em, font={\bf}, align=center]
+       (bonsai)
+       {\includegraphics[width=7em]{bonsai-lettering}\\
+         Bonsai core (C\#)};
+
+       
+ \coordinate [below = 5em of bonsai.south] (A);
+
+  \node[below left=0 and 1em of A, Ext]
+       (lang)
+       {\textbf{Language interface:}\\
+         C\# $\leftrightarrow$ Python\\
+         $\qquad \leftrightarrow$ R\\
+         $\qquad \leftrightarrow$ MATLAB
+       };
+
+
+  \node[below right=0 and 1em of A, Ext]
+       (abstr)
+       {\textbf{Analysis layers:}\\
+         \texttt{Estimator}\\
+         \texttt{Predictor}\\
+         \texttt{Tranformer}};
+
+  \node[above=1ex of A, text=blue!50!black, font={\bf}, inner sep=0]  (intr) {Interface layers};
+
+  \node[fit=(lang) (abstr) (intr), line width=1mm, draw=blue!50!black!50, rounded
+    corners, inner sep=1ex] (intr box) {};
+
+ \coordinate [below = 12em of A] (B);
+
+
+ \node[below=0 of B, ML]
+       (signal)
+       {\textbf{Signal analysis:}\\
+         Spike detection\\
+         LFP extraction\\
+         Decoding};
+
+  \node[below left=0 and 1em of signal.north west, ML]
+       (video)
+       {\textbf{Video analysis:}\\
+         Motion sequencing\\
+         Behaviour decoding\\
+         Interpretable latents};
+       
+       
+  \node[below right=0 and 1em of signal.north east, ML]
+       (dimred)
+       {\textbf{Population analysis:}\\
+         Gaussian LDS\\
+         Poisson LDS\\
+         HMM\\
+         GPFA\\
+         svGPFA\\
+         LFADS};
+
+  \node[above=1ex of B, text=green!50!black, font={\bf}, inner sep=0] (ml)
+       {Machine-intelligence algorithms};
+
+  \node[fit=(video) (signal) (dimred) (ml), line width=1mm, draw=green!50!black!50, rounded
+    corners, inner sep=1ex] (ml box) {};
+
+
+  \draw[<->, line width=1mm, gray] (bonsai) -- (intr box);
+
+  \draw[<->, line width=1mm, gray] (intr box) -- (ml box);
+
+  
+  
+
+  %% \node[below = 15em of bonsai, ML]
+  %% (compare)
+  %%      {\textbf{Method comparison}};
+       
+\end{tikzpicture}
+
+% \end{document}
+
+% Local Variables:
+% mode: latex
+% eval: (set-fill-column 80)
+% End:

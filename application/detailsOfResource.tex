@@ -27,6 +27,13 @@ This specificity restricts the range of potential contributors to the ecosystem.
 %
 It also hinders easy incorporation of published analytic tools, many of which are implemented within other interpreted language systems such as Python, R, or MATLAB.  
 
+\begin{wrapfigure}{R}{0.4\textwidth}
+  \includegraphics[width=0.4\textwidth]{application/figures/extensions.pdf}
+%   \input{figures/extensions}
+  \caption{Proposed extensions to Bonsai}
+  \label{fig:proposedBonsaiExtensions}
+\end{wrapfigure}
+
 We will extend the Bonsai package interface to allow direct interaction with the runtime execution environments that implement these common languages.  
 %
 Where possible, the extensions will be based on existing pipeline tools that allow C\#-based programs to interact with a number of alternative run-time engines.
@@ -44,7 +51,7 @@ If necessary, we will also incorporate direct inter-runtime communication using 
 \subsection{General abstraction framework for data processing}
 \label{sec:generality}
 
-To avoid the need to re-implement a single data analysis algorithm in multiple different contexts we will create a set of abstract machine-intelligence operators in Bonsai that can be configured to map between data substrates and machine-learning algorithms.
+To avoid the need to re-implement a single data analysis algorithm to handle multiple different data types we will create a set of abstract machine-intelligence operators in Bonsai that can be configured to map between data substrates and machine-learning algorithms.
 %
 The planned abstraction layer is based on the successful \texttt{scikit-learn} Python
 library \citep{buitinckEtAl13}.
@@ -53,212 +60,82 @@ By analogy to the interfaces provided by this library we will introduce three ty
 %
 Interactions between these different object types will allow a single algorithm class (implemented by \texttt{Estimator} and \texttt{Predictor} operators) to act on many different data streams.
 %
-An example closed-loop system allowing  control of a computer cursor with neural activity is shown represented in
-Figure~\ref{fig:proposedBonsaiExtensions}b. The Bonsai
-graphical program for this system is given in
-Figure~\ref{fig:proposedBonsaiExtensions}c. The
-objects instantiating the SpikeThresholdDetector, the KiloSortSpikeSorter and
-GPFAlatentsExtractor will implement the \texttt{Transformer} interface (blue),
-and the object instantiating the TimeSeriesForestClassifier will implement the
-\texttt{Predictor} interface (green; Figure~\ref{fig:proposedBonsaiExtensions}c, top).
-%
-The parameters for the SpikeThresholdDetector and the KiloSortSpikeSorter will
-be set manually by the user, as is commonly done in practice. The parameters of
-the GPFAlatentsExtractor will be learnt offline in an unsupervised way by an
-\texttt{Estimator} (red) in a second pipeline
-(Figure~\ref{fig:proposedBonsaiExtensions}c, middle).
-Finally, the parameters of the TimeSeriesForestClassifier will also be learnt
-offline, but in a supervised way, by another \texttt{Estimator} in a third
-pipeline (Figure~\ref{fig:proposedBonsaiExtensions}c, bottom).
-
-
-Using the previous software, we will build C\# wrappers around machine
-intelligence programs written in other languages, so that these programs
-implement the \texttt{Estimator}, \texttt{Predictor} or \texttt{Transformer}
-interfaces and can be integrated into Bonsai as machine intelligence operators.
-
-a package management , and its community of users have
-already extended Bonsai's functionality with several contributed packages.
-%
-However, these packages need to
-be written in C\#, while most current neuroscience data analysis methods are
-written in Python, R or Matlab. We propose to add to Bonsai capabilities to
-communicate with software written in these languages
-(Section~\ref{sec:softwareInfrastructure}).  These capabilities will allow a
-large number of neuroscience data analysis methods to be easily integrated into
-the Bonsai ecosystem and will provide Bonsai users a large repertoire of
-advanced machine learning methods for their behavioural and neural data
-analysis.
-%
-Using these capabilities we will integrate into Bonsai an initial set of
-state-of-the art behavioural and neural data analysis methods
-(Section~\ref{sec:functionality}).
-
-% \subsubsection{Extensibility}
-% \label{sec:extensibility}
-
-% To incorporate machine learning functionality into the Bonsai ecosystem, we
-% could
-% implement this functionality directly into Bonsai, as done in
-% \texttt{scikit-learn}. Alternatively, or in addition, we could build software
-% infrastructure to facilitate the integration of existing machine learning
-% software into Bonsai. We chose to begin with the second alternative because
-% high-quality implementations of machine learning functionality already exist,
-% which can be quickly integrated into the Bonsai ecosystem. In addition, the
-% second alternative is more sustainable, as it will allow the continued addition
-% of new machine learning functionality to Bonsai after the completion of the
-% BBSRC-BBR funding period. Later we may decide to implement some widely-used
-% machine learning functionality directly into Bonsai (e.g., for performance or
-% robustness issues).
+% An example closed-loop architecture allowing online control of a compu|ter cursor with neural activity is shown in Figure~\ref{fig:proposedBonsaiExtensions}b. The Bonsai
+% graphical program for this system is given in Figure~\ref{fig:proposedBonsaiExtensions}c. The
+% objects instantiating the SpikeThresholdDetector, the KiloSortSpikeSorter and
+% GPFAlatentsExtractor implement the \texttt{Transformer} interface (blue),
+% and the object instantiating the TimeSeriesForestClassifier implements the
+% \texttt{Predictor} interface (green; Figure~\ref{fig:proposedBonsaiExtensions}c, top).
+% %
+% While the parameters for the SpikeThresholdDetector and the KiloSortSpikeSorter may
+% be set manually by the user, the parameters of
+% the GPFAlatentsExtractor can be learnt offline in an unsupervised way using an
+% \texttt{Estimator} (red) in a second pipeline
+% (Figure~\ref{fig:proposedBonsaiExtensions}c, middle).
+% Finally, the parameters of the TimeSeriesForestClassifier can also be learnt
+% offline, but in a supervised way, using another \texttt{Estimator} in a third
+% pipeline (Figure~\ref{fig:proposedBonsaiExtensions}c, bottom).
 
 
 
 
 
 
-This initial set of methods should demonstrate to Bonsai users, and to
-machine-learning methods developers, the potential of embedding
-machine-learning functionality into the experimental control loop. We propose
-user engagement activities to expose both of these groups to this
-potential (Section~\ref{sec:userEngagement}).  As data-analysis method
-developers recognise this opportunity, they will become interested in
-contributing their methods to the Bonsai ecosystem, ensuring the
-\textbf{long-term sustainability} of the proposed resource.
+% This initial set of methods should demonstrate to Bonsai users, and to
+% machine-learning methods developers, the potential of embedding
+% machine-learning functionality into the experimental control loop. We propose
+% user engagement activities to expose both of these groups to this
+% potential (Section~\ref{sec:userEngagement}).  As data-analysis method
+% developers recognise this opportunity, they will become interested in
+% contributing their methods to the Bonsai ecosystem, ensuring the
+% \textbf{long-term sustainability} of the proposed resource.
 
-Adding machine learning functionality to the experimental control loop will
-make possible the implementation of experiments with unprecedented levels of
-control. Moreover, equipping experimental scientists without programming
-experience with machine learning tools will considerably increase the
-application of machine learning to the biosciences, which most probably will
-translate into groundbreaking scientific discoveries.
+% Adding machine learning functionality to the experimental control loop will
+% make possible the implementation of experiments with unprecedented levels of
+% control. Moreover, equipping experimental scientists without programming
+% experience with machine learning tools will considerably increase the
+% application of machine learning to the biosciences, which most probably will
+% translate into groundbreaking scientific discoveries.
 
 
 
-Developers of advanced data-analysis methods should become interested in
-integrating them into the Bonsai ecosystem, as it will allow their methods to
-reach the wide Bonsai user community. In addition this integration will enable
-method developers to easily compare the performance of their methods with
-that of many methods previously integrated into the Bonsai ecosystem. Method
-developers will thus become a new type of Bonsai users, which will contribute
-to the \textbf{sustainability} of the proposed resource beyond the period of
-BBSRC-BBR funding.
+% Developers of advanced data-analysis methods should become interested in
+% integrating them into the Bonsai ecosystem, as it will allow their methods to
+% reach the wide Bonsai user community. In addition this integration will enable
+% method developers to easily compare the performance of their methods with
+% that of many methods previously integrated into the Bonsai ecosystem. Method
+% developers will thus become a new type of Bonsai users, which will contribute
+% to the \textbf{sustainability} of the proposed resource beyond the period of
+% BBSRC-BBR funding.
 
 % Scientific advances rely on \textbf{reproducibility}, which in turn depends on standardized tools for experimental control and analysis, shared between laboratories (Baker, 2016; Ioannidis, 2005). Although such tools exist in genetics, astronomy, physics and medicine (Fish et al., 2016; Abdalla et al., 2018, CERN Education, Communications and Outreach Group, 2018, Dickinson et al., 2016, Bycroft et al., 2018), they are mostly lacking in neuroscience, which in itself suffers from a paucity of reproducible discoveries (Baker, 2016; Botvinik-Nezer et al., 2020; Button et al., 2013). Bonsai is an excellent tool for reproducible data acquisition and experimental control. For example, an experiment implemented in Bonsai can be replicated in
 % any laboratory by just sharing a Bonsai configuration file. With the addition of the proposed machine learning functionality Bonsai will extend this
 % reproducibility to the domain of data analysis
 % (Section~\ref{sec:reproducibility}).
 
-\begin{figure} \begin{center}
 
-    \href{http://www.gatsby.ucl.ac.uk/~rapela/bbsrc-bbr21/proposed_bonsai_extensions_combined.png}{\includegraphics[width=5in]{figures/proposed_bonsai_extensions_combined.png}}
+% \begin{figure} \begin{center}
 
-    \caption{Extensions to Bonsai. (A) we propose to integrate machine learning
-    functionality into the experimental control loop by building software
-    infrastructure to allow Bonsai to communicate with existing machine
-    learning software written in Python, R and Matlab. (B) flow chart
-    representing the BCI application that we propose to implement with the
-    machine learning functionality to be added to Bonsai. (C) Bonsai graphic
-    program implementing the BCI application in (B).}
+%     \href{http://www.gatsby.ucl.ac.uk/~rapela/bbsrc-bbr21/proposed_bonsai_extensions_combined.png}{\includegraphics[width=5in]{figures/proposed_bonsai_extensions_combined.png}}
 
-        \label{fig:proposedBonsaiExtensions}
-    \end{center}
-\end{figure}
+%     \caption{Extensions to Bonsai. (A) we propose to integrate machine learning
+%     functionality into the experimental control loop by building software
+%     infrastructure to allow Bonsai to communicate with existing machine
+%     learning software written in Python, R and Matlab. (B) flow chart
+%     representing the BCI application that we propose to implement with the
+%     machine learning functionality to be added to Bonsai. (C) Bonsai graphic
+%     program implementing the BCI application in (B).}
 
-
-\subsection{Software infrastructure}
-\label{sec:infrastructure}
-
-\begin{comment}
-Bonsai does not currently provide machine learning functionality. For instance,
-the close-loop experimental control depicted in
-Figure~\ref{fig:proposedBonsaiExtensions}b cannot be currently implemented in
-Bonsai. It represents the control of an experiment where a subject guides the
-mouse position in a computer screen with her brain activity (Section~\ref{}).
-Nodes highlighted in colour require machine intelligence functionality currently
-not available in Bonsai.
-%
-\end{comment}
-
-We propose to create software infrastructure to add machine intelligence
-functionality to the Bonsai ecosystem in general
-(Section~\ref{sec:generality}) and extensible ways
-(Section~\ref{sec:extensibility}).
+%         
+%     \end{center}
+% \end{figure}
 
 
-\begin{comment}
-\begin{figure}
-   \begin{center}
-       \includegraphics[width=4in]{figures/bci.png}
-       \caption{Close-loop system for controlling a computer cursor with brain activity}
-     \label{fig:bci}
-   \end{center}
-\end{figure}
-
-    The spike detector transforms membrane
-potentials into spike sequences. The spike sorter transforms spikes sequences
-into lists of spikes, one list per neuron. The latents extractor transforms
-multi-neuron lists of spikes into latent trajectories summarising the
-multi-neuron spiking activity.  The neural decoder predicts the next cursor
-position from the latent trajectories.
-\end{comment}
-
-\begin{comment}
-middle, whose output will set
-As in this library,
-there will be three type of machine intelligence operators in Bonsai:
-%
-estimator operators for building and fitting models, predictor operators for
-making predictions and transformer operators for converting data. These
-operators will be implemented by objects exposing the corresponding interfaces.
-
-The estimator interface exposes a fit method for learning a model from training
-data.  This method is called with training data (e.g., supplied as two arrays
-X\_train and y\_train in supervised learning estimators). Its task is to run a
-learning algorithm and to determine model-specific parameters from the training
-data.  All supervised and unsupervised learning algorithms (e.g., for
-classification, regression or clustering) will be offered as objects
-implementing this interface. Machine learning tasks like feature extraction,
-feature selection or dimensionality reduction will also be provided as
-estimators.
-
-The predictor interface extends the notion of an estimator by adding a predict
-method that takes an array X\_test and produces predictions for X\_test, based
-on the learned parameters of the estimator (we call the input to predict
-“X\_test” in order to emphasise that predict generalises to new data). In the
-case of supervised learning estimators, this method typically returns the
-predicted labels or values computed by the model.
-
-Since it is common to modify or filter data before feeding it to a learning
-algorithm, the transformer interface defines a transform method. It takes as
-input some new data X\_test and yields as output a transformed version of
-X\_test. Preprocessing, feature selection, feature extraction and
-dimensionality reduction algorithms will be provided as transformers in Bonsai.
-
-Bonsai will provide the ability to compose new
-estimators from several base estimators. Composition mechanisms can be used
-to combine typical machine learning workflows into a single object which is
-itself an estimator, and can be employed wherever usual estimators can be used.
-Composition of estimators will be done with Pipeline objects that chain multiple estimators into a single one. This is useful
-since a machine learning workflow typically involves a fixed sequence of processing steps (e.g., feature extraction, dimensionality reduction, learning and making
-predictions), many of which perform some kind of learning. A sequence of N such
-steps can be combined into a Pipeline if the first N-1 steps are transformers;
-the last can be either a predictor, a transformer or both.
-
-\end{comment}
-
-
-
-\subsection{Machine intelligence functionality to be added to Bonsai}
+\subsection{Machine intelligence functionality}
 \label{sec:functionality}
 
-We propose to initially add to Bonsai machine intelligence functionality to
-support neuroscience experiments because, currently, neuroscience is the
-research area with the largest number of Bonsai users. Within neuroscience, we
-propose to add functionality for video-based behavioural analysis
-(Section~\ref{sec:videoBasedBehavioralAnalysis}) and for running
-brain-computer-interface (BCI) experiments (Section~\ref{sec:bci}), since these tasks
-are relevant to many Bonsai users, and recent advances in machine learning
-will greatly improve their implementation in Bonsai.
+We will use the frameworks developed above to integrate existing machine-intelligence programs within one or more Bonsai packages.  Based on user input, we have identified initial domains of video-based behavioural analysis (Section~\ref{sec:videoBasedBehavioralAnalysis}) and
+brain-computer-interface (BCI) experiments (Section~\ref{sec:bci}). 
 
 \subsubsection{Video-based behavioral analysis}
 \label{sec:videoBasedBehavioralAnalysis}
@@ -447,44 +324,44 @@ k-nearest neighbour, linear discriminative analysis, support vector machines,
 random forests, artificial neural networks, naive Bayes and Gaussian process
 classifiers.
 
-\paragraph{Comparing multiple data-analysis methods}
+\subsection{Comparing multiple data-analysis methods}
 \label{sec:comparisonOfMultipleMethods}
 
-% We propose to add functionality to Bonsai to facilitate multi-method
-% comparisons in user-supplied datasets.
+We propose to add functionality to Bonsai to facilitate multi-method
+comparisons in user-supplied datasets.
 
-Below we describe a comparison that we
-will perform in Bonsai to asses the relative performance of the methods
-described in the previous sections, using neural recordings from behaving rats.
-These recordings are currently being performed, to address scientific questions,
-at the laboratory of Prof.~Akrami in the SWC.
-%
-Details of the experimental task appear in~\citet{akramiEtAl18}.
-%
-Briefly, in this task there are three nose ports (left, centre, right). Rats
-initiate a trial by inserting their nose in the centre port for the duration of
-the fixation period, until they hear a Go stimulus. During the fixation period
-two stimuli $s_a$ and $s_b$ are presented. Rats should decide which stimuli is
-louder. If $s_a$ is louder than $s_b$ the correct action is to poke the nose
-into the right port in order to collect a liquid reward, and if $s_b$ is louder
-than $s_a$ the correct choice is the left port.
+% Below we describe a comparison that we
+% will perform in Bonsai to asses the relative performance of the methods
+% described in the previous sections, using neural recordings from behaving rats.
+% These recordings are currently being performed, to address scientific questions,
+% at the laboratory of Prof.~Akrami in the SWC.
+% %
+% Details of the experimental task appear in~\citet{akramiEtAl18}.
+% %
+% Briefly, in this task there are three nose ports (left, centre, right). Rats
+% initiate a trial by inserting their nose in the centre port for the duration of
+% the fixation period, until they hear a Go stimulus. During the fixation period
+% two stimuli $s_a$ and $s_b$ are presented. Rats should decide which stimuli is
+% louder. If $s_a$ is louder than $s_b$ the correct action is to poke the nose
+% into the right port in order to collect a liquid reward, and if $s_b$ is louder
+% than $s_a$ the correct choice is the left port.
 
-We will use high-density Neuropixel spike and LFP recordings from the rats
-performing this task to learn low-dimensional representations of spiking
-activity and LFPs during the decision time period (between the presentation of
-the last auditory stimuli and the presentation of the Go stimulus), using the
-methods described in
-Sections~\ref{sec:lowDimensionalRepresentation}
-and~\ref{sec:lowDimensionalRepresentationsOfLFPs}. We will also learn the
-parameters of the classifiers described in Section~\ref{sec:neuralDecoding} to
-optimally classify animal decisions (poke the nose into the right/left port)
-based on the previous low-dimensional representations.
+% We will use high-density Neuropixel spike and LFP recordings from the rats
+% performing this task to learn low-dimensional representations of spiking
+% activity and LFPs during the decision time period (between the presentation of
+% the last auditory stimuli and the presentation of the Go stimulus), using the
+% methods described in
+% Sections~\ref{sec:lowDimensionalRepresentation}
+% and~\ref{sec:lowDimensionalRepresentationsOfLFPs}. We will also learn the
+% parameters of the classifiers described in Section~\ref{sec:neuralDecoding} to
+% optimally classify animal decisions (poke the nose into the right/left port)
+% based on the previous low-dimensional representations.
 
-We will compare the decoding accuracy of all decoders. This comparison will
-tells us, for the auditory working memory task, which neural data type (spikes
-or LFPs), which low-dimensional representation method (e.g., LDS or Gaussian
-processes), and which decoder (e.g., Bayesian or ANN) yields the best decodings
-in state-of-the-art neural recordings from behaving animals.
+% We will compare the decoding accuracy of all decoders. This comparison will
+% tells us, for the auditory working memory task, which neural data type (spikes
+% or LFPs), which low-dimensional representation method (e.g., LDS or Gaussian
+% processes), and which decoder (e.g., Bayesian or ANN) yields the best decodings
+% in state-of-the-art neural recordings from behaving animals.
 
 \begin{comment}
 

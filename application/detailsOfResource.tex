@@ -148,11 +148,10 @@ other informative features from video recordings.
 
 \begin{description}
 
-    \item[Motion sequencing]\citep[MoSeq;][]{wiltschkoEtAl15}: extracts patterns
-        of behaviour that repeat over time (i.e., syllables of behaviour) from
+    \item[Motion sequencing]\citep[MoSeq;][]{wiltschkoEtAl15} extracts patterns
+        of behaviour that repeat over time (i.e. syllables of behaviour) from
         video data. For instance, it parses (in an unsupervised way) the
-        behaviour of a mouse in an arena into segments of time where a mouse
-        was running, rearing and grooming. It uses a hidden Markov model and it
+        behaviour of a mouse in an arena into segments of time where it        was running, rearing and grooming. It uses a hidden Markov model and
         is implemented in Python\footnote{Code for MoSeq can be requested from
         the Datta laboratory, as indicated at
         http://datta.hms.harvard.edu/research/behavioral-analysis/.}.
@@ -163,12 +162,12 @@ other informative features from video recordings.
         models with convolutional autoencoders and discriminative models to
         decode video data from neural recordings. It is implemented in
         Python\footnote{https://github.com/themattinthehatt/behavenet}.
-        After trained it can be used online to decode video data and detect
-        behavioral syllables.
+        After training it can be used online to decode video data and detect
+        behavioural syllables.
 
     \item[Interpretable latents for behavioral videos]\citep[Partitioned
-        Subspace Variational Autoencoder, PS-VAE;][]{whitewayEtAl21}: produces
-        interpretable low-dimensional representations of behavioral videos by
+        Subspace Variational Autoencoder, PS-VAE;][]{whitewayEtAl21} produces
+        interpretable low-dimensional representations of behavioural videos by
         combining the output of pose-estimation algorithms (e.g., DeepLabCut)
         with unsupervised dimensionality reduction methods. These
         low-dimensional representations facilitate downstream behavioral and
@@ -176,7 +175,7 @@ other informative features from video recordings.
         Python\footnote{code for PS-VAE is embedded in the BehaveNet code
         https://github.com/themattinthehatt/behavenet.%
         % Please refer to class \texttt{PSVAE} in texttt{behavenet.models.vaes.py}.
-        }. After trained it can be used
+        }. After training it can be used
         online to extract low-dimensional features and perform downstream
         processing.
 
@@ -185,10 +184,10 @@ other informative features from video recordings.
 \subsubsection{Brain-computer-interface applications}
 \label{sec:bci}
 
-We propose to add functionality into Bonsai for the implementation of
+We propose to add functionality to Bonsai for the implementation of
 brain-computer-interface (BCI) applications illustrated in
 Figure~\ref{fig:proposedBonsaiExtensions}b. In
-this implementation voltage recordings from the brain will be converted into
+this implementation, voltage recordings from the brain will be converted into
 spikes fired by single neurons by a \texttt{SpikeDetector}
 (Section~\ref{sec:spikeDetection}), or to local field potentials (LFP) by an
 \texttt{LFPextractor} (Section~\ref{sec:lfpExtraction}). Next, neural activity
@@ -203,19 +202,18 @@ Spikes from multiple neurons can be detected in recordings from a single
 electrode inserted in neural tissue. Spike sorting is the computational step
 used to assign each spike to the neuron that generated it. Most spike sorting
 algorithms are designed to work offline (i.e., to use a complete recording
-session, after this session terminated). Online spike sorting (i.e., the task
-of assigning spikes to individual neurons as recordings are being aquired) is a
-still unsolved task, specially for recording devices with large number of
+session, after the session terminated). Online spike sorting (i.e., the task
+of assigning spikes to individual neurons as recordings are being acquired) is a
+still unsolved task, especially for recording devices with large number of
 electrodes.
 %
 However, for the type of BCI application proposed here, previous studies have
 shown that spike sorting is not beneficial and high performance can be retained
 by just detecting spikes, without assigning them to invidivual
-neurons~\citep{trautmannEtAl19,todorovaEtAl14}. Thus, for the BCI application
-proposed here we will only detect spikes with a simple zero-corssing method,
+neurons~\citep{trautmannEtAl19,todorovaEtAl14}. Thus, we will only detect spikes with a simple zero-corssing method,
 and not assign them to individual neurons.  We will, however, integrate into
-Bonsai two offline spike sorting methods, Kilosort~\citep[][written in Matlab]{pachitariuEtAl16} and MountainSort~\citep[][written in
-Python]{chungEtAl17}, to provide Bonsai users spike sorting functionality for
+Bonsai two offline spike sorting methods, Kilosort~\citep[][written in Matlab]{pachitariuEtAl16}, and MountainSort~\citep[][written in
+Python]{chungEtAl17}, to provide Bonsai users with spike sorting functionality for
 applications that benefit from it.
 
 \paragraph{LFP extraction}
@@ -232,18 +230,17 @@ functions implemented in Python to compute LFPs.
 
 Bonsai is well integrated with OpenEphys~\citep{siegleEtAl17}, which allows
 scientists to record neural data from a large number of devices. However, it
-lacks functionality to process these recordings. Here we describe software that
-we propose to integrate into Bonsai to extract interpretable summary statistics
+lacks functionality to process these recordings. Here we propose Bonsai software integrations to extract interpretable summary statistics
 (i.e., latent variables) from neural spiking activity.
 
 \begin{description}
 
     \item[Gaussian Linear Dynamical
-        System]\citep[GLDS][]{andersonAndMoore12}: with sufficiently large
+        System]\citep[(GLDS)][]{andersonAndMoore12}: with sufficiently large
         bin sizes, spike counts can be modelled as Gaussian random processes.
         This Gaussianity assumption greatly simplifies the estimation of
         parameters of linear dynamical system (LDS) models, as well as
-        inferences about their states. After models parameters have been
+        inferences about their states. After models' parameters have been
         learned, GLDS can be used online. A unique feature of GLDS is that the
         posterior distribution of states given all observation up to the
         present can be calculated efficiently. This estimate of the posterior
@@ -319,7 +316,7 @@ In order to use low-dimensional representations of spiking activity and/or of
 LFPs to guide the control of experiments, we need a decoder to optimally map
 these low-dimensional representations to experimental controls.
 %
-We propose to implement in Bonsai several decoding/classification algorithms:
+We propose implementing in Bonsai several decoding/classification algorithms:
 k-nearest neighbour, linear discriminative analysis, support vector machines,
 random forests, artificial neural networks, naive Bayes and Gaussian process
 classifiers.
@@ -327,7 +324,7 @@ classifiers.
 \subsection{Comparing multiple data-analysis methods}
 \label{sec:comparisonOfMultipleMethods}
 
-We propose to add functionality to Bonsai to facilitate multi-method
+We propose adding functionality to Bonsai to facilitate multi-method
 comparisons in user-supplied datasets.
 
 % Below we describe a comparison that we
@@ -386,23 +383,19 @@ ZeroMQ\footnote{https://zeromq.org/}.
 \subsection{Testing with neuroscience data}
 \label{sec:testingWithNeuroscienceData}
 
-Multiple groups at the SWC currently use Bonsai for data acquisition and
+Multiple groups at the Sainsbury Wellcome Centre for Neural Circuits and Behaviour (SWC) currently use Bonsai for data acquisition and
 experimental control. Carefully testing the functionality of new software is
-essential to ensure its correct functionality. We propose to use the SWC large
-internal Bonsai user base to test the functionality we will add to Bonsai,
+essential to ensure correct functionality. We propose using the SWC's large Bonsai user base to test the added Bonsai functionality,
 before distributing it to the general public.
 
 \subsection{Reproducibility with Bonsai}
 \label{sec:reproducibility}
 
-The current version of Bonsai facilitates reproducibility of data acquisition
+Bonsai currently facilitates reproducibility of data acquisition
 and experimental control across laboratories. Most data acquisition and
 experimental control aspects of an experiment can be reproduced across
-different laboratories by sharing a Bonsai configuration file.
+different laboratories by sharing a Bonsai configuration file. Adding data analysis functionality to Bonsai will also allow this to be reproduced by Bonsai users. 
 %
-By adding data analysis functionality to Bonsai, besides reproducing my data
-acquisition and experimental control, Bonsai users will also be able to reproduce
-data analysis functionality.
 
 We will demonstrate each machine intelligence functionality added to Bonsai
 (Section~\ref{sec:functionality}) and the multiple
@@ -414,7 +407,7 @@ demonstrations.
 \subsection{Measurable targets}
 \label{sec:measurableTargets}
 
-We propose to assess the progress of the proposed project using three different
+We propose assessing the progress of the proposed project using three 
 types of targets.
 %
 First, we will have targets associated with each release to the general public

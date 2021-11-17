@@ -27,7 +27,7 @@ This specificity restricts the range of potential contributors to the ecosystem.
 %
 It also hinders easy incorporation of published analytic tools, many of which are implemented within other interpreted language systems such as Python, R, or MATLAB.  
 \begin{wrapfigure}{R}{0pt}
-  \includegraphics[width=0.5\textwidth]{figures/extensions.pdf}
+  \includegraphics[width=0.5\textwidth]{figures/extensions.pdf}%
 %   \input{figures/extensions}
   \caption{Proposed extensions to Bonsai}
   \label{fig:proposedBonsaiExtensions}
@@ -51,7 +51,7 @@ If necessary, we will also incorporate direct inter-runtime communication using 
 \subsection{General abstraction framework for data processing}
 \label{sec:generality}
 
-To avoid the need to re-implement a single data analysis algorithm to handle multiple different data types we will create a set of abstract machine-intelligence operators in Bonsai that can be configured to map between data substrates and machine-learning algorithms.
+To avoid the need to re-implement a single data analysis algorithm to handle multiple different data types we will create a set of abstract machine-intelligence operators in Bonsai that can be configured to map between data substrates and ML algorithms.
 %
 The planned abstraction layer is based on the successful \texttt{scikit-learn} Python
 library \citep{buitinckEtAl13}.
@@ -137,7 +137,7 @@ Interactions between these different object types will allow a single algorithm 
 We will use the frameworks developed above to integrate existing machine-intelligence programs within one or more Bonsai packages.  Based on user input, we have identified initial domains of video-based behavioural analysis (Section~\ref{sec:videoBasedBehavioralAnalysis}) and
 brain-computer-interface (BCI) experiments (Section~\ref{sec:bci}). 
 
-\subsubsection{Video-based behavioral analysis}
+\subsubsection{Video-based behavioural analysis}
 \label{sec:videoBasedBehavioralAnalysis}
 
 Precisely quantifying animal behaviour is an essential step toward understanding
@@ -156,7 +156,7 @@ other informative features from video recordings.
         is implemented in Python\footnote{Code for MoSeq can be requested from
         the Datta laboratory, as indicated at
         http://datta.hms.harvard.edu/research/behavioral-analysis/.}.
-        After trained MoSeq can be used to detect behavioral syllables online.
+        After trained MoSeq can be used to detect behavioural syllables online.
 
     \item[Decoding behaviour from neural
         activity]\citep[BehaveNet;][]{battyEtAl19} combines hidden Markov
@@ -194,7 +194,7 @@ spikes fired by single neurons by a \texttt{SpikeDetector}
 \texttt{LFPextractor} (Section~\ref{sec:lfpExtraction}). Next, neural activity
 (spikes or LFPs) will be represented in a low-dimensional latent space by a
 \texttt{LatentsCalculator}. Finally, a \texttt{Decoder} will extract the
-intended behavior of the animal from this low-dimensional representation.
+intended behaviour of the animal from this low-dimensional representation.
 
 \paragraph{Spike detection}
 \label{sec:spikeDetection}
@@ -423,10 +423,10 @@ of the software components described above.
 %
 Second, we will monitor user activity in the Bonsai
 forum\footnote{https://groups.google.com/g/bonsai-users},
-and publications citing Bonsai that use th new machine larning functionality,
+and publications citing Bonsai that use the new ML functionality,
 to estimate the number of Bonsai users using this functionality.
 %
-Third, we will count the number of machine learning methods that are integrated
+Third, we will count the number of ML methods that are integrated
 into the Bonsai ecosystem by us and by other method developers.
 
 \begin{comment}

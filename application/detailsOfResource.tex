@@ -173,7 +173,7 @@ other informative features from video recordings.
         with unsupervised dimensionality reduction methods. These
         low-dimensional representations facilitate downstream behavioral and
         neural analyses. It is based on autoencoders and is implemented in
-        Python\footnote{code for PS-VAE is embedded in the BehaveNet code
+        Python\footnote{code for PS-VAE is embedded in the BehaveNet code\\ 
         https://github.com/themattinthehatt/behavenet.%
         % Please refer to class \texttt{PSVAE} in texttt{behavenet.models.vaes.py}.
         }. After trained it can be used
@@ -250,7 +250,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
         distribution can be used online for experimental control, as we
         propose in Section~\ref{sec:comparisonOfMultipleMethods}. We will use an R implementation of GLDS
         which allows the use of external
-        inputs\footnote{https://github.com/joacorapela/kalmanFilter}.
+        inputs\\ \footnote{https://github.com/joacorapela/kalmanFilter}.
 
     \item[Poisson Linear Dynamical System]\citep[PLDS][]{mackeEtAl15}: for
         smaller bin sizes, spike counts are better modelled as Poisson random
@@ -258,7 +258,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
         \citet{mackeEtAl15} can estimate the parameters of a LDS, and make
         inferences about its states, from Poisson distributed observations.  We
         propose to interface Bonsai with a Matlab implementation of
-        PLDS\footnote{https://bitbucket.org/mackelab/pop\_spike\_dyn/src/master/}
+        PLDS\\ \footnote{https://bitbucket.org/mackelab/pop\_spike\_dyn/src/master/}
         that uses variational inference. PLDS does not provide online estimates
         of the states, since data from a full trial is needed for state
         inference.
@@ -297,7 +297,7 @@ we propose to integrate into Bonsai to extract interpretable summary statistics
         framework, with recursive neural networks, to infer continuous states
         conditioned on spike counts, similar to those inferred by GPFA. We
         propose to use a Python implementation at
-        LFADS\footnote{https://github.com/tensorflow/models/tree/master/research/lfads.}.
+        LFADS\\ \footnote{https://github.com/tensorflow/models/tree/master/research/lfads.}.
         As GPFA, LFADS do not provide online estimates of states.
 
 \end{description}

@@ -1,0 +1,82 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=2cm]{geometry}
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage{microtype}      % fine pdf font control
+
+\usepackage[scaled=0.92]{helvet} \renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor} % -- loaded by tikz
+
+
+% \usepackage[colorlinks=true]{hyperref}
+\usepackage[colorlinks = true,
+            linkcolor = blue!50!black!50,
+            urlcolor  = blue!50!black!50,
+            citecolor = blue!50!black!50,
+            anchorcolor = blue!50!black!50]{hyperref}
+\usepackage[super]{natbib}
+\renewcommand{\citet}[1]{[\citenum{#1}]}
+% \usepackage{apalike}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{authblk}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\usetikzlibrary{calc}
+
+\usepackage{float}
+\usepackage{wrapfig}
+
+\usepackage[font={footnotesize}]{caption}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+\usepackage[tiny]{titlesec} % format section titles
+\def\headfmt{\color{blue!50!black!50}\bfseries}
+\titleformat*{\section}{\headfmt}
+\titlespacing*{\section}{0pt}{*1}{*0}[-4em]
+\titleformat*{\subsection}{\headfmt}
+\titlespacing*{\subsection}{0pt}{*0.5}{*0}
+\titleformat*{\subsubsection}{\headfmt}
+\titlespacing*{\subsubsection}{0pt}{*0}{*0}
+\titleformat*{\paragraph}{\headfmt}
+\titlespacing*{\paragraph}{0pt}{*0.5}{*0}
+
+\usepackage{enumitem}
+\setlist[description]{
+    topsep=0pt,
+    itemsep=0pt,
+    partopsep=0pt,
+    parsep=0pt,
+    font=\headfmt,
+    leftmargin=1em}
+
+\renewcommand{\footnote}[1]{ [#1]}
+
+\title{Machine intelligence for (neuroscience) experimental control}
+\author[1]{Mrsic-Flogel, Thomas}
+\author[2]{Sahani, Maneesh}
+\author[2]{Rapela, Joaquin}
+\author[3]{Lopes, Goncalo}
+\affil[1]{Sainsbury Wellcome Centre}
+\affil[2]{Gatsby Computational Neuroscience Unit}
+\affil[2]{NeuroGEARS Ltd.}
+\date{}
+\begin{document}
+
+\maketitle
+
+    The current proposal requests funding to maintain an existing resource. We
+    declare no conflict of interest.
+
+\end{document}

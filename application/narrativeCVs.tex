@@ -23,6 +23,7 @@
 \usepackage{pdfpages}
 
 \usepackage{wrapfig}
+\usepackage{enumitem}
 
 \makeatletter
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
@@ -30,24 +31,14 @@
             {1.25ex \@plus .25ex}%
             {\normalfont\normalsize\bfseries}}
 \makeatother
-\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{secnumdepth}{-2} % how many sectioning levels to assign numbers to
 \setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
 \usepackage[small]{titlesec} % format section titles
 
 \title{Case for Support}
 \author{}
-
+\pagestyle{empty}
 \begin{document}
-
-\maketitle
-
-\tableofcontents
-    
-\newpage
-
-\includepdf{narrativeCVTMF.pdf}
-
-\setcounter{page}{2}
 
 \input{narrativeCVSahani}
 

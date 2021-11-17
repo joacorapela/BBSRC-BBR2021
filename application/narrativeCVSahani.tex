@@ -18,6 +18,10 @@
 % 
 %
 
+{
+  \parindent 0pt
+  \parskip 1ex
+
 \section{Prof.\ Maneesh Sahani -- narrative CV}
 
 
@@ -26,13 +30,22 @@
 
 \subsection{Academic history and eligibility criteria}
 
-I am currently Professor of Theoretical Neuroscience and Machine Learning, and
+I am currently \textbf{Professor of Theoretical Neuroscience and Machine Learning}, and
 director of the Gatsby Computational Neuroscience Unit at UCL.
 %
-As such, I am resident in the UK, and hold an open-ended academic
-employment contract with UCL.
+I am a UK resident and hold an open-ended academic employment contract
+with UCL.
 
-I 
+I earned my PhD from the California Institute of Technology (Caltech)
+in 1999, working in the laboratories of Profs.\ Richard Andersen and
+John Hopfield.
+%
+After post-doctoral work at UCL/Gatsby (with Prof.\ Peter Dayan) and
+UCSF (Prof.\ Michael Merzenich) I joined the academic staff of the
+Gatsby Unit as a Lecturer in 2004, becoming Reader in 2009 and
+Professor in 2013.
+%
+I took over the Directorship of the Unit at the end of 2017.
 
 % 2) How have you contributed to the generation and flow of new ideas, hypotheses, 
 % tools or knowledge?
@@ -41,16 +54,128 @@ I
 % key outputs such as data sets, software, and research and policy publications. In each case 
 % the relevance to delivering the proposed project should be summarised.
 
-\subsection{Contributions to ideas}
+\subsection{Contributions to ideas, hypotheses, tools and knowledge}
 
-Prof.\ Sahani has authored over 100 peer-reviewed scientific papers,
-with an h-index (computed by Google scholar) of 47.
+I have authored over 100 peer-reviewed scientific papers, with an
+h-index (computed by Google scholar) of 47.
 
-GPFA
+A substantial component of my research focuses on the development of
+advanced machine-learning based tools for neuroscience research.
+%
+This included my PhD research.  My thesis \textit{Latent variable
+  models for neural data analysis} introduced new techniques of
+probabilistic inference and applied these to the problem of ``spike
+sorting'' and clustering of neuronal activity profiles.  It has been cited
+over 180 times.
 
-PLDS
 
-Grant funding?
+Beginning around 2005, my group published a series of new
+neuroinformatics tools designed to characterise and understand
+population-scale activity using the large-scale multielectrode
+recording methods being developed.  These papers provided the backbone
+for a new analytic approach that is now being employed and extended by
+systems neuroscience laboratories worldwide.
+%
+A central component of the current proposal is to make this approach
+(and others) available within Bonsai, easing its adoption by a wider
+group of laboratories that lack in-house informatics expertise.
+%
+Key foundational papers include:
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+\item  B. M. Yu, A. Afshar, G. Santhanam, S. I. Ryu, K. V. Shenoy, and M. Sahani.
+Extracting dynamical structure embedded in neural activity.
+In Y. Weiss, B. Schölkopf, and J. Platt, eds., Advances in Neural
+Information Processing Systems, vol. 18, pp. 1545–1552. MIT Press,
+Cambridge, Massachusetts, 2006.\\
+Cited 91 times.
+% \item M. M. Churchland, B. M. Yu, M. Sahani, and K. V. Shenoy.
+% Techniques for extracting single-trial activity patterns from large-scale neural recordings.
+% Current Opinion in Neurobiology, 17(5):609–618, 2007.\\
+% Review, cited 183 times.
+\item B. M. Yu, J. P. Cunningham, G. Santhanam, S. I. Ryu, K. V. Shenoy, and M. Sahani.
+Gaussian-process factor analysis for low-dimensional single-trial analysis of neural population activity.
+Journal of Neurophysiology, 102:614–635, 2009.\\
+Introduced the GPFA method; cited 561 times.
+% \item B. Petreska, B. M. Yu, J. P. Cunningham, G. Santhanam, S. I. Ryu, K. V. Shenoy, and M. Sahani.
+% Dynamical segmentation of single trials from population neural data.
+% In J. Shawe-Taylor, R. S. Zemel, P. Bartlett, F. C. N. Pereira, and
+% K. Q. Weinberger, eds., Advances in Neural Information Processing
+% Systems, vol. 24, pp. 756–764. Curran Associates, Inc., Red Hook, New
+% York, 2011.\\
+% Cited 64 times.
+
+
+\item J. H. Macke, L. Büsing, J. P. Cunningham, B. M. Yu, K. V. Shenoy, and M. Sahani.
+Empirical models of spiking in neural populations.
+In J. Shawe-Taylor, R. S. Zemel, P. Bartlett, F. C. N. Pereira, and
+K. Q. Weinberger, eds., Advances in Neural Information Processing
+Systems, vol. 24, pp. 1350–1358. Curran Associates, Inc., Red Hook,
+New York, 2011.\\
+Introduced effective methods to identify dynamical systems underlying
+population data.  Cited 210 times.
+\end{itemize}
+\noindent This remains an active thread of my research, with key recent
+papers including:
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+% \item L. Buesing, J. H. Macke, and M. Sahani.
+% Spectral learning of linear dynamics from generalised-linear observations with application to neural population data.
+% In P. Bartlett, F. C. N. Pereira, L. Bottou, C. J. C. Burges, and K. Q. Weinberger, eds., Advances in Neural Information Processing Systems, vol. 25, 2012.
+% 
+% \item J. H. Macke, L. Buesing, and M. Sahani.
+% Estimating state and model parameters in state-space models of spike trains.
+% In Z. Chen, ed., Advanced State Space Methods for Neural and Clinical Data. Cambridge University Press, 2015. 
+
+\item L. Duncker, G. Bohner, J. Boussard, and M. Sahani.
+Learning interpretable continuous-time models of latent stochastic dynamical systems.
+In K. Chaudhuri and R. Salakhutdinov, eds., Proceedings of the 36th International Conference on Machine Learning, vol. 97 of Proceedings of Machine Learning Research, pp. 1726–1734. PMLR, Long Beach, California, USA, 09–15 Jun 2019. 
+\item V. Rutten, A. Bernacchia, M. Sahani, and G. Hennequin.
+Non-reversible gaussian processes for identifying latent dynamical structure in neural data.
+In H. Larochelle, M. Ranzato, R. Hadsell, M. F. Balcan, and H.-T. Lin,
+eds., Advances in Neural Information Processing Systems 33. Curran
+Associates, Inc., 2020.
+\item H. Soulat, S. Keshvarzi,  T. Margrie, and M. Sahani.
+  Probabilistic Tensor Decomposition of Neural Population Spiking
+  Activity.
+  Advances in Neural Information Processing Systems 34. Curran
+  Associates, Inc., 2021.
+\end{itemize}
+Many of the algorithms described in these papers form the basis of
+capabilities to be incorporated into Bonsai as part of the proposed
+project.
+
+
+I have also developed a number of other neuroinformatics tools
+relevant to the other capabiilties to be developed, and so my
+expertise here will be valuable for evaluation and guidance.
+%
+Key examples include  decoding methods:
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+  \item B. M. Yu, G. Santhanam, M. Sahani, and K. V. Shenoy.
+Neural decoding for motor and communication prostheses.
+In K. G. Oweiss, ed., Statistical Signal Processing for Neuroscience,
+pp. 219–263. Elsevier, 2010.
+\item G. Santhanam, B. M. Yu, V. Gilja, S. I. Ryu, A. Afshar, M. Sahani, and K. V. Shenoy.
+Factor-analysis methods for higher-performance neural prostheses.
+Journal of Neurophysiology, 102:1315–1330, 2009. 
+\item B. M. Yu, C. Kemere, G. Santhanam, A. Afshar, S. I. Ryu, T. H. Meng, M. Sahani, and K. V. Shenoy.
+Mixture of trajectory models for neural decoding of goal-directed movements.
+Journal of Neurophysiology, 97(5):3763–3780, 2007. 
+\end{itemize}
+Cell segmentation methods for optical imaging:
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+    \item M. Pachitariu, A. Packer, N. Pettit, H. Dalgleish, M. Hausser, M. Sahani.
+    Extracting regions of interest from biological images with convolutional sparse block coding
+    Advances in Neural Information Processing Systems 26, 1745-1753,
+    2013.
+  \item G. Bohner and M. Sahani.
+    Convolutional higher order matching pursuit.
+    In 2016 IEEE 26th International Workshop on Machine Learning for
+    Signal Processing (MLSP), 2016.
+\end{itemize}
+
+
+
+
 
 % 3) How have you contributed to research teams and the development of
 % others? % Examples might include: project management, supervision, mentoring or line management 
@@ -60,18 +185,26 @@ Grant funding?
 % From QQR:
 \subsection{Contributions to teams and development}
 
-As a PI, I have supervised a total of \textbf{X} students and \textbf{X} postdocs.  
-In the last five years, 4 of students have moved to postdoctoral positions (at
-Aalto, Cambridge, CMU and Stanford), 1 works at DeepMind, and 1 holds a faculty offer at Shanghai Tech.  In all, 8 previous students have now secured faculty (or group leader) positions at Cambridge, CMU, Columbia, Copenhagen, Janelia (2), Pittsburgh and Shanghai.
-%
-Of the postdoctoral fellows I have supervised in the last five years, one is doing further postdoc work in Bonn; another holds an independent
-Research Fellowship at Radboud; and 2 have faculty positions: at Edinburgh and at UBC.
+To date, I have supervised a total of 14 PhDs and 14 postdocs.
 
-DARPA repair
+Of the students, 8 now hold faculty (or group leader) positions at
+Cambridge, CMU, Columbia, Copenhagen, Janelia (2), Pittsburgh and
+Shanghai; 2 work in corporate research groups (DeepMind and Advanced
+Bionics); and 4 recent graduates are currently in postdoctoral
+positions (Aalto, Cambridge, CMU, Stanford).
 
-Since 2017, I have been Director of the Gatsby Computational Neuroscience Unit, and have spearheaded its new strategic research direction. I created two new roles to support and develop the new strategy, and have recruited 2 new faculty members who have added new and highly relevant research strands to our research portfolio. As Director, I sit in the Executive Leadership Committee of the Faculty of Life Sciences at UCL. 
+Of the postdoctoral fellows, 6 have faculty positions at British
+Columbia, Edinburgh, Oldenburg (2), Queensland and Tuebingen; 2 hold
+independent research positions (Livermore Labs, Radboud); and 4 work
+in industry.
+
+Since 2017, I have been Director of the Gatsby Computational
+Neuroscience Unit, leading strategy in research and teaching.  I have
+created two new roles to support and develop new strategy, and have
+recruited two new members of faculty who have expanded our research
+portfolio. As Director, I sit in the Executive Leadership Committee of
+the Faculty of Life Sciences at UCL.
  
-
 
 % 4) How have you contributed to the wider research community?
 % 
@@ -83,30 +216,60 @@ Since 2017, I have been Director of the Gatsby Computational Neuroscience Unit, 
 
 \subsection{Contributions to wider research community}
 
-Current collaborations/networks?
+I have been an active contributor to the academic community, shaping
+the development of programme content for many scientific meetings,
+critically assessing the intellectual content of research proposals
+and awards applications, and reviewing the research and strategic
+direction of various world-class research institutions.
 
-I have been an active member of the academic community by contributing the development of programme content for many scientific meetings, critically assessing the intellectual content of research proposals and awards applications, and reviewing the research and strategic direction of various world-class research institutions. 
+I am a member of the Society for Neuroscience and IEEE, and in 2021
+became a Fellow of the European Laboratory for Learning and
+Intelligent Systems (ELLIS).
 
-I co-founded the Neural Coding, Computation and Dynamics meeting in 2007, and was in the organising committee in 2015 and 2017. 
+I served on the Board of Directors of the Computational Neuroscience
+Organization between 2003-2006.
+%
+I was a member of the programme committees for 
+%
+the Neural Information Processing Systems (NeurIPS) meeting
+(2004,2006); and the Computational and Systems Neuroscience (COSYNE)
+conference (2007).
+%
+I was the Workshops Chair for NeurIPS in 2008 and for the Computational
+Neuroscience Meeting from 1999-2003.
+%
+In 2009 I was the Programme Chair for COSYNE, taking over as General
+Chair in  2010.
+%
+I co-founded the Neural Coding, Computation and Dynamics meeting in
+2007, and was in the organising committee in 2015 and 2017.
 
-I participated in the selection committee for the Swartz Prize for Theoretical and Computational Neuroscience in 2014-2016, and was in the programme committee for the Computational and Systems Neuroscience (COSYNE) conference in 2007, becoming a  Programme Chair in 2009 and General Chair in 2010. 
+I have held editorial roles at various journals including, Current
+Opinion in Neurobiology (Special issue on Big Data and Neuroscience),
+Neural Computation, Neural Systems and Circuits, Network: Computation
+in Neural Systems, and Faculty of 1000, "Machine learning: life
+sciences" collection.
 
-I was also in the Programme Committee for NIPS (now NeurIPS) in 2004 and 2006, becoming a Workshops Chair in 2008. I was also a Workshops Chair for the Computational Neuroscience Meeting from 1999 - 2003. 
+I have taken various advisory roles for international review and award
+panels. I reviewed the Donders Institute for Brain, Cognition and
+Behaviour (Netherlands), The Edmond and Lily Safra Center for Brain
+Sciences, Hebrew University (Israel), and the Barcelona Summer School
+on Advanced Modelling of Behaviour (Spain). I have advised on awards
+such as the Swartz Prize for Theoretical and Computational
+Neuroscience (SFN, US), the Bernstein Prize (BMBF, Germany), and
+COSYNE.
 
-I was a member of the Board of Directors of the Computational Neuroscience Organization between 2003 - 2006. I am currently a member of the Society for Neuroscience and IEEE, and in 2021 became a Fellow of the European Laboratory for Learning and Intelligent Systems (ELLIS). 
+Recently, I have acted as an advisor to a new established
+cross-disciplinary effort at the Indian Institute of Science in
+Bangalore; visiting the site a number of times and hosting a joint
+workshop here at UCL.
 
-I currently have editorial roles in various journals including, Current Opinion in Neurobiology (Special issue on Big Data and Neuroscience), Neural Computation, Neural Systems and Circuits, Network:
-Computation in Neural Systems, and Faculty of
-1000, "Machine learning: life sciences" collection. 
-
-I have taken various advisory roles for international review and award panels. I reviewed the Donders Institute for Brain, Cognition and Behaviour (Netherlands), The Edmond and Lily Safra Center for Brain Sciences, Hebrew
-University (Israel), and the Barcelona Summer School on Advanced Modelling of Behaviour (Spain). I have advised on awards such as the Swartz Prize for Theoretical and Computational Neuroscience (SFN, US), the Bernstein Prize (BMBF, Germany), and COSYNE.
-
-Recently, I have acted as an advisor to a new established cross-disciplinary effort at the Indian Institute of Science in Bangalore; visiting the site a
-number of times and hosting a joint workshop here at UCL.
-
-I have sat on various grant award panels for the BMBF and DFG (Germany), and the (US) NSF/NIH collaborative research
-in computational neuroscience (CRCNS) programme. I have also acted as a reviewer for proposals for the Bernstein prize, the Einstein Foundation, EPSRC, MRC, Novo Nordisk Foundation (Denmark) and NWO (Netherlands).
+I have sat on various grant award panels for the BMBF and DFG
+(Germany), and the (US) NSF/NIH collaborative research in
+computational neuroscience (CRCNS) programme. I have also acted as a
+reviewer for proposals for the Bernstein prize, the Einstein
+Foundation, EPSRC, MRC, Novo Nordisk Foundation (Denmark) and NWO
+(Netherlands).
 
 % 5) How have you contributed to broader society? 
 % Examples might include: engagement across the public and / or private sectors or with the 
@@ -125,3 +288,4 @@ in computational neuroscience (CRCNS) programme. I have also acted as a reviewer
 % however if there are any details you do wish panel members to consider in their assessment 
 % of the proposal they may be included here.
 % 
+}

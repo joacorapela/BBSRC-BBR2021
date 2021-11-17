@@ -19,13 +19,13 @@ Furthermore, we will build on these extensibility developments to implement a su
 
 \subsection{Extensions to incorporate non-native code packages into Bonsai}
 
-As it stands, Bonsai is designed to be extensible and is distributed with a package-management framework that controls installation of optional core packages as well as user-contributed extensions.
+Bonsai is designed to be extensible and is distributed with a package-management framework that controls installation of optional core packages as well as user-contributed extensions.
 %
-However extensions must be written in Bonsai's native C\# programming language.
+However, extensions must be written in Bonsai's native C\# programming language.
 %
-This specificity restricts the range of potential contributors to the ecosystem.
+This restricts the range of potential contributors to the ecosystem.
 %
-It also hinders easy incorporation of published analytic tools, many of which are implemented within other interpreted language systems such as Python, R, or MATLAB.  
+It also hinders incorporation of published analytic tools, many of which are implemented within other interpreted language systems such as Python, R, or MATLAB.  
 \begin{wrapfigure}{R}{0pt}
   \includegraphics[width=0.5\textwidth]{figures/extensions.pdf}%
 %   \input{figures/extensions}
@@ -141,8 +141,8 @@ brain-computer-interface (BCI) experiments (Section~\ref{sec:bci}).
 \label{sec:videoBasedBehavioralAnalysis}
 
 Precisely quantifying animal behaviour is an essential step toward understanding
-brain function.  Deeplabcut is a Python-based software for tracking animal body
-parts \citep{mathisEtAl18}, which it is currently well integrated with
+brain function.  DeepLabCut is a Python-based software for tracking animal body
+parts \citep{mathisEtAl18}, which is currently well integrated with
 Bonsai~\citep{kaneEtAl20}. Here we propose extensions to Bonsai to extract
 other informative features from video recordings.
 

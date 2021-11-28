@@ -1,5 +1,5 @@
 # all: caseForSupport.pdf workPlan.pdf narrativeCVs.pdf coverLetter.pdf
-all: dataManagementPlan.pdf
+all: dataManagementPlan_long.pdf dataManagementPlan_short.pdf
 
 %.pdf: %.tex
 	pdflatex $<

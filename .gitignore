@@ -12,3 +12,15 @@ narrativeCVs.*
 !narrativeCVs.tex
 coverLetter.*
 !coverLetter.tex
+dataManagementPlan_long.*
+!dataManagementPlan_long.tex
+dataManagementPlan_short.*
+!dataManagementPlan_short.tex
+justificationOfResources.*
+!justificationOfResources.tex
+Software\ management\ plan.pdf.xoj
+application/figures/bonsai_noCaption.pdf
+application/figures/roadmap-bbsrc.pdf
+application/figures/roadmap-bbsrc.svg
+application/wrapper.*
+

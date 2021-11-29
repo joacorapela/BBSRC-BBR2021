@@ -70,81 +70,99 @@
 
 \maketitle
 
-\textcolor{orange}{\textit{The following template is provided to applicants to assist in the development of a Data Management Plan (DMP) to accompany a research proposal. The notes (in italics) provide further context and guidance for its completion and should be deleted prior to submission. Applicants should consider submission of a DMP which is proportional to the quantity and nature of the data. Where substantial data is generated from the research, it is expected that the DMP will be longer and more detailed than studies generating small amounts of data, where DMPs may be significantly shorter. In either case, the DMP should be a maximum of 3 pages in length.}}
+% \textcolor{orange}{\textit{The following template is provided to applicants to assist in the development of a Data Management Plan (DMP) to accompany a research proposal. The notes (in italics) provide further context and guidance for its completion and should be deleted prior to submission. Applicants should consider submission of a DMP which is proportional to the quantity and nature of the data. Where substantial data is generated from the research, it is expected that the DMP will be longer and more detailed than studies generating small amounts of data, where DMPs may be significantly shorter. In either case, the DMP should be a maximum of 3 pages in length.}}
 
 \setcounter{section}{-1}
 
 \section{Proposal name}
 
-\textcolor{orange}{\textit{Exactly as in the proposal that the DMP accompanies}}
+% \textcolor{orange}{\textit{Exactly as in the proposal that the DMP accompanies}}
 
 Machine intelligence for (neuroscience) experimental control
 
 \section{Description of the data}
 \subsection{Type of study}
 
-\textcolor{orange}{\textit{Up to three lines of text that summarise the type of study (or studies) for which the data are being collected}}
+% \textcolor{orange}{\textit{Up to three lines of text that summarise the type of study (or studies) for which the data are being collected}}
 
-Enhancement of an existing software resource, the Bonsai software
-ecosystem for data acquisition and experimental control.
+The project will generate software modules appropriate for use in behavioural neuroscience experiments in animal models, and other types of study that involve a combination of reactive experimental (particularly behavioural) control and streamed data acquisition.  
+
+% Enhancement of an existing software resource, the Bonsai software
+% ecosystem for data acquisition and experimental control.
 
 \subsection{Types of data}
 
-\textcolor{orange}{\textit{Types of research data to be managed: quantitative or
-qualitative, sequencing data, images, models, software, scripts, protocols, and
-procedures}}
+% \textcolor{orange}{\textit{Types of research data to be managed: quantitative or
+% qualitative, sequencing data, images, models, software, scripts, protocols, and
+% procedures}}
 
-We propose to incorporate into the Bonsai software ecosystem state-of-the-art
-machine-learning models, as well as capabilities to enable the communication
-between Bonsai, written in C\#, and machine-learning applications written in
-Python, R and Matlab.
+This is a software project.  We will produce and manage new modules to be integrated into the Bonsai software ecosystem.  These will include communication modules to be written in C\#, and machine-learning applications written in Python, R and Matlab.
+
+% We propose to incorporate into the Bonsai software ecosystem state-of-the-art
+% machine-learning models, as well as capabilities to enable the communication
+% between Bonsai, written in C\#, and machine-learning applications written in
+% Python, R and Matlab.
 
 \subsection{Origin of the data}
 
-\textcolor{orange}{\textit{Are you creating new primary data (i.e. collecting or
-generating data)? Or are you re-using already available sources, including to
-create new data (e.g. a new dataset created from transformation or integration
-of existing data)? If data is being re-used, is it publicly accessible?}}
+% \textcolor{orange}{\textit{Are you creating new primary data (i.e. collecting or
+% generating data)? Or are you re-using already available sources, including to
+% create new data (e.g. a new dataset created from transformation or integration
+% of existing data)? If data is being re-used, is it publicly accessible?}}
 
-We will not create primary data for the proposed project. However, as outlined
-in \emph{Section 2.5 Testing with neuroscience data} of the \emph{Case for
-Support} document, the large community of Bonsai users at the Sainsbuy Wellcome
-Centre (SWC) will test the new functionality added to Bonsai prior to its
-distribution. For these tests, this community will use their own datasets, its
-including high-density Neuropixels physiological recordings, with optogentic
-manipulations and high-resolution video monitoring of animal behaviour. These
-datasets will not be made publicly available for the purposes of the proposed
-project. However, we are building infrastructure to make them available in the
-near future.
+This is a software project.  New modules will be created and tested by software research engineers at UCL in consultation with staff at NeuroGEARS Ltd (a project collaborator).  These will be integrated into the existing Bonsai software ecosystem.
 
-The proposed enhancements to the Bonsai ecosystem will impact a wide range of
-existing and to-be-created datasets collected by open-source initiatives
-already integrated into the Bonsai ecosystem. For example, datasets of feeding
-behaviour in flies (collected with FlyPAD
-sensors\footnote{\url{https://flypad.rocks/}}), high-resolution zebrafish
-tracking datasets (collected with
-BonZeb\footnote{\url{https://github.com/ncguilbeault/BonZeb/}}),
-electrophysiology datasets (collected with products supported by
-OpenEphys\footnote{\url{https://open-ephys.org/}} or with NeuroPixels
-probes\footnote{\url{https://www.neuropixels.org/}})), datasets of in-vivo
-imaging of brain activity (collected with the UCLA
-Miniscope\footnote{\url{http://miniscope.org/}} or with NeuroPhotometrics
-products\footnote{\url{https://neurophotometrics.com/}}), datasets using rich
-2D or 3D visual environments (created with
-BonVision\footnote{\url{https://bonvision.github.io/}}), and animal behavioral
-datasets (with body parts tracked with
-DeepLabCut\footnote{\url{http://www.mackenziemathislab.org/deeplabcut}}).
+We will access experimental data during the testing phase, but will not seek to manage these data within the project.  Such data will have been collected in the course of other projects and will be managed in accordance with the original protocols. 
+
+% We will not create primary data for the proposed project. However, as outlined
+% in \emph{Section 2.5 Testing with neuroscience data} of the \emph{Case for
+% Support} document, the large community of Bonsai users at the Sainsbuy Wellcome
+% Centre (SWC) will test the new functionality added to Bonsai prior to its
+% distribution. For these tests, this community will use their own datasets, its
+% including high-density Neuropixels physiological recordings, with optogentic
+% manipulations and high-resolution video monitoring of animal behaviour. These
+% datasets will not be made publicly available for the purposes of the proposed
+% project. However, we are building infrastructure to make them available in the
+% near future.
+
+% The proposed enhancements to the Bonsai ecosystem will impact a wide range of
+% existing and to-be-created datasets collected by open-source initiatives
+% already integrated into the Bonsai ecosystem. For example, datasets of feeding
+% behaviour in flies (collected with FlyPAD
+% sensors\footnote{\url{https://flypad.rocks/}}), high-resolution zebrafish
+% tracking datasets (collected with
+% BonZeb\footnote{\url{https://github.com/ncguilbeault/BonZeb/}}),
+% electrophysiology datasets (collected with products supported by
+% OpenEphys\footnote{\url{https://open-ephys.org/}} or with NeuroPixels
+% probes\footnote{\url{https://www.neuropixels.org/}})), datasets of in-vivo
+% imaging of brain activity (collected with the UCLA
+% Miniscope\footnote{\url{http://miniscope.org/}} or with NeuroPhotometrics
+% products\footnote{\url{https://neurophotometrics.com/}}), datasets using rich
+% 2D or 3D visual environments (created with
+% BonVision\footnote{\url{https://bonvision.github.io/}}), and animal behavioral
+% datasets (with body parts tracked with
+% DeepLabCut\footnote{\url{http://www.mackenziemathislab.org/deeplabcut}}).
 
 \subsection{Format and scale of the data}
 
-\textcolor{orange}{\textit{File formats, software used, number of records, databases, sweeps, repetitions... (in terms that are meaningful in your field of research). An indication of the size of data to be stored and shared.}}
+% \textcolor{orange}{\textit{File formats, software used, number of records, databases, sweeps, repetitions... (in terms that are meaningful in your field of research). An indication of the size of data to be stored and shared.}}
 
-The source code for the core Bonsai ecosystem and the majority of extension
-packages are hosted at \url{github.com/bonsai-rx}.
+Software modules will comprise source files in a number of programming languages: C\#, Python, MATLAB and R.  These will be accompanied by extensive documentation (discussed below).
+
+NEED: Approximate lines of code??? (order of magnitude is fine)
+
+NEED: testing files, makefiles?, other stuff, 
+
+
+% The source code for the core Bonsai ecosystem and the majority of extension
+% packages are hosted at \url{github.com/bonsai-rx}.
 
 \section{Data management, documentation, and curation}
 
 \textcolor{orange}{\textit{Keep this section concise and accessible to readers who are not data management experts.  Focus on principles, systems, and major standards. Focus on the main kind(s) of study data.  Give brief examples and avoid long lists.}}
+
+
+\subsection{Managing, storing and curating data}
 
 % documentation
 The documentation, including learning materials and all relevant community
@@ -178,8 +196,6 @@ recruited to this project will work with our collaborators at NeuroGEARS Ltd,
 to strengthen and maintain these practices. Once fully familiar with the Bonsai
 core architecture they will participate in review of pull requests and other
 code contributions.
-
-\subsection{Managing, storing and curating data}
 
 \textcolor{orange}{\textit{Briefly describe how data will be stored, backed-up, managed and curated in the short to medium term. Specify any community agreed or other formal data standards used (with URL references).}}
 
@@ -226,5 +242,62 @@ The fact that Bonsai is distributed as an open source project
 (\url{https://groups.google.com/g/bonsai-users}), and that is integrated with
 many other open-source projects (Figure~1A and~1B, \emph{Case for Support})
 enables the use of the Bonsai ecosystem by the general public.
+
+
+\subsection{Data preservation strategy and standards}
+
+Plans and place for long-term storage, preservation, and planned retention period for the research data. Formal preservation standards, if any. Indicate which data may not be retained (if any). Also, briefly describe what will be stored long-term, raw data, processed data?
+
+\section{Data sharing and access}
+\subsection{Where will data be shared?}
+% Identify any data repository (-ies) that are, or will be, entrusted with storing, curating and/or sharing data from your study, where they exist for particular disciplinary domains or data types.
+Software modules and documentation will be available on github, with links from the Bonsai project site (https://bonsai-rx.org) and available through the Bonsai system's package management interface.
+
+NEED: github org and status?
+
+
+\subsection{When will data be available?}
+% It is expected that timely release would generally be no later than the release through publication of the main findings and should be in line with established best practice in the field. Where best practices do not exist release within three years of generation of the dataset is suggested as a guide.
+
+Release management: repositories will be public throughout, but marked as developmental.  Alpha-level code will be available but not publicised until after extensive testing.  Will be integrated into package management and advertised once it achieves release quality.
+
+\subsection{How will data be made findable and accessible?}
+
+Package management
+Bonsai website
+Community fora
+Workshops
+Paper?
+
+
+% Indicate how potential new users (outside of your organisation) can find out about your data and identify whether it could be suitable for their research purposes, also consider how it will be licenced. The approach should encompass data in all its forms as well as software. This section could also outline access procedures, how your data will be able to be cited and tracked.
+
+\subsection{How will data be made reusable?}
+
+This is an open source software project.  Code will be distributed under ??? license.
+
+
+% What steps will you take to ensure that your data could be re-analysed by other researchers? (e.g. availability of meta data, worked examples, vignettes). How will metadata be made available?
+
+\subsection{Restrictions or delays to sharing, with planned actions to limit such restrictions} 
+Restriction to data sharing may be due to subject confidentiality or to ensure you can gain IP protection. Applicants should ensure they have obtained necessary clearances from relevant collaborators with regards to the content of the proposal including the data sharing plan in line with the BBSRC Research Grants Guide. Where possible please indicate when data will be made available following a period of restriction.  
+
+All distributed software will be developed as part of the project, based on published and unrestricted algorithms.  Thus it is unencumbered by IP restrictions.  Will be available as above.
+
+4. Data security (where relevant)
+4.1	Formal information/data security standards
+% Identify formal information standards with which your study is or will be compliant. An example is ISO 27001. If your organisation is ISO compliant, please state the registration number.
+
+Not applicable.
+
+4.2	Main risks to data security
+% All personal data has an element of risk. Summarise the main risks to the confidentiality and security of information related to human participants or users, the level of risk and how these risks will be managed. Cover the main processes or facilities for storage and processing of personal data, data access, with controls put in place and any auditing of user compliance with consent and security conditions. It is not sufficient to write ‘not applicable’ under this heading.
+
+This is a freely-available open source software package, which does not contain participants or personal data.   User access to the repository is anonymous and user personal information will not be collected. 
+
+
+
+
+
 
 \end{document}

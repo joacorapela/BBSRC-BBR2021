@@ -16,9 +16,10 @@
             urlcolor  = blue!50!black!50,
             citecolor = blue!50!black!50,
             anchorcolor = blue!50!black!50]{hyperref}
-\usepackage[super]{natbib}
-\renewcommand{\citet}[1]{[\citenum{#1}]}
-% \usepackage{apalike}
+% \usepackage[super]{natbib}
+% \renewcommand{\citet}[1]{[\citenum{#1}]}
+\usepackage{natbib}
+\usepackage{apalike}
 \usepackage{graphicx}
 \usepackage{verbatim}
 
@@ -70,6 +71,8 @@
 
 \maketitle
 
+\textcolor{orange}{\textit{The following template is provided to applicants to assist in the development of a Data Management Plan (DMP) to accompany a research proposal. The notes (in italics) provide further context and guidance for its completion and should be deleted prior to submission. Applicants should consider submission of a DMP which is proportional to the quantity and nature of the data. Where substantial data is generated from the research, it is expected that the DMP will be longer and more detailed than studies generating small amounts of data, where DMPs may be significantly shorter. In either case, the DMP should be a maximum of 3 pages in length.}}
+
 \setcounter{section}{-1}
 
 \section{Proposal name}
@@ -118,8 +121,10 @@ The proposed enhancements to the Bonsai ecosystem will impact a wide range of
 existing and to-be-created datasets collected by open-source initiatives
 already integrated into the Bonsai ecosystem. For example, datasets of feeding
 behaviour in flies (collected with FlyPAD
-sensors\footnote{\url{https://flypad.rocks/}}), electrophysiology datasets
-(collected with products supported by
+sensors\footnote{\url{https://flypad.rocks/}}), high-resolution zebrafish
+tracking datasets (collected with
+BonZeb\footnote{\url{https://github.com/ncguilbeault/BonZeb/}}),
+electrophysiology datasets (collected with products supported by
 OpenEphys\footnote{\url{https://open-ephys.org/}} or with NeuroPixels
 probes\footnote{\url{https://www.neuropixels.org/}})), datasets of in-vivo
 imaging of brain activity (collected with the UCLA
@@ -159,5 +164,9 @@ sustainability of the proposed resource development.
 
 We believe this section does not applies to our proposed software resource that
 will not generate primary data.
+
+% \bibliographystyle{unsrtveryabbrv}
+\bibliographystyle{apalike}
+\bibliography{bonsai}
 
 \end{document}

@@ -4,8 +4,14 @@ all: dataManagementPlan_long.pdf dataManagementPlan_short.pdf
 %.pdf: %.tex
 	pdflatex $<
 
+# dataManagementPlan_short.pdf: dataManagementPlan_short.tex
+#	pdflatex $<
+#	bibtex dataManagementPlan_short.aux
+#	pdflatex $<
+#	pdflatex $<
+
 caseForSupport.pdf: caseForSupport.tex backgroundToTheResource.tex bonsai.tex detailsOfResource.tex communityDemand.tex userEngagement.tex trackRecord.tex otherResources.tex
 	pdflatex $<
-	bibtex $*.aux
+	bibtex caseForSupport.aux
 	pdflatex $<
 	pdflatex $<

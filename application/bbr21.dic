@@ -1,4 +1,4 @@
-personal_ws-1.1 en 127 
+personal_ws-1.1 en 140 
 Aishah
 Akrami
 Almaden
@@ -16,6 +16,7 @@ EEGLAB
 EMBS
 EOG
 Extensibility
+Flogel
 FlyPAD
 GCNU
 GFPA
@@ -26,7 +27,9 @@ GPFAlatentsExtractor
 Gaussianity
 Github
 Goncalo
+Gonçalo
 HMMs
+Kanban
 KiloSortSpikeSorter
 LDS
 LDSs
@@ -35,9 +38,11 @@ LFP
 LFPs
 Miniscope
 MoSeq
+Mrsic
 NeuroGEARS
 NeuroPhotometrics
 NeuroPixels
+Neurogears
 Neurophotometrics
 Neuropixel
 Neuropixels
@@ -47,7 +52,9 @@ PSVAE
 Preprocessing
 Qureshi
 Rapela
+ReadTheDocs
 SWC
+Sahani
 Sainsbuy
 Simons
 SpikeThresholdDetector
@@ -55,11 +62,13 @@ TODO
 TimeSeriesForestClassifier
 Tsong
 Tzyy
+UCL
 UCSD
 VAE
 Wellcome
 Westerfield
 Yan
+Zenodo
 ZeroMQ
 akramiEtAl
 andersonAndMoore
@@ -88,6 +97,7 @@ electrophysiological
 electrophysiology
 epsrcSoftwareForResearchCommunities
 extracellularly
+findable
 footnotesize
 gaussianProcesses
 hl
@@ -97,6 +107,7 @@ itemsep
 kaneEtAl
 latents
 leftmargin
+licencing
 lopesAndMonteiro
 lopesEtAl
 machineLearning
@@ -104,6 +115,7 @@ mackeEtAl
 mathisEtAl
 matlab
 monitoringBehavior
+neurocientists
 neuroscientists
 optogentic
 pandarinathEtAl
@@ -111,6 +123,7 @@ parsep
 partopsep
 rabiner
 reproducibility
+reusability
 rx
 scikit
 scipy

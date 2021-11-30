@@ -85,7 +85,7 @@ Machine intelligence for (neuroscience) experimental control
 
 % \textcolor{orange}{\textit{Up to three lines of text that summarise the type of study (or studies) for which the data are being collected}}
 
-The project will generate software modules appropriate for use in behavioural neuroscience experiments in animal models, and other types of study that involve a combination of reactive experimental (particularly behavioural) control and streamed data acquisition.  
+The project will generate software modules appropriate for use in behavioural neuroscience experiments using animal models, and other types of study that involve a combination of reactive experimental (particularly behavioural) control and streamed data acquisition.  
 
 % Enhancement of an existing software resource, the Bonsai software
 % ecosystem for data acquisition and experimental control.
@@ -96,7 +96,12 @@ The project will generate software modules appropriate for use in behavioural ne
 % qualitative, sequencing data, images, models, software, scripts, protocols, and
 % procedures}}
 
-This is a software project.  We will produce and manage new modules to be integrated into the Bonsai software ecosystem.  These will include communication modules to be written in C\#, and machine-learning applications written in Python, R and Matlab.
+This is a software project.  We will produce and manage new modules to be
+integrated into the Bonsai software ecosystem.  These will include extensions
+to incorporate non-native code packages into Bonsai (Section 2.1, Case for
+Support), a general abstraction framework for data processing (Section 2.2,
+Case for Support), machine learning functionality added to Bonsai (Section 2.3,
+Case for Support) and documentation.
 
 % We propose to incorporate into the Bonsai software ecosystem state-of-the-art
 % machine-learning models, as well as capabilities to enable the communication
@@ -147,12 +152,7 @@ We will access experimental data during the testing phase, but will not seek to 
 
 % \textcolor{orange}{\textit{File formats, software used, number of records, databases, sweeps, repetitions... (in terms that are meaningful in your field of research). An indication of the size of data to be stored and shared.}}
 
-Software modules will comprise source files in various programming languages: C\#, Python, MATLAB and R.  These will be accompanied by extensive documentation (discussed below).
-
-**NEED**: Approximate lines of code??? (order of magnitude is fine)
-
-**NEED**: testing files, makefiles?, other stuff, 
-
+Software modules will comprise source files in various programming languages: C\#, Python, MATLAB and R, along with supporting files for version control, compilation, testing, packaging and documentation.
 
 % The source code for the core Bonsai ecosystem and the majority of extension
 % packages are hosted at \url{github.com/bonsai-rx}.
@@ -166,16 +166,18 @@ Software modules will comprise source files in various programming languages: C\
 
 % Briefly describe how data will be stored, backed-up, managed and curated in the short to medium term. Specify any community agreed or other formal data standards used (with URL references). 
 
-Software will be developed within the git distributed version control system, with public repositories made available within a specially created organisation at github.com.  
+Software will be developed within the git distributed version control
+system, with public repositories made available within a specially
+created organisation at github.com and linked from \url{github.com/bonsai-rx}.
 
-Copies of all repositories will be maintained within the Sainsbury Wellcome Centre data storage system at UCL.  **NEED**: short/medium term backup protocols from John Pelan's DMP
+Mirrors of all repositories will be maintained within the Sainsbury Wellcome Centre data storage system at UCL. 
 
 % management
 Package installation and updates are supported by standalone package management
 software included within the core Bonsai distribution and hosted in a shared
 centralised and curated repository. This ensures that bugfixes and enhancements
 are easily available and, importantly, allows for reproducible deployment of
-user environments to ensure working experiments are not disrupted by system
+user environments to guarantee existing experiments are not disrupted by system
 changes.
 %
 Large-scale experimental projects such as the International Brain Laboratory
@@ -188,8 +190,8 @@ available. This allows the community to report issues with new features on
 GitHub, thereby distributing bug reporting and triage, and improving the
 quality of stable releases.
 
-The core compiler and IDE is extensively tested, and uses a strong type system
-to greatly reduce bugs at compile-time. Best practices for leveraging this
+The core compiler and the Integrated Development Environment (IDE) is extensively tested, and uses a strongly typed language
+that greatly reduce bugs at compile-time. Best practices for leveraging this
 infrastructure for building new packages are in place. The software engineers
 recruited to this project will work with our collaborators at NeuroGEARS Ltd,
 to strengthen and maintain these practices. Once fully familiar with the Bonsai
@@ -235,59 +237,85 @@ code contributions.
 % \textcolor{orange}{\textit{What metadata is produced about the data generated from the research? For example descriptions of data that enable research data to be used by others outside of your own team.  This may include documenting the methods used to generate the data, analytical and procedural information, capturing instrument metadata alongside data, documenting provenance of data and their coding, detailed descriptions for variables, records, etc.}}
 
 % documentation
-Current Bonsai documentation, including learning materials and all relevant community
+Bonsai documentation, including learning materials and all relevant community
 links are publicly accessible at \url{bonsai-rx.org}.
+% A forum where Bonsai users daily exchange questions and answers can be accessed at the public
+% repository \url{https://groups.google.com/g/bonsai-users}. Currently more than
+% 700 users contribute to this forum (Figure~1f, \emph{Case for Support}).
+Documentation will be created for the new modules produced in this project that
+meets the existing standards, and will be integrated into the Bonsai
+documentation framework.
 
-Documentation will be created for the new modules produced in this project that meets the existing standards, and will be integrated into the Bonsai documentation framework.
-
-% The fact that Bonsai is distributed as an open source project
-% (\url{https://bonsai-rx.org/}), that is has extensive online documentation
-% (\url{https://bonsai-rx.org/docs/}) and a vibrant user discussion forum
-% (\url{https://groups.google.com/g/bonsai-users}), and that is integrated with
-% many other open-source projects (Figure~1A and~1B, \emph{Case for Support})
-% enables the use of the Bonsai ecosystem by the general public.
-
+Classes, methods and functions will be documented in the code, and automatic
+documentation tools (e.g., Sphinx for Python code, or Sphinx for .Net for C\#)
+will be used to automatically generate API documentation. This documentation
+will be complemented with class and interaction diagrams, documenting the
+structure and dynamics of the application objects.
 
 \subsection{Data preservation strategy and standards}
 
 % Plans and place for long-term storage, preservation, and planned retention period for the research data. Formal preservation standards, if any. Indicate which data may not be retained (if any). Also, briefly describe what will be stored long-term, raw data, processed data?
 
+Persistent storage and long term preservation will be achieved using
+Zenodo [\url{https://zenodo.org/}], which is well integrated with
+GitHub.
+
+
+
 \section{Data sharing and access}
 \subsection{Where will data be shared?}
 % Identify any data repository (-ies) that are, or will be, entrusted with storing, curating and/or sharing data from your study, where they exist for particular disciplinary domains or data types.
-Software modules and documentation will be available through the github.com service, with links from the Bonsai project site (https://bonsai-rx.org) and available through the Bonsai system's package management interface.  
-
-**NEED**: github org and status?
-
-Repositories will be mirrored within the Sainsbury Wellcome Centre scientific computing system.  **NEED**: long-term backup from John's DMP 
+Software modules will be available on Github and on Zenodo for long-term
+preservation, with links from the Bonsai project site
+(\url{https://bonsai-rx.org}) and available through the Bonsai system's package
+management interface. Tutorials on how to use the added machine learning
+functionality will be available at the Bonsai project site
+(\url{https://bonsai-rx.org}) and automatically generated API documentation for
+this functionality will be available through ReadTheDocs [\url{https://readthedocs.org/}].
 
 
 \subsection{When will data be available?}
 % It is expected that timely release would generally be no later than the release through publication of the main findings and should be in line with established best practice in the field. Where best practices do not exist release within three years of generation of the dataset is suggested as a guide.
 
-Release management: repositories will be public throughout, but marked as developmental.  Alpha-level code will be available but not publicised until after extensive testing.  Will be integrated into package management and advertised once it achieves release quality.
+% Release management: repositories will be public throughout, but marked as developmental.  Alpha-level code will be available but not publicised until after extensive testing.  Will be integrated into package management and advertised once it achieves release quality.
+
+Modules will be made available once they have passed rigorous internal quality checks.
+Software will be automatically tested during development with a comprehensive set of unit test and integration tests, implemented as  GitHub Actions.  Once complete, each 
+module will be tested by a group of beta adopters (largely drawn from within the SWC to enable rapid feedback and debugging).  Project outputs will be accepted when all tests run successfully and no major functional problems are reported in beta tests.
+
+Release management: we will create a new release after each of the machine
+learning functionalities (described in Section~2.3 of the Case for Support) is
+integrated into the Bonsai ecosystem following the above method to accept a
+project output. Credentials for release will be granted initially by Dr.
+Gonçalo Lopes, Head Engineer at Neurogears and the current curator of the
+Bonsai official package feed, but might be expanded to other team members after
+training.  Acceptance criteria for release will be a group decision between
+Dr.~Lopes, Dr.~Rapela, Prof.~Sahani and Prof.~Mrsic-Flogel.
 
 \subsection{How will data be made findable and accessible?}
 
 % Indicate how potential new users (outside of your organisation) can find out about your data and identify whether it could be suitable for their research purposes, also consider how it will be licenced. The approach should encompass data in all its forms as well as software. This section could also outline access procedures, how your data will be able to be cited and tracked.
 
-Package management
-Bonsai website
-Community fora
-Workshops
-Paper?
- A forum where Bonsai
-users daily exchange questions and answers can be accessed at
-\url{https://groups.google.com/g/bonsai-users}. Currently more than 700 users
-contribute to this forum (Figure~1f, \emph{Case for Support}).
+Bonsai is already a widely adopted software ecosystem.  Community users will engage with the development of new capabilities in this project through planned workshops and the Bonsai users forum [\url{https://groups.google.com/g/bonsai-users}]. 
+
+On release, modules will be announced on the Bonsai website and available for installation through the package management system.
+
+We anticipate that incorporation of these new capabilities, associated workshops, announcements, and possible future publications will drive further adoption of Bonsai in behavioural systems neuroscience laboratories worldwide.
 
 \subsection{How will data be made reusable?}
 
 % What steps will you take to ensure that your data could be re-analysed by other researchers? (e.g. availability of meta data, worked examples, vignettes). How will metadata be made available?
 
-This is an open source software project.  Code will be distributed under **NEED** licence, and thus will be freely reusable and modifiable.
-
-
+Several factors will contribute to the reusability of new functionality
+incorporated into Bonsai. Code implementing this functionality will be
+available in Github and Zenodo, under the permissive MIT license. Emphasis on standard and
+uniform code style, achieved with the help of code review and paired
+programming, will generate readable code, easier to read and extend by third
+parties. Automated build methods will simplify code building and encourage
+modification by new developers. Test cases with large coverage will motivate
+software developers to modify Bonsai, without the risk of introducing
+undetected bugs into the software. Carefully designed software, with simple and
+clear object interfaces, will simplify the reuse of the proposed software.
 
 \subsection{Restrictions or delays to sharing, with planned actions to limit such restrictions} 
 % Restriction to data sharing may be due to subject confidentiality or to ensure you can gain IP protection. Applicants should ensure they have obtained necessary clearances from relevant collaborators with regards to the content of the proposal including the data sharing plan in line with the BBSRC Research Grants Guide. Where possible please indicate when data will be made available following a period of restriction.  
@@ -298,5 +326,21 @@ All distributed software will be developed as part of the project, based on publ
 
 The software produced will be freely available and open sourced.  It will contain no personal data.  User access to the repository will be anonymous and user personal information will not be collected.  Thus security concerns do not apply.
 
+\section{Capabilities}
+
+The project collaborator, NeuroGEARS Ltd, and its lead, Dr.~Gon\c{c}alo Lopes, have extended experience of software management and distribution, and will support our efforts.  In addition we will benefit from advice from UCL's recently established Centre for Advanced Research Computing.
+
+\section{Responsibilities}
+
+Drs.~Rapela (team member) and Lopes (collaborator) will jointly take responsibility for technical quality of version control, testing, documentation, and distribution.  Oversight will be provided by Profs.~Sahani (co-I) and Mrsic-Flogel (PI) along with a planned scientific advisory board committee that will include international experts.
+
+
+\section{Relevant institutional, departmental or study policies on data sharing and data security}
+
+Not applicable.
+
+\section{Author}
+
+The plan was prepared jointly by the team.  Enquiries should be directed to the PI and Co-I.
 
 \end{document}

@@ -6,4 +6,6 @@
 
 # aspell -p ./bbr21.dic check dataManagementPlan_long.tex
 
-aspell -p ./bbr21.dic check dataManagementPlan_short.tex
+# aspell -p ./bbr21.dic check dataManagementPlan_short.tex
+
+aspell -p ./bbr21.dic check dataManagementPlan_longJR.tex

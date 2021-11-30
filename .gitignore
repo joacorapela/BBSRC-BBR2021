@@ -14,6 +14,8 @@ coverLetter.*
 !coverLetter.tex
 dataManagementPlan_long.*
 !dataManagementPlan_long.tex
+dataManagementPlan_longJR.*
+!dataManagementPlan_longJR.tex
 dataManagementPlan_short.*
 !dataManagementPlan_short.tex
 justificationOfResources.*

@@ -152,11 +152,13 @@ We will access experimental data during the testing phase, but will not seek to 
 
 % \textcolor{orange}{\textit{File formats, software used, number of records, databases, sweeps, repetitions... (in terms that are meaningful in your field of research). An indication of the size of data to be stored and shared.}}
 
-Software modules will comprise source files in various programming languages: C\#, Python, MATLAB and R.  These will be accompanied by extensive documentation (discussed below).
+Software modules will comprise source files in various programming languages:
+C\#, Python, MATLAB and R.  These will be accompanied by documentation
+(Section~\ref{sec:documentation}).
 
-**NEED**: Approximate lines of code??? (order of magnitude is fine)
+% **NEED**: Approximate lines of code??? (order of magnitude is fine)
 
-**NEED**: testing files, makefiles?, other stuff, 
+% **NEED**: testing files, makefiles?, other stuff, 
 
 
 % The source code for the core Bonsai ecosystem and the majority of extension
@@ -172,8 +174,8 @@ Software modules will comprise source files in various programming languages: C\
 
 % code
 The source code for the core Bonsai ecosystem and the majority of extension
-packages are hosted at \url{github.com/bonsai-rx} with MIT license (no
-copyright and licencing restrictions).
+packages are hosted, with MIT license (i.e., no copyright and licencing
+restrictions), at \url{github.com/bonsai-rx} 
 
 % management
 Package installation and updates are supported by standalone package management
@@ -201,12 +203,12 @@ to strengthen and maintain these practices. Once fully familiar with the Bonsai
 core architecture they will participate in review of pull requests and other
 code contributions.
 
-Team responsibilities: Goncalo Lopes (Bonsai related software
-development, software releases, organization of Bonsai workshops and
-co-supervision of research software engineer), Joaquin Rapela (machine learning
-software development, testing ML functionality with behavioral and neural
-recordings and co-supervision of research software engineer), Maneesh Sahani
-(supervision on ML and neural data analysis), Tom Mrsic-Flogel (superivision on
+Team responsibilities: Dr.~Lopes (Bonsai related software development, software
+releases, organization of Bonsai workshops and co-supervision of research
+software engineer), Dr.~Rapela (machine learning software development, testing
+maching learning functionality with behavioral and neural recordings and
+co-supervision of research software engineer), Prof.~Sahani (supervision on
+maching learning and neural data analysis), Prof.~Mrsic-Flogel (superivision on
 neuroscience topics and communication with the steering committee).
 
 We will use the Kanban software development model, which both Dr.~Lopes and
@@ -223,19 +225,20 @@ pair-programming sessions will guarantee that the generated code shares a
 uniform style, which will help new contributors to the project (e.g., machine
 learning methods developers) easily understand the code functionality.
 
-We speculate the following potential risks of the project:
+We speculate the following risks of the project:
 
 \begin{description}
 
-    \item[language integration] we proposed to use existing software libraries
-        to enable the communication between Bonsai, written in C\#, and other
-        machine learning algorithms, written in Python (Python.NET), R (R.Net)
-        and Matlab (native Matlab .Net interface). We have not yet tested any
-        of these existing libraries, and we may found that they don't function
-        reliably enough for our purposes. If this were the case, we proposed to
-        build our own interface protocol using the ZeroMQ messaging library.
-        This risk will only delay the progress of the proposed project, but
-        will not hinder the deployment of its proposed outputs.
+    \item[problem in language integration] we proposed to use existing software
+        libraries to enable the communication between Bonsai, written in C\#,
+        and other machine learning algorithms, written in Python (Python.NET),
+        R (R.Net) and Matlab (native Matlab .Net interface). We have not yet
+        tested any of these existing libraries, and we may found that they
+        don't function reliably enough for our purposes. If this were the case,
+        we proposed to build our own interface protocol using the ZeroMQ
+        messaging library.  This risk will only delay the progress of the
+        proposed project, but will not hinder the deployment of its proposed
+        outputs.
 
     \item[disfunctional machine learning functionality] in Section 2.3 of the
         Case for Support document (Figure 2, green box) we proposed to
@@ -248,24 +251,23 @@ We speculate the following potential risks of the project:
         developed by us, or we are substantial experienced using them.
 
     \item[lack of interest from Bonsai users] we will minimize the probability
-        of this problem by advertising broadly the new functionality among
-        Bonsai users upon
-        release.  However, we don't think this would be a real problem, since
-        Bonsai users have reapeatly asked the addition of machine learning
-        functionality to Bonsai (Section 3 Community demand, Case for Support),
-        and because the machine learning functionality we proposed to add to
-        Bonsai are popular among experimental-control neurocientists.
+        of this problem by demonstrating broadly among Bonsai users the unique
+        capabilities of the new machine learning functionality.  We don't think
+        this would be a serious problem, since Bonsai users have reapeatly
+        asked the addition of machine learning functionality to Bonsai (Section
+        3 Community demand, Case for Support), and because the functionality we
+        proposed to add to Bonsai (Section~2.3, Case for Support) is of large
+        interest among experimental-control neurocientists.
 
-    \item[lack of interest from machine-learning methods developers] To
-        minimize the probability that this risk turns into a large problem we
-        will take three actions. First, we will provide machine-learning
-        methods developers and easy-to-use API to interface their methods into
-        the Bonsai ecosystem. Second, we will show machine-learning methods
-        developers the large user exposure that Bonsai provides to integrated
-        ML functionality. Third, we will organize Bonsai workshops for methods
-        developers showcasing machine learning functionality integrated into
-        the Bonsai ecosystem and instructing them how to integrate new methods
-        into Bonsai.
+    \item[lack of interest from machine-learning methods developers] to reduce
+        the probability of this problem we will take three actions. First, we
+        will provide machine-learning methods developers and easy-to-use API to
+        interface their methods into the Bonsai ecosystem. Second, we will
+        demonstrate them the large user exposure that Bonsai offers to
+        integrated maching learning functionality. Third, we will organize
+        Bonsai workshops for methods developers showcasing machine learning
+        methods already integrated into the Bonsai ecosystem and instructing
+        them on how to integrate new methods into the Bonsai ecosystem.
 
     \end{description}
 
@@ -276,7 +278,7 @@ We speculate the following potential risks of the project:
 % The specific contributions developed as part of this project will form new core components and packages within the Bonsai ecosystem. In particular, the new language integration packages will support long-term sustainability, by dramatically increasing Bonsai's interoperability with existing software development communities which are already well established in basic science (MATLAB, Python, R). Developing these new packages with input from the core advisory panel of Bonsai, and early public distribution and user testing within the SWC and with planned workshops, will ensure solid and broad user engagement from the beginning of the development cycle and will therefore build momentum for their use, support and dissemination. Close collaboration with the core maintainers of the Bonsai ecosystem at NeuroGEARS will allow them to take over responsibility for maintenance and support of these packages beyond the end of the project, following the same principles of open-source and free sharing of knowledge that characterises the entire Bonsai ecosystem.
 
 \subsection{Metadata standards and data documentation}
-
+\label{sec:documentation}
 % \textcolor{orange}{\textit{What metadata is produced about the data generated from the research? For example descriptions of data that enable research data to be used by others outside of your own team.  This may include documenting the methods used to generate the data, analytical and procedural information, capturing instrument metadata alongside data, documenting provenance of data and their coding, detailed descriptions for variables, records, etc.}}
 
 % The fact that Bonsai is distributed as an open source project
@@ -292,35 +294,36 @@ links are publicly accessible at \url{bonsai-rx.org}. A forum where Bonsai
 users daily exchange questions and answers can be accessed at the public
 repository \url{https://groups.google.com/g/bonsai-users}. Currently more than
 700 users contribute to this forum (Figure~1f, \emph{Case for Support}).
+Documentation will be created for the new modules produced in this project that
+meets the existing standards, and will be integrated into the Bonsai
+documentation framework.
 
 Classes, methods and functions will be documented in the code, and automatic
 documentation tools (e.g., Sphinx for Python code, or Sphinx for .Net for C\#)
-will be used to automatically generate API documentation. API documentation
+will be used to automatically generate API documentation. This documentation
 will be complemented with class and interaction diagrams, documenting the
 structure and dynamics of the application objects.
 
 \subsection{Data preservation strategy and standards}
 
-\textcolor{orange}{\textit{Plans and place for long-term storage, preservation,
-and planned retention period for the research data. Formal preservation
-standards, if any. Indicate which data may not be retained (if any). Also,
-briefly describe what will be stored long-term, raw data, processed data?}}
+% \textcolor{orange}{\textit{Plans and place for long-term storage, preservation, and planned retention period for the research data. Formal preservation standards, if any. Indicate which data may not be retained (if any). Also, briefly describe what will be stored long-term, raw data, processed data?}}
 
 For persistent and long term preservation we propose to use
-Zenodo\footnote{\url{https://zenodo.org/}}.
+Zenodo\footnote{\url{https://zenodo.org/}}, which is well integrated with
+GitHub.
 
 \section{Data sharing and access}
 \subsection{Where will data be shared?}
 % Identify any data repository (-ies) that are, or will be, entrusted with storing, curating and/or sharing data from your study, where they exist for particular disciplinary domains or data types.
 
-Software modules and documentation will be available on Github, with links from
-the Bonsai project site (https://bonsai-rx.org) and available through the
-Bonsai system's package management interface.
-
-**NEED**: github org and status?
-
-Repositories will be mirrored within the Sainsbury Wellcome Centre scientific computing system.  **NEED**: long-term backup from John's DMP 
-
+Software modules will be available on Github and on Zenodo for long-term
+preservation, with links from the Bonsai project site
+(\url{https://bonsai-rx.org}) and available through the Bonsai system's package
+management interface. Tutorial on how to use the added machine learning
+functionality will be available at the Bonsai project site
+(\url{https://bonsai-rx.org}) and automatically generated API documentation for
+this functionality will be available through
+ReadTheDocs\footnote{\url{https://readthedocs.org/}}.
 
 \subsection{When will data be available?}
 % It is expected that timely release would generally be no later than the release through publication of the main findings and should be in line with established best practice in the field. Where best practices do not exist release within three years of generation of the dataset is suggested as a guide.
@@ -347,22 +350,45 @@ Dr.~Lopes, Dr.~Rapela, Prof.~Sahani and Prof.~Mrsic-Flogel.
 
 % Indicate how potential new users (outside of your organisation) can find out about your data and identify whether it could be suitable for their research purposes, also consider how it will be licenced. The approach should encompass data in all its forms as well as software. This section could also outline access procedures, how your data will be able to be cited and tracked.
 
-Package management
-Bonsai website
-Community fora
-Workshops
-Paper?
- A forum where Bonsai
-users daily exchange questions and answers can be accessed at
-\url{https://groups.google.com/g/bonsai-users}. Currently more than 700 users
-contribute to this forum (Figure~1f, \emph{Case for Support}).
+% Package management
+% Bonsai website
+% Community fora
+% Workshops
+% Paper?
+ % A forum where Bonsai
+% users daily exchange questions and answers can be accessed at
+% \url{https://groups.google.com/g/bonsai-users}. Currently more than 700 users
+% contribute to this forum (Figure~1f, \emph{Case for Support}).
+
+Currently Bonsai is a well-known software. A strategy that its author has
+used to gain this visiability is to build interoperability with a large number
+of open-source source projects for data acquistion. With the addition of the
+proposed machine learning functionality, Bonsai will interact with popular
+machine learning algorithms, which will confer Bonsai further visibility.
+
 
 \subsection{How will data be made reusable?}
 
 % What steps will you take to ensure that your data could be re-analysed by other researchers? (e.g. availability of meta data, worked examples, vignettes). How will metadata be made available?
 
-This is an open source software project.  Code will be distributed under **NEED** licence, and thus will be freely reusable and modifiable.
+Several factors will contribute to the reusability of new functionality
+incorporated into Bonsai. Code implementing this functionality will be
+available in Github and Zenodo, under MIT license. Emphasis on standard and
+uniform code style, achieved with the help of code review and paired
+programming, will generate readable code, easier to read and extend by third
+parties. Automated build methods, will simplify code building and encourage
+modification by new developers. Test cases with large coverage will motivate
+software developers to modify Bonsai, without the risk of introducing
+undetected bugs into the software. Carefully designed software, with simple and
+clear object interfaces, will simplify the resuse of the proposed software.
 
+\subsection{Restrictions or delays to sharing, with planned actions to limit such restrictions} 
+% Restriction to data sharing may be due to subject confidentiality or to ensure you can gain IP protection. Applicants should ensure they have obtained necessary clearances from relevant collaborators with regards to the content of the proposal including the data sharing plan in line with the BBSRC Research Grants Guide. Where possible please indicate when data will be made available following a period of restriction.  
 
+All distributed software will be developed as part of the project, based on published and unrestricted algorithms.  Thus it is unencumbered by IP restrictions and will be available throughout development as described above.
+
+\section{Data security (where relevant)}
+
+The software produced will be freely available and open sourced.  It will contain no personal data.  User access to the repository will be anonymous and user personal information will not be collected.  Thus security concerns do not apply.
 
 \end{document}

@@ -1,6 +1,7 @@
 
 \documentclass[12pt]{letter}
 
+\usepackage[hypertexnames=false,colorlinks=true,breaklinks]{hyperref}
 \usepackage[margin=1.25in]{geometry}
 
 \begin{document}
@@ -23,7 +24,7 @@ the corresponding sections.
 such algorithms and may make people who use them not understand what they are
 actually doing.}
 
-We share these concerns with the reviewer. Some data-analysis open-source
+We share these concerns with the reviewer. Some current data-analysis open-source
 software packages allow users to fit complex statistical models by just
 clicking a few buttons in a graphical user interface. And sometimes, this ease
 of use leads users to apply these statistical models without sufficient
@@ -37,7 +38,7 @@ workshops explaining the function of added methods.
 %
 The Gatsby Computational Neuroscience Unit is a centre of excellence in
 statistical neuroscience and machine learning. Its contributions will be
-essential to building simple and high-quality statistical documentation related to
+essential to building simple and accurate statistical documentation related to
 the interfaced methods.
 
 In addition, for every machine-learning method that we will integrate into
@@ -69,7 +70,8 @@ knowledge, should not be required for this.
 
 Our vision is that Bonsai will not only allow its users to run advanced
 machine-learning methods, but it will also serve as an educational tool, that
-will provide users deep understanding of what these methods do.
+will provide users deep understanding of machine learning functionality for
+experimental control and neural data analysis.
 
 \noindent\textbf{Uniqueness and Availability}
 
@@ -77,13 +79,22 @@ will provide users deep understanding of what these methods do.
 but this proposal puts them all together and within the Bonsai framework, so
 the uniqueness is somewhat lower.}
 
-It is true that the machine learning functionality that we propose to
-incorporate into Bonsai is already available as free packages. However, people
-without much programming experience will most commonly not be able to use this
-functionality to control or analyse their experiments. Thus, a first unique
-contribution from our proposal is that we will provide machine learning
-functionality to people without programming experience, which will most
-probably accelerate discovery. Bonsai has a good track record of providing advanced functionality to a broad community of users, for example in the existing integration with DeepLabCut (https://elifesciences.org/articles/61909) or the support for dynamic presentation of visual stimuli in BonVision (https://elifesciences.org/articles/65541). 
+It is not the aim of the proposed resource to develop new machine learning
+functionality. We intend to build a resource that can easily integrate into the
+experimental control loop existing reliable machine learning functionality
+developed by the machine learing community. In this way, the
+proposed resource should continuously provide to experimental neuroscientists
+up-to-date machine learning functionality. In addition, the resource should
+provide methods developers rich datasets on which to assess the performance of
+their contributed methods. We believe that these contributions are unique.
+
+Bonsai has a good track record of providing advanced functionality to a broad
+community of users, for example in the existing integration with
+DeepLabCut\footnote{\url{https://elifesciences.org/articles/61909}} or the
+support for dynamic presentation of visual stimuli in
+BonVision\footnote{\url{https://elifesciences.org/articles/65541}}. The
+proposed machine learning extensions should significantly enhance these
+contributions.
 
 Experimental control and neural data analysis are currently highly
 disassociated. Most neuroscientists collect their data and only afterwards
@@ -91,7 +102,15 @@ analyse it. This split has had negative consequences for the progress of
 neuroscience, as the vast majority of neural data analysis methods are offline
 and do not provide key functionality for online experimental control. Hence, a
 second unique contribution from our proposal is that it will generate the need
-of online data analysis methods, which may generate advances in the field. For example, we have discussed the possibility of enabling and standardising systems for online closed-loop control of behavioural tasks where the results of statistical inference directly feedback to modulate the environment to which animals are exposed. Such novel tasks remain very hard to implement at the moment, and their reproducibility is complicated by the fact that there is no standardised way to easily share such interactive systems. Bonsai is well positioned to address this problem and we expect that the impact of such practices will be very high in the experimentalist community.
+of online data analysis methods, which may generate advances in the field. For
+example, we have discussed the possibility of enabling and standardising
+systems for online closed-loop control of behavioural tasks where the results
+of statistical inference directly feedback to modulate the environment to which
+animals are exposed. Such novel tasks remain very hard to implement at the
+moment, and their reproducibility is complicated by the fact that there is no
+standardised way to easily share such interactive systems. Bonsai is well
+positioned to address this problem and we expect that the impact of such
+practices will be very high in the community of experimental neuroscientists.
 
 \end{letter}
 
